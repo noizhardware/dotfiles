@@ -1,0 +1,15 @@
+sudo apt-get install lm-sensors
+sudo sensors-detect
+
+# if previous command gives "coretemp"
+sudo modprobe coretemp
+
+sudo apt-get install xsensors
+sudo apt-get install fancontrol
+sudo service kmod start
+
+# without GUI:
+sensors
+
+# with GUI:
+xsensors
