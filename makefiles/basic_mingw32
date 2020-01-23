@@ -1,0 +1,4 @@
+progname = 
+libs = 
+$(progname).exe : $(progname).c
+	gcc -g -Wall -Wno-comment -o $@ $^ -l $(libs)
