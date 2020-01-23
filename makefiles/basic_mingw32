@@ -1,3 +1,4 @@
+# rename as "Makefile" for automatic detection
 progname = 
 libs = 
 $(progname).exe : $(progname).c
