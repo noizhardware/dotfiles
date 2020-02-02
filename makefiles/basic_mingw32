@@ -1,0 +1,6 @@
+# rename as "Makefile" for automatic detection
+progname = 
+includePath = 
+libs = 
+$(progname).exe : $(progname).c
+	gcc -g -Wall -Wno-comment -o $@ $^ -l $(libs) -I $(includePath)
