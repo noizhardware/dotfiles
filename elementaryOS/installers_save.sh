@@ -1,6 +1,8 @@
 # this is where the installers are stored:
 cd /var/cache/apt/archives/
 
+## something like -S to save installer in local folder
+
 #to save installers without installing:
 sudo apt-get install --download-only <package_name>
 
