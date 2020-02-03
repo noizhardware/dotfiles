@@ -1,0 +1,12 @@
+(bind-func mysine
+  (lambda (in:SAMPLE time:i64 chan:i64 data:SAMPLE*)
+  (let ((vol 0.0)) ;; set volume here!
+  (let ((freq 432.)) ;; set frewuency here!
+    (* vol (sin (/ (* 2.0 3.1415               ;; 2pi(ish)
+                     freq                    ;; frequency (Hz)
+                     (i64tof (% time 44100))) ;; time mod samplerate
+                  44100.0)))))))
+
+;; to let Extempore know that this function is the one
+;; it should call to get the output audio samples
+(dsp:set! mysine)
