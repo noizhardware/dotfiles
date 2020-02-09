@@ -2,5 +2,6 @@
 progname = 
 includePath = 
 libs = 
+libpaths = 
 $(progname).exe : $(progname).c
-	gcc -g -Wall -Wno-comment -o $@ $^ -l $(libs) -I $(includePath)
+	gcc -g -Wall -Wno-comment -o $@ $^ -L $(libpaths) -l $(libs) -I $(includePath)
