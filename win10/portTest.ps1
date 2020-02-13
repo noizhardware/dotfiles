@@ -1,0 +1,1 @@
+Test-NetConnection -ComputerName localhost -Port 23
