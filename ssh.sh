@@ -2,6 +2,8 @@ apt install openssh-server &&
 systemctl status ssh && ## q to quit
 ufw allow ssh
 
+## need to open router's port 22
+
 ##start:
 ##systemctl start ssh
 
