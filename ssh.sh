@@ -13,3 +13,7 @@ ufw allow ssh
 ##boottime:
 ##systemctl disable ssh
 ##systemctl enable ssh
+
+## remote:
+## ssh username@ipaddr
+## ssh username@machinename
