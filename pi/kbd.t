@@ -1,0 +1,4 @@
+sudo dpkg-reconfigure keyboard-configuration
+ASPETTA che carichi l'interfaccia e scegli la tastiera
+poi
+sudo reboot
