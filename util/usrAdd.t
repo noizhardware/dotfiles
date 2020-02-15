@@ -5,3 +5,6 @@ passwd username
 
 
 to log in: su - username
+
+to delete an user:
+userdel username
