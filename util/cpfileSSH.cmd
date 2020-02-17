@@ -1,7 +1,7 @@
 SET target_user=""
 SET target_ip=""
 SET target_dir="/home/user/dirname"
-SET local_file_to_transfer="R:/Work/electronics/aerocene/raspi/home-pi/aerocene/server.js"
+SET local_file_to_transfer="R:/dir/dir/file.extension"
 
 scp %local_file_to_transfer% %target_user"@%target_ip%:%target_dir%
 
