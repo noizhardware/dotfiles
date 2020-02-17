@@ -1,5 +1,8 @@
-# copy a folder
+## copy a folder
 sudo cp -aR orig/ dest/
 
-# delete a directory and its contents
+## delete a directory and its contents
 sudo rm -r dirname/
+
+## copy contents of a folder into another folder
+scp -r /home/user/bla/origin_folder /home/user/bla/destination_folder 
