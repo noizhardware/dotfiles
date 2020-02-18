@@ -10,3 +10,6 @@ REM ,,filetransfer
 REM ,,coding
 REM ,,linux
 REM ,,bash
+
+REM to copy a folder FROM remote to local:
+scp -r remote_username@remote_machine_ip:/remote/folder R:/local/folder

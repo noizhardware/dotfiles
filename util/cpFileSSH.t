@@ -1,1 +1,0 @@
-scp %source_server% pi@%raspi_ip%:/home/pi/aerocene
