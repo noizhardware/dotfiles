@@ -1,0 +1,2 @@
+$ cat .gitattributes
+*.t linguist-detectable=false
