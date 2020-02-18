@@ -1,2 +1,3 @@
 $ cat .gitattributes
-*.t linguist-detectable=false
+*.t linguist-detectable=true
+*.t linguist-language=prose
