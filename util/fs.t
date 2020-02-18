@@ -12,3 +12,6 @@ mv original_foldername new_foldername
 
 ## rename or move a file:
 mv -v original_filename new_filename ##the -v is just "verbose"
+
+## append a file(or more files)  to another, and write it to another file
+cat file1 file2 file3 > destinationfile
