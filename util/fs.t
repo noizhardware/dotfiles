@@ -10,5 +10,5 @@ scp -r /home/user/bla/origin_folder /home/user/bla/destination_folder
 ## rename folder:
 mv original_foldername new_foldername
 
-## rename file:
+## rename or move a file:
 mv -v original_filename new_filename ##the -v is just "verbose"
