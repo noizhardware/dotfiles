@@ -2,7 +2,7 @@ SRC =
 DEST = 
 
 all: $(SRC)
-	gcc -g -Wall -pedantic-errors -o $(DEST) $(SRC)
+	gcc -std=c99 -g -Wall -pedantic-errors -o $(DEST) $(SRC)
 
 clean:
 	rm $(DEST)
