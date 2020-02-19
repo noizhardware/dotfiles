@@ -13,3 +13,6 @@ REM ,,bash
 
 REM to copy a folder FROM remote to local:
 scp -r remote_username@remote_machine_ip:/remote/folder R:/local/folder
+
+REM to copy a file from local TO remote
+scp R:/test.txt pi@62.11.161.98:/home/pi/test.txt
