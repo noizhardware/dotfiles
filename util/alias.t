@@ -3,7 +3,9 @@ sudo nano ~/.bashrc
 sudo source ~/.bashrc ## to make the changes effective immediately, withour log-out-in
 
 ## exec a specific program:
-## alias dive="cd /home/ghost/; ./dive"sudo nano ~/.bashrc
+## alias dive='cd /home/ghost/; ./dive'
+
+sudo nano ~/.bashrc
 # alias alias_name='original_command'
 exec bash
 source bash
