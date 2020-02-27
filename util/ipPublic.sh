@@ -1,2 +1,1 @@
-host myip.opendns.com resolver1.opendns.com ##public
-##ip a ##local
+host myip.opendns.com resolver1.opendns.com | grep "has address" | grep -Eoh "([0-9]{1,3}[\.]){3}[0-9]{1,3}"
