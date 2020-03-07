@@ -1,4 +1,4 @@
 sudo chown -R username foldername
 
-give rwed write permission to groups
+give read and write permission to groups
 chmod g+rw /path/tofile/fileName
