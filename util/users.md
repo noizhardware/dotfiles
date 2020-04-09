@@ -1,9 +1,9 @@
 * **add a user** (do it as root)
      ~~~~
      useradd username
-     passwd username ## here you can(and must!) set the pwd for the new user
+     passwd username
      ~~~~
-
+here you're asked to(and you must!) set the pwd for the new user
 
 * to **log in**: `su - username`
 * to **delete** an user: `userdel username`
