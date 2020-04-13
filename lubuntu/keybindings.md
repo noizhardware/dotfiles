@@ -4,3 +4,4 @@
 
 `Ctrl + Alt + Left/Right arrows` to switch to prev/next desktop
 `Alt + Shift + Left/Right arrows` to move the current window to another desktop
+you can also drag it on the left/right edge of the current desktop
