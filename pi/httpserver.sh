@@ -79,6 +79,18 @@ echo "and port 3000 to access from localhost\n"
 
 #https://dev.to/bogdaaamn/run-your-nodejs-application-on-a-headless-raspberry-pi-4jnn
 
+##################
+# sudo npm install http-server -g
+# sudo nano /etc/nginx/sites-available/default
+# dento la funzione server{ aggiungi: 
+# location /ciccio {
+#    proxy_pass  http://127.0.0.1:8080;}
+# reset nginx
+# poi crea una cartella per tutti i file, tipo file/
+# metti i file nella sottocartella files/ciccio/
+# da file/ fai partire http-server --log-ip
+# ora sarà visibile da fuori del localhost!
+
 
 # old
 # 
