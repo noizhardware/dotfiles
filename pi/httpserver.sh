@@ -79,8 +79,9 @@ echo "and port 3000 to access from localhost\n"
 
 #https://dev.to/bogdaaamn/run-your-nodejs-application-on-a-headless-raspberry-pi-4jnn
 
-##################
+################## serve files on http:::
 # sudo npm install http-server -g
+# sudo npm install forever -g
 # sudo nano /etc/nginx/sites-available/default
 # dento la funzione server{ aggiungi: 
 # location /ciccio {
