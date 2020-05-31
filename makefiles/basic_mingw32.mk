@@ -5,4 +5,4 @@ includePath =
 libs = 
 libpaths = 
 $(progname).exe : $(progname).c $(OTHER_C_FILES)
-	gcc -g -Wall -Wno-comment -o $@ $^ -L $(libpaths) -l $(libs) -I $(includePath)
+	gcc -Wall -Wno-comment -o $@ $^ -L $(libpaths) -l $(libs) -I $(includePath)
