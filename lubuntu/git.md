@@ -1,6 +1,8 @@
 `git config --global user.name "username"`
 you need to actually use double quotes around the username
 
+`git status` to check the status of the repo you're in now
+
 ## Pull
 To pull remote changes:
 * go in local repo directory
