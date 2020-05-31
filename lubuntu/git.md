@@ -6,6 +6,6 @@ go in local repo directory
 to pull remote changes
 
 `git add .`
-`git commit`
-`git push`
+`git commit` you're gonya be taken to a file, edit it with your commit message, save and exit
+`git push` asks for username + pwd
 to push local changes
