@@ -6,11 +6,16 @@
 * go into your local folder:
 `git init`
 `git add .`
-`git commit /m "my commit message"`
+`git commit -m "my commit message"`
 `git remote add origin https://github.com/username/repoName`
 `git remote -v`
 `git push -f origin master`
 `git status`
+* then from gitHub desktop:
+  - add Local Repository
+  - navigate to the local directory, select it
+  - "publish this branch to github" it won't change anything, don't worry
+* now youre all sync'd up and done :)
 
 ---
 
