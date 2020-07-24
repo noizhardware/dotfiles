@@ -16,3 +16,28 @@ To push local changes:
 
 `git commit` you're gonya be taken to a file, edit it with your commit message, save and exit
 `git push` asks for username + pwd
+
+## Add a Submodule to a repo
+~~~~
+git submodule add https://github.com/chaconinc/DbConnector
+git commit -m "my comment"
+git push
+~~~~
+
+## Update Submodules in Parent Repo
+~~~~
+git submodule foreach git pull origin master
+git add .
+git commit -m "update submodules"
+git push
+~~~~
+
+
+## Check repo Status
+~~~~
+git status
+~~~~
+
+,,git
+,,software
+,,coding
