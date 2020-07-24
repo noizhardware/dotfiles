@@ -14,8 +14,8 @@
 * then from gitHub desktop:
   - add Local Repository
   - navigate to the local directory, select it
-  - "publish this branch to github" it won't change anything, don't worry
-* now youre all sync'd up and done :)
+  - "Publish Branch" it won't change anything, don't worry
+* now you're all sync'd up and done :)
 
 ---
 
