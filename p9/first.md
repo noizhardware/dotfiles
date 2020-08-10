@@ -22,7 +22,7 @@ rio (the gui OS) is launched
 
 ## plan9 C
 each compiler-linker has a letter or number, will be x from now on.
-eg - ARM compiler is 5c, the linker is 5l (works for the rPi)
+eg - ARM64 compiler is 7c, the linker is 7l (works for the rPi3)
 - to compile: `xc mysource.c`
 - then link: `xl mysource.5`
 - run the program: x.out (it's the default output file name)
