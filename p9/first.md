@@ -1,4 +1,4 @@
-## 9front on rPi3
+## 9front on rPi3 (build-7408)
 boots on plan 9 console, asks for bootarg:
   - `local!/dev/sdM0/fs`
   - asks for user -- type `glenda`
