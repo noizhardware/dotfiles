@@ -7,3 +7,6 @@ Compile the source using the make command
 `make all`
 Finally, install the package using the make command
 `make install`
+
+* configure pulse audio, try:
+`apt-get install libpulse-dev`
