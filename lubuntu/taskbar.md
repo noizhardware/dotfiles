@@ -3,7 +3,7 @@ sudo apt install --reinstall lxpanel
 - menu:applications - destop settings - lxqt settings - session settings - autostart - add - and in "command" paste that thing you found before
 - `sudo reboot`
 
-- broken libglib:
+- broken GLIB:
   + `sudo apt install libglib2.0`
 
 
