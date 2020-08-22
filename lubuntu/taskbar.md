@@ -3,6 +3,8 @@ sudo apt install --reinstall lxpanel
 - menu:applications - destop settings - lxqt settings - session settings - autostart - add - and in "command" paste that thing you found before
 - `sudo reboot`
 
+- broken libglib:
+  + `sudo apt install libglib2.0`
 
 
 
@@ -12,6 +14,6 @@ if the taskbar disappears:
 - `sudo nano ~/.config/user-dirs.dirs`
 - change the line `XDG_TEMPLATES_DIR="$HOME/"` into `XDG_TEMPLATES_DIR="$HOME/Documents"`
 - if the directory `~/Documents` doesn't exist, create it
-- `sudo lxpanel` 
+- `sudo lxpanel`
 - remove the file `~/.config/lxqt/panel.conf`
 - `sudo reboot`
