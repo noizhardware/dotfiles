@@ -1,15 +1,17 @@
-SRC = 
-DEST = 
-includePath = ~/s/i
+SRC = .c
+DEST = .exe
+DESTnix = 
+includePath = R:/s/c/i
+includePathNix = ~/c/i
 
 .PHONY: all
 all: $(SRC)
-	gcc -std=c90 -g0 -Wall -pedantic-errors -o $(DEST) $(SRC) -I $(includePath)
+	gcc -ansi -g0 -O3 -Wall -Wextra -Wshadow -Wvla -pedantic-errors -o $(DEST) $(SRC) -I $(includePath)
 
 .PHONY: debug
 debug:
-	gcc -std=c90 -Wall -pedantic-errors -o $(DEST) $(SRC) -I $(includePath)
-	./$(DEST)
+	gcc -ansi -g3 -static-libasan -fsanitize=address -Wall -Wextra -Wshadow -Wvla -pedantic-errors -o $(DESTnix) $(SRC) -I $(includePathNix) -Wno-long-long
+	./$(DESTnix)
 
 .PHONY: clean
 clean:
