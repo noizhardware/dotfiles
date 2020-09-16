@@ -1,8 +1,7 @@
 * to enable access to local filesystem:
-`termux-setup-storage`
-(give permission when asked)
-
-`cd ~/storage/shader` will lead to your local filesystem :)
+     - `termux-setup-storage`
+     - (give permission when asked)
+     - now `cd ~/storage/shader` will lead to your local filesystem :)
 
 `volumeDN + A` → Move cursor to the beginning of line
 `volumeDN + C` → Abort (send SIGINT to) current process
