@@ -1,9 +1,11 @@
+@ echo off
 REM       "m" is for "make"
 REM       usage:
 REM       m myproj
 REM       will compile myproj.c into myproj.exe, and run it if the compile process was successful
 
-@ echo off
+REM you can add the path to the present file to PATH
+
 REM %1 is the first command line argument
 SET progName=%1
 SET includePath="R:/s/c/i"
