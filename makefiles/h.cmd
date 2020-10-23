@@ -9,5 +9,5 @@ REM you can add the path to the present file to PATH
 REM %1 is the first command line argument
 SET progName=%1
 
-@ echo on
-ghc %progName%.hs && rm %progName%.hi && rm %progName%.o && echo ==Compilation was successful, now running... && %progName%.exe
+REM @ echo on
+ghc %progName%.hs -no-keep-hi-files -no-keep-o-files -O2 && echo ==Compilation was successful, now running... && %progName%.exe
