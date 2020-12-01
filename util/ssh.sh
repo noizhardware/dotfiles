@@ -17,6 +17,8 @@ ufw allow ssh
 ## remote:
 ## ssh username@ipaddr
 ## ssh username@machinename
+## ssh username@machinename -p[portnumber]
+##  example: ciccio@porco.dio -p666
 
 ###### file transfer via ssh:
 ## on receiving machine, the user must own the destination folder

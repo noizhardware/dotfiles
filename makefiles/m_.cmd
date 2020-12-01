@@ -12,4 +12,4 @@ SET includePath="R:/s/c/i"
 SET includePathNix="~/s/cBao"
 
 @ echo on
-gcc -g0 %progName%.c -o %progName%.exe -Wall -Wextra -Wshadow -Wvla -pedantic-errors -I %includePath% -ansi
+gcc -g0 %progName%.c -o %progName%.exe -Wall -Wextra -Wshadow -Werror=implicit-int -Werror=incompatible-pointer-types -Werror=int-conversion -Wvla -pedantic-errors -Werror=stack-usage=65536 -Werror=frame-larger-than=65536 -I %includePath% -ansi
