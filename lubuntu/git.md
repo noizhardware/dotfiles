@@ -1,3 +1,6 @@
+## install
+`sudo apt install git`
+
 ## add a local folder to a repo with a different name (keeping the local folder's name)
 * create an empty repo from the github website
 * run gitBash as administrator
@@ -19,8 +22,22 @@
 
 ---
 
+## setup
 `git config --global user.name "username"`
-you need to actually use double quotes around the username
+`git config --global user.email "your_email@whatever.com"`
+you need to actually use double quotes around the username and email
+Also, for Unix/Mac users:
+EXECUTE:
+     git config --global core.autocrlf input
+     git config --global core.safecrlf true
+And for Windows users:
+     git config --global core.autocrlf true
+     git config --global core.safecrlf true
+
+## cloning
+it's when you pull from a remote source for the first time, copying it to your local system
+`git clone addressofrepositoy`
+example: `git clone https://github.com/noizhardware/cBao.git`
 
 `git status` to check the status of the repo you're in now
 
@@ -31,8 +48,8 @@ To pull remote changes:
 
 ## Push
 To push local changes:
-`git add --all` tkes care of locally removed files, will remove on remote as well
-`git add .` new local files will be added to remote, local removed files will not be removed from remote
+`git add --all` takes care of locally removed files, will remove on remote as well
+`git add .` new local files will be added to remote, local removed files will **NOT** be removed from remote
 `git add -u` only changes to existing files will be applied to the remote
 
 `git commit` you're gonya be taken to a file, edit it with your commit message, save and exit
