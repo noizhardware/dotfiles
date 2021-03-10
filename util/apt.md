@@ -1,0 +1,1 @@
+sudo apt autoremove : to remove unused deps
