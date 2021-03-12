@@ -14,4 +14,4 @@ SET sdlLib="R:/s/c/i/sdl2-mingw/sdl/SDL2-2.0.10/i686-w64-mingw32/lib"
 SET includePathNix="~/s/cBao"
 
 @ echo on
-gcc -g0 %progName%.c -o %progName%.exe -Wall -Wextra -Wshadow -Werror=implicit-int -Werror=incompatible-pointer-types -Werror=int-conversion -Wvla -pedantic-errors -I %sdlPath% -L %sdlLib% -lmingw32 -lSDL2main -lSDL2 -mwindows -ansi && %progName%.exe
+gcc -g0 %progName%.c -o %progName%.exe -Wall -Wextra -Wshadow -Werror=implicit-int -Werror=incompatible-pointer-types -Werror=int-conversion -Wvla -pedantic-errors -I %sdlPath% -I %includePath% -L %sdlLib% -lmingw32 -lSDL2main -lSDL2 -mwindows -ansi && %progName%.exe
