@@ -27,7 +27,7 @@ bash F2 at boot
 - choose "install lubuntu"
      - if it's freezing on "installation type" and the "install now" button is grayed out, click "back" and then again "continue"
 - sound:
-     `sudo apt-get gnome-alsamixer`
+     `sudo apt install gnome-alsamixer`
      `gnome-alsamixer` >> raise all volumes, especially "headphones"(it's actually the speakers' volume LoL)
      `speaker-test`
 
@@ -81,7 +81,7 @@ cpanel >> Wallpaper >> choose solid color
 
 
 
-## Damn Small Linux (DSL) 
+## Damn Small Linux (DSL)
   - http://www.damnsmalllinux.org/
   - flash usbKey con UNetbootin
   - nammerda lol, faila e ti manda a un terminale inutile (non ha manco ls hahaha)
@@ -102,7 +102,7 @@ cpanel >> Wallpaper >> choose solid color
 - `@{rfork n; aux/realemu; aux/vga −m vesa −l 800x600x32}` per cambiare risoluzione dello schermo
 ### install:
 - `inst/start`, e da li vedi come si chiama l'HDD sul quale vuoi installare >> HDDNAME (di solito è "sdE0" o una roba simile...)
-- prepara disk: 
+- prepara disk:
 ~~~~
 disk/mbr –m /386/mbr /dev/HDDNAME/data
 disk/fdisk –baw /dev/HDDNAME/data
@@ -147,7 +147,7 @@ lo trovi anche in R:\Programzz\OS\p9\9front\666a.rc
 ## 9atom
   - R:/Programzz/OS/p9/9atom.iso con win32imager
   - nada - quando lo seleziono al boot faila e poi boota con quello che ho gia sul pc
-  
+
 ## memory consumption:
 free -m
 lubuntu-16.04.2-desktop-i386: 132mb used
