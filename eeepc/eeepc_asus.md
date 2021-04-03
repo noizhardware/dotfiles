@@ -30,6 +30,9 @@ bash F2 at boot
      `sudo apt install gnome-alsamixer`
      `gnome-alsamixer` >> raise all volumes, especially "headphones"(it's actually the speakers' volume LoL)
      `speaker-test`
+  - laptop lid behavior
+  nano /etc/systemd/logind.conf
+  and search for "lid"   
 
 ## lubuntu (lubuntu-16.04.1-alternate-i386.iso)
 installed this older version hoping for the touchpad to work...lol NOPE
