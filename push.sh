@@ -1,3 +1,3 @@
 git add --all
-git commit -m "ak"
+git commit
 git push
