@@ -10,8 +10,8 @@
 # $1 is the first command line argument
 progName=$1
 includePath="R:/s/c/i"
-includePathNix="~/s/cBao"
+includePathNix=~/s/cBao
 
 #@ echo on
 #gcc -g0 $progName.c -o $progName -Wall -Wextra -Wshadow -Werror=implicit-int -Werror=incompatible-pointer-types -Werror=int-conversion -Wvla -pedantic-errors -Werror=stack-usage=65535 -Werror=frame-larger-than=65535 -I $includePathNix -ansi && ./$progName
-gcc -g0 $progName.c -o $progName -Wall -Wextra -Wshadow -Werror=implicit-int -Werror=incompatible-pointer-types -Werror=int-conversion -Wvla -pedantic-errors -I $includePathNix -ansi && ./$progName 
+gcc -g0 $progName.c -o $progName -lm -Wall -Wextra -Wshadow -Werror=implicit-int -Werror=incompatible-pointer-types -Werror=int-conversion -Wvla -pedantic-errors -I $includePathNix -ansi && ./$progName
