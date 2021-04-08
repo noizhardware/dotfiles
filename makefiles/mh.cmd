@@ -1,5 +1,5 @@
 @ echo off
-REM       "h" is for "haskell"
+REM       "mh" is for "make haskell"
 REM       usage:
 REM       h myproj
 REM       will compile myproj.hs into myproj.exe, clean .hi and .o, and run it if the compile process was successful
