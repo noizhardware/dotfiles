@@ -10,6 +10,13 @@
 
 * append a file(or more files)  to another, and write it to another file `cat file1 file2 file3 > destinationfile`
 
+* append text to a file:
+  echo "this is a new line" >> file.txt
+  you can also print newlines with the -e option:
+  echo -e "this is a new line \nthis is another new line" >> file.txt
+  OR use printf for more complex stuff:
+  printf "Hello, I'm %s.\n" $USER >> file.txt
+
 * show files and sizes `sudo du -sh *`
 
 * clean up some shit `sudo apt autoremove`
