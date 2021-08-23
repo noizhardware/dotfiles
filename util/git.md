@@ -1,6 +1,43 @@
 ## install
 `sudo apt install git`
 
+## sourcehut
+### setup
+from https://man.sr.ht/tutorials/set-up-account-and-git.md
+- `ssh/keygen`
+- then you should be pointed to a key file (usually C:\Users\ninja\.ssh\id_rsa.pub)
+- copy the entire content of the file
+- go to https://meta.sr.ht/keys
+- paste it in "SSH Public Key:" and click "Add Key"
+
+- if you haven't yet, init you git repo:
+     `git init`
+- add sourcehut as a remote:
+     `git remote add origin git@git.sr.ht:~username/projectname`
+- do the "push all":
+~~~~
+git add .
+git commit -m "comment"
+git push origin master
+~~~~
+if the repository didn't previously exist, you'll be prompted with a link to create the repository on git.sr.ht — click that link and fill out the form on that page. You'll be redirected to your repository on git.sr.ht: you're done!
+
+- licensing: (from https://man.sr.ht/license.md)
+Once you pick a license, add it to your project by copying the plain-text version into a file called "LICENSE" or "COPYING" at the root directory of your repository.
+
+### clone
+- copy the "read-only" link on a repo's page
+- git pull https://git.sr.ht/~noizhardware/666cpu
+- you're done!
+
+## push all
+~~~~
+git add .
+git commit -m "comment"
+git push origin master
+~~~~
+"master" can be any other branch
+
 ## add a local folder to a repo with a different name (keeping the local folder's name)
 * create an empty repo from the github website
 * run gitBash as administrator
