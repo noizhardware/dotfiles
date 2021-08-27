@@ -4,8 +4,9 @@
 ## sourcehut
 ### setup
 from https://man.sr.ht/tutorials/set-up-account-and-git.md
-	- `ssh-keygen`
+- `ssh-keygen` if on linux, use a password!
 - then you should be pointed to a key file (usually C:\Users\ninja\.ssh\id_rsa.pub)
+linux (/home/nff/.ssh/id_rsa.pub)
 - copy the entire content of the file
 - go to https://meta.sr.ht/keys
 - paste it in "SSH Public Key:" and click "Add Key"
