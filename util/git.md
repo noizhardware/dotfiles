@@ -1,3 +1,4 @@
+se pul da problemi, usa git pull origin master
 ## install
 `sudo apt install git`
 
