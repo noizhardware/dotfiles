@@ -1,11 +1,12 @@
-se pul da problemi, usa git pull origin master
+- if `git pull` doesn't work try `git pull origin master`
+
 ## install
 `sudo apt install git`
 
 ## sourcehut
 ### setup
 from https://man.sr.ht/tutorials/set-up-account-and-git.md
-- `ssh-keygen` if on linux, use a password!
+- `ssh-keygen` (if on Linux, use a password!)
 - then you should be pointed to a key file (usually C:\Users\ninja\.ssh\id_rsa.pub)
 linux (/home/nff/.ssh/id_rsa.pub)
 - copy the entire content of the file
@@ -31,6 +32,12 @@ Once you pick a license, add it to your project by copying the plain-text versio
 - copy the "read-only" link on a repo's page
 - git pull https://git.sr.ht/~noizhardware/666cpu
 - you're done!
+
+## GitHub
+- generate a token https://github.com/settings/tokens
+copy it and paste it somewhere safe
+now use it in place of your password when pushing from terminal
+done.
 
 ## push all
 ~~~~
