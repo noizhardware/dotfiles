@@ -1,3 +1,7 @@
+## syntax:
+- create syntax file as myname.nanorc
+- in ~/.nanorc file add "include path/to/myname.nanorc"
+
 undo: Alt + U
 redo: bho
 
