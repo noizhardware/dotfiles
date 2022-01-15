@@ -13,6 +13,7 @@ linux (/home/nff/.ssh/id_rsa.pub)
 - go to https://meta.sr.ht/keys
 - paste it in "SSH Public Key:" and click "Add Key"
 
+### create a repo
 - if you haven't yet, init you git repo:
      `git init`
 - add sourcehut as a remote:
