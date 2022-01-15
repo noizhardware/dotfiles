@@ -90,17 +90,17 @@ example: `git clone https://github.com/noizhardware/cBao.git`
 
 ## Pull
 To pull remote changes:
-* go in local repo directory
-`git pull`
+- go in local repo directory
+- `git pull`
 
 ## Push
 To push local changes:
-`git add --all` takes care of locally removed files, will remove on remote as well
-`git add .` new local files will be added to remote, local removed files will **NOT** be removed from remote
-`git add -u` only changes to existing files will be applied to the remote
+- `git add --all` takes care of locally removed files, will remove on remote as well
+- `git add .` new local files will be added to remote, local removed files will **NOT** be removed from remote
+- `git add -u` only changes to existing files will be applied to the remote
 
-`git commit` you're gonya be taken to a file, edit it with your commit message, save and exit
-`git push` asks for username + pwd
+- `git commit` you're gonya be taken to a file, edit it with your commit message, save and exit
+- `git push` asks for username + pwd
 
 ## Add a Submodule to a repo
 ~~~~
