@@ -31,7 +31,7 @@ Once you pick a license, add it to your project by copying the plain-text versio
 
 ### clone
 - copy the "read-only" link on a repo's page
-- git pull https://git.sr.ht/~noizhardware/666cpu
+- git clone https://git.sr.ht/~noizhardware/666cpu
 - you're done!
 
 ## GitHub
