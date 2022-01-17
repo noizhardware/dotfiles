@@ -34,6 +34,25 @@ Once you pick a license, add it to your project by copying the plain-text versio
 - git clone https://git.sr.ht/~noizhardware/666cpu
 - you're done!
 
+### troubleshooting
+if having problems when pushing, like a 40 error, check the config file `repoFolder/.git/config`
+it should look like this:
+~~~~
+[core]
+        repositoryformatversion = 0
+        filemode = true
+        bare = false
+        logallrefupdates = true
+[remote "origin"]
+        url = git@git.sr.ht:~noizhardware/uxnBao
+        fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "master"]
+        remote = origin
+        merge = refs/heads/master
+~~~~
+
+If it doesn't, correct it, especially the part `url = git@git.sr.ht:~noizhardware/`
+
 ## GitHub
 - generate a token https://github.com/settings/tokens
 copy it and paste it somewhere safe
