@@ -1,3 +1,10 @@
+## Win10
+- regedit in `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Command Processor`
+- add a _String Value_ entry with the name `AutoRun` and as value, the full path of your `alias.cmd` file.
+	This way, every time cmd is run, the aliases are loaded.
+- in your `alias.cmd` use `DOSKEY` bindings. see `dotfiles/win10/alias.cmd`
+
+## Linux
 `sudo nano ~/.bashrc`
 `alias alias_name='original_command'` use single quotes around the original command!
 `sudo source ~/.bashrc` to make the changes effective immediately, withour logging out and back in
