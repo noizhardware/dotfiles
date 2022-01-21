@@ -2,7 +2,7 @@
 
 :: Temporary system path at cmd startup
 
-:: set PATH=%PATH%;"C:\Program Files\Sublime Text 2\"
+set PATH=%PATH%;"R:\s\c\kalk\"
 
 :: Add to path by command
 
