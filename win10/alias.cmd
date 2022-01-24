@@ -5,7 +5,6 @@
 set PATH=%PATH%;"R:\s\c\kalk\"
 
 :: Add to path by command
-
 ::DOSKEY add_python26=set PATH=%PATH%;"C:\Python26\"
 ::DOSKEY add_python33=set PATH=%PATH%;"C:\Python33\"
 
@@ -13,8 +12,15 @@ set PATH=%PATH%;"R:\s\c\kalk\"
 
 DOSKEY lsd=ls -d */
 DOSKEY lsa=ls -a
+
+DOSKEY si=find -maxdepth 1 -type f -printf "%%s %%f\n"
+
 DOSKEY qq=exit
+
 DOSKEY src=R: $T cd s $T cd c
+DOSKEY mr=R: $T cd s $T cd c $T cd 666 $T cd vm $T cd 666MR
+
+DOSKEY gits=git status
 
 
 :: Common directories
