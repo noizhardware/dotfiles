@@ -14,7 +14,7 @@ DOSKEY lsd=ls -d */
 DOSKEY lsa=ls -a
 
 :: size of all files in current dir
-DOSKEY lss=find -maxdepth 1 -type f -printf "%%s %%f\n"
+DOSKEY lss=find -maxdepth 1 -type f -printf "%%s\t%%f\n"
 
 DOSKEY qq=exit
 
