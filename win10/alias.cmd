@@ -13,7 +13,8 @@ set PATH=%PATH%;"R:\s\c\kalk\"
 DOSKEY lsd=ls -d */
 DOSKEY lsa=ls -a
 
-DOSKEY si=find -maxdepth 1 -type f -printf "%%s %%f\n"
+:: size of all files in current dir
+DOSKEY lss=find -maxdepth 1 -type f -printf "%%s %%f\n"
 
 DOSKEY qq=exit
 
