@@ -3,6 +3,8 @@
 :: Temporary system path at cmd startup
 
 set PATH=%PATH%;"R:\s\c\kalk\"
+set PATH=%PATH%;"R:\s\c\uxnBao\bin\"
+set PATH=%PATH%;"R:\s\c\666\vr\666MR\bin\"
 
 :: Add to path by command
 ::DOSKEY add_python26=set PATH=%PATH%;"C:\Python26\"
