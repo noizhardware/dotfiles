@@ -1,5 +1,26 @@
 - if `git pull` doesn't work try `git pull origin master`
 
+`git add --all` == `git add -A` adds all changes and deletes
+`git add .` adds only changes
+
+Git considers each commit change point or "save point"
+
+`git status --short` or `git status -s` to see the changes in a more compact way:
+?? - Untracked files
+A - Files added to stage
+M - Modified files
+D - Deleted files
+
+`git log` to see log of all commits
+use `B` and `Spacebar` to navigate up and dn, and `q` to quit
+
+## Local repo
+- `git add -A` to add all changes and deletes
+- `git commit`, then you enter vi to edit comment
+- press `i`, now you can type your comment
+- when you're done, press `Esc`
+- save and exit, using `:x` or `:wq` (it's the same)
+
 ## install
 `sudo apt install git`
 
