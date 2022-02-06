@@ -14,6 +14,25 @@ D - Deleted files
 `git log` to see log of all commits
 use `B` and `Spacebar` to navigate up and dn, and `q` to quit
 
+- `git branch my-branch-name` creates a new branch
+- `git branch` to see existing branches
+- `git checkout my-branch-name` moved current workspace to that branch
+- `git checkout -b my-branch-name` create branch and move to it
+
+- `git merge another-branch` to merge another-branch into current branch
+- `git branch -d another-branch` to delete another-branch
+
+if after the merge there are conflicts with a "conflictedfile.txt", you need to open it, you will see it had been edited to mark the problems/differencies
+edit it as you like, solve the conflict, then
+`git add conflictedfile.txt` and then
+`git commit -m "I solved that conflict!"`
+then you can also delete the old branch
+
+push a local repo to a remote server
+`git remote add origin https://github.com/w3schools-test/hello-world.git`
+then push and set it as the default remote branch
+`git push --set-upstream origin master`
+
 ## Local repo
 - `git add -A` to add all changes and deletes
 - `git commit`, then you enter vi to edit comment
