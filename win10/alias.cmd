@@ -25,6 +25,7 @@ DOSKEY mr=R: $T cd s $T cd c $T cd 666 $T cd vm $T cd 666MR
 
 DOSKEY gits=git status
 
+DOSKEY tapc=R:\s\c\tapCounter\tapcounter.exe
 
 :: Common directories
 

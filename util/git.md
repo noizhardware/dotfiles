@@ -1,19 +1,22 @@
 - if `git pull` doesn't work try `git pull origin master`
 
+## Adding files
 `git add --all` == `git add -A` adds all changes and deletes
 `git add .` adds only changes
 
 Git considers each commit change point or "save point"
 
-`git status --short` or `git status -s` to see the changes in a more compact way:
-?? - Untracked files
-A - Files added to stage
-M - Modified files
-D - Deleted files
+## Checking current status
+- `git status --short` or `git status -s` to see the changes in a more compact way:
+	?? - Untracked files
+	A - Files added to stage
+	M - Modified files
+	D - Deleted files
 
 `git log` to see log of all commits
-use `B` and `Spacebar` to navigate up and dn, and `q` to quit
+	use `B` and `Spacebar` to navigate up and dn, and `q` to quit
 
+## Branches
 - `git branch my-branch-name` creates a new branch
 - `git branch` to see existing branches
 - `git checkout my-branch-name` moved current workspace to that branch
@@ -22,16 +25,60 @@ use `B` and `Spacebar` to navigate up and dn, and `q` to quit
 - `git merge another-branch` to merge another-branch into current branch
 - `git branch -d another-branch` to delete another-branch
 
+### conflicts
 if after the merge there are conflicts with a "conflictedfile.txt", you need to open it, you will see it had been edited to mark the problems/differencies
 edit it as you like, solve the conflict, then
 `git add conflictedfile.txt` and then
 `git commit -m "I solved that conflict!"`
 then you can also delete the old branch
 
-push a local repo to a remote server
-`git remote add origin https://github.com/w3schools-test/hello-world.git`
-then push and set it as the default remote branch
-`git push --set-upstream origin master`
+for binary files: you can choose which file to keep
+- `git checkout --theirs -- path/to/conflicted-file.txt` to keep the version from the branch you're trying to merge
+- `git checkout --ours -- path/to/conflicted-file.txt`  to keep the version present in the current branch
+
+## Revert/Reset to a previous commit
+with `git log` you will see each commit have their SHA-1 checksum
+	
+~~~~
+	commit 6f0b21972ee92c3f0a7b5df21bcb14f3084e5f8e (HEAD -> master)
+Author: noizhardware <noisefuel@gmail.com>
+Date:   Mon Feb 7 09:53:37 2022 +0100
+
+    stocazzo
+
+commit 3d5991a2ce0225feb6a1c6cc1890de6432ee93da
+Author: noizhardware <noisefuel@gmail.com>
+Date:   Mon Feb 7 09:50:37 2022 +0100
+
+    uno
+
+commit 31e027142d1ce49c1e06f92bdd4b7879afd447b4
+Author: noizhardware <noisefuel@gmail.com>
+Date:   Mon Feb 7 09:49:58 2022 +0100
+
+    prova comment
+~~~~
+you can use those to go back in time to that commit, like this:
+`git reset --hard 3d5991a2ce0225feb6a1c6cc1890de6432ee93da` to revert to commit "uno"
+this will delete all commits more recent than "uno"
+
+OR, you can (from https://stackoverflow.com/questions/4114095/how-do-i-revert-a-git-repository-to-a-previous-commit )
+~~~~
+git revert --no-commit 0766c053..HEAD
+git commit
+This will revert everything from the HEAD back to the commit hash, meaning it will recreate that commit state in the working tree as if every commit after 0766c053 had been walked back. You can then commit the current tree, and it will create a brand new commit essentially equivalent to the commit you "reverted" to.
+
+(The --no-commit flag lets git revert all the commits at once- otherwise you'll be prompted for a message for each commit in the range, littering your history with unnecessary new commits.)
+
+This is a safe and easy way to rollback to a previous state. No history is destroyed, so it can be used for commits that have already been made public.
+~~~~
+but I never tested it
+
+## Remote
+	push a local repo to a remote server
+	`git remote add origin https://github.com/w3schools-test/hello-world.git`
+	then push and set it as the default remote branch
+	`git push --set-upstream origin master`
 
 ## Local repo
 - `git add -A` to add all changes and deletes
@@ -55,16 +102,19 @@ linux (/home/nff/.ssh/id_rsa.pub)
 
 ### create a repo
 - if you haven't yet, init you git repo:
-     `git init`
+	`git init`
 - add sourcehut as a remote:
-     `git remote add origin git@git.sr.ht:~username/projectname`
+	`git remote add origin git@git.sr.ht:~username/projectname`
+- if you made a mistake, you can
+	`git remote set-url origin git@git.sr.ht:~correctUsername/correctProjectname`
 - do the "push all":
 ~~~~
-git add .
+git add -A
 git commit -m "comment"
 git push origin master
 ~~~~
 if the repository didn't previously exist, you'll be prompted with a link to create the repository on git.sr.ht — click that link and fill out the form on that page. You'll be redirected to your repository on git.sr.ht: you're done!
+in this step you can set your repo as `Public`, `Unlisted` or `Private`
 
 - licensing: (from https://man.sr.ht/license.md)
 Once you pick a license, add it to your project by copying the plain-text version into a file called "LICENSE" or "COPYING" at the root directory of your repository.
@@ -75,8 +125,7 @@ Once you pick a license, add it to your project by copying the plain-text versio
 - you're done!
 
 ### troubleshooting
-if having problems when pushing, like a 40 error, check the config file `repoFolder/.git/config`
-it should look like this:
+if having problems when pushing or even when cloning for the first time, like a 403 error, check the config file `repoFolder/.git/config`, or just the url you're cloning from; it should look like this:
 ~~~~
 [core]
         repositoryformatversion = 0
