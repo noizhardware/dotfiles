@@ -144,6 +144,16 @@ If it doesn't, correct it, especially the part `url = git@git.sr.ht:~noizhardwar
 
 ## GitHub
 - SSH:
+	- verify if you already have a SSH key `ls -al ~/.ssh`
+	- if yes, `cat ~/.ssh/id_rsa.pub`, and copy it
+	- if you dont have a key, create one:
+		- `ssh-keygen` (if on Linux, use a password!)
+		- then you should be pointed to a key file (usually C:\Users\ninja\.ssh\id_rsa.pub)
+		linux (/home/nff/.ssh/id_rsa.pub)
+		- copy the entire content of the file
+	- https://github.com/settings/keys to add the key
+
+OR you can:
 - generate a token https://github.com/settings/tokens
 copy it and paste it somewhere safe
 now use it in place of your password when pushing from terminal
