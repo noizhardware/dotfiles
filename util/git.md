@@ -148,6 +148,8 @@ copy it and paste it somewhere safe
 now use it in place of your password when pushing from terminal
 done.
 
+ninja: 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 2022c13-0939
+
 ## push all
 ~~~~
 git add .
@@ -231,6 +233,8 @@ git push
 git status
 ~~~~
 
-,,git
-,,software
-,,coding
+#credentials
+#pvt
+#git
+#software
+#coding
