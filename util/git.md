@@ -143,6 +143,7 @@ if having problems when pushing or even when cloning for the first time, like a 
 If it doesn't, correct it, especially the part `url = git@git.sr.ht:~noizhardware/`
 
 ## GitHub
+- SSH:
 - generate a token https://github.com/settings/tokens
 copy it and paste it somewhere safe
 now use it in place of your password when pushing from terminal
