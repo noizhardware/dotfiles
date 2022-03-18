@@ -159,6 +159,8 @@ copy it and paste it somewhere safe
 now use it in place of your password when pushing from terminal
 done.
 
+THEN you need to: `git remote set-url origin git@github.com:noizhardware/repoName.git`
+
 ## push all
 ~~~~
 git add --all
