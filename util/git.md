@@ -122,9 +122,14 @@ Once you pick a license, add it to your project by copying the plain-text versio
 ### clone
 - copy the "read-only" link on a repo's page
 - git clone https://git.sr.ht/~noizhardware/666cpu
+- e invece NOOOOOO!!! devi usare la read/write, tipo:
+    git@git.sr.ht:~noizhardware/666cpu
 - you're done!
 
 ### troubleshooting
+Make sure to always use the read/write link when cloning, like:
+    git@git.sr.ht:~noizhardware/666cpu
+
 if having problems when pushing or even when cloning for the first time, like a 403 error, check the config file `repoFolder/.git/config`, or just the url you're cloning from; it should look like this:
 ~~~~
 [core]
