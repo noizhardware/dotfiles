@@ -13,3 +13,6 @@ alias glo='git log'
 alias gpl='git pull origin master'
 alias gps='git add --all && git commit -m "nb" && git push origin master'
 
+alias siz='du -sbh *'
+
+alias off='shutdown -P now'
