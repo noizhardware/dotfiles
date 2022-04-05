@@ -1,0 +1,1 @@
+diff filename1 filename2
