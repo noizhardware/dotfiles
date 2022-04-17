@@ -2,10 +2,17 @@
 
 alias lsa='ls -a'
 alias lsd='ls -d'
+killdir(){
+	rm -r "$1"
+}
+
+
+alias disk='df -h | grep sda1'
 
 alias todo='cat $HOME/s/TODO.txt'
 alias tode='nano $HOME/s/TODO.txt'
 alias toad='$HOME/s/toad.sh'
+
 alias lite='$HOME/s/lite/lite ./'
 
 alias gsta='git status'
@@ -18,5 +25,7 @@ alias siz='du -sbh *'
 alias off='shutdown -P now'
 
 alias refresh='source $HOME/.bashrc'
-alias hh='cat $HOME/nff/s/dotfiles/alianew.sh'
+alias hh='cat $HOME/s/dotfiles/alianew.sh'
+alias eda='nano $HOME/s/dotfiles/alianew.sh'
+
 alias qq='exit'
