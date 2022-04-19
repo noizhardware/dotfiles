@@ -6,6 +6,7 @@ killdir(){
 	rm -r "$1"
 }
 
+alias vol='gnome-alsamixer'
 
 alias disk='df -h | grep sda1'
 
@@ -22,7 +23,7 @@ alias gpus='git add --all && git commit -m "nb" && git push origin master'
 
 alias siz='du -sbh *'
 
-alias off='shutdown -P now'
+alias off='sudo shutdown -P now'
 
 alias refresh='source $HOME/.bashrc'
 alias hh='cat $HOME/s/dotfiles/alianew.sh'
