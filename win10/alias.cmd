@@ -19,6 +19,8 @@ DOSKEY lsa=ls -a
 :: size of all files in current dir
 DOSKEY lss=find -maxdepth 1 -type f -printf "%%s\t%%f\n"
 
+DOSKEY deldir=rm -r $*
+
 DOSKEY qq=exit
 
 DOSKEY src=R: $T cd s $T cd c

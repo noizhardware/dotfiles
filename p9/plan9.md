@@ -26,3 +26,6 @@ eg - ARM64 compiler is 7c, the linker is 7l (works for the rPi3)
 - to compile: `xc mysource.c`
 - then link: `xl mysource.5`
 - run the program: x.out (it's the default output file name)
+
+
+#plan9
