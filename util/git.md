@@ -147,6 +147,9 @@ if having problems when pushing or even when cloning for the first time, like a 
 
 If it doesn't, correct it, especially the part `url = git@git.sr.ht:~noizhardware/`
 
+### browsing projects
+- https://sr.ht/projects
+
 ## GitHub
 - SSH:
 	- verify if you already have a SSH key `ls -al ~/.ssh`
