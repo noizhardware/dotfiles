@@ -3,6 +3,8 @@
 :: Temporary system path at cmd startup
 
 set PATH=%PATH%;"R:\s\c\kalk\"
+set PATH=%PATH%;"R:\s\c\crow\"
+set PATH=%PATH%;"R:\s\c\dok\"
 set PATH=%PATH%;"R:\s\c\uxnBao\bin\"
 set PATH=%PATH%;"R:\s\c\666\vr\666MR\bin\"
 set PATH=%PATH%;"R:\Programzz\coding\lite\"
@@ -33,6 +35,8 @@ DOSKEY glog=git log
 DOSKEY gpul=git pull origin master
 DOSKEY gpus=git add --all $T git commit -m "nj" $T git push origin master
 
+:: other
+DOSKEY wea=curl wttr.in/milan
 
 :: DOSKEY tapc=R:\s\c\tapCounter\tapcounter.exe
 DOSKEY tw=R: $T cd s $T cd c $T cd twBao $T twbao nj $*
@@ -41,3 +45,7 @@ DOSKEY tw=R: $T cd s $T cd c $T cd twBao $T twbao nj $*
 
 ::DOSKEY dropbox=cd "%USERPROFILE%\Dropbox\$*"
 ::DOSKEY research=cd %USERPROFILE%\Dropbox\Research\
+
+:: META
+DOSKEY hh=cat R:\Work\git\dotfiles\win10\alias.cmd
+DOSKEY eda=nano R:\Work\git\dotfiles\win10\alias.cmd

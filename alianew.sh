@@ -30,3 +30,5 @@ alias hh='cat $HOME/s/dotfiles/alianew.sh'
 alias eda='nano $HOME/s/dotfiles/alianew.sh'
 
 alias qq='exit'
+
+# export PATH=$PATH:/path/to/my/file
