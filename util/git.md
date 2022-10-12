@@ -93,7 +93,7 @@ but I never tested it
 ## sourcehut
 ### setup
 from https://man.sr.ht/tutorials/set-up-account-and-git.md
-- `ssh-keygen` (if on Linux, use a password!)
+- `ssh-keygen` (if on Linux, use a password!)(or NOT, if you need to automate things on your local machine)
 - then you should be pointed to a key file (usually C:\Users\ninja\.ssh\id_rsa.pub)
 linux (/home/nff/.ssh/id_rsa.pub)
 - copy the entire content of the file
@@ -120,10 +120,8 @@ in this step you can set your repo as `Public`, `Unlisted` or `Private`
 Once you pick a license, add it to your project by copying the plain-text version into a file called "LICENSE" or "COPYING" at the root directory of your repository.
 
 ### clone
-- copy the "read-only" link on a repo's page
-- git clone https://git.sr.ht/~noizhardware/666cpu
-- e invece NOOOOOO!!! devi usare la read/write, tipo:
-    git@git.sr.ht:~noizhardware/666cpu
+- copy the "read/write" link on a repo's page, and prepend `git@`, like this:
+- `git clone git@git.sr.ht:~noizhardware/666cpu`
 - you're done!
 
 ### troubleshooting
@@ -147,7 +145,7 @@ if having problems when pushing or even when cloning for the first time, like a 
 
 If it doesn't, correct it, especially the part `url = git@git.sr.ht:~noizhardware/`
 
-### browsing projects
+### browsing projects (search)
 - https://sr.ht/projects
 
 ## GitHub

@@ -1,7 +1,18 @@
+download from f-droid, NOT from googleplay
+
 * to enable access to local filesystem:
      - `termux-setup-storage`
      - (give permission when asked)
      - now `cd ~/storage/shared` will lead to your local filesystem :)
+ 
+pkg install git
+termux-info
+termux-change-repo
+	space to select
+	enter to confirm/exit
+apt remove science-repo game-repo
+
+ssh: `cat ~/.ssh/id_rsa.pub`
 
 `volumeDN + A` → Move cursor to the beginning of line
 `volumeDN + C` → Abort (send SIGINT to) current process
