@@ -8,6 +8,10 @@ set PATH=%PATH%;"R:\s\c\dok\"
 set PATH=%PATH%;"R:\s\c\uxnBao\bin\"
 set PATH=%PATH%;"R:\s\c\666\vr\666MR\bin\"
 set PATH=%PATH%;"R:\Programzz\coding\lite\"
+set PATH=%PATH%;"C:\Program Files\LOVE\"
+set PATH=%PATH%;"C:\Program Files\NASM\"
+set PATH=%PATH%;"C:\Users\ninja\J903\bin\"
+
 
 :: Add to path by command
 ::DOSKEY add_python26=set PATH=%PATH%;"C:\Python26\"
