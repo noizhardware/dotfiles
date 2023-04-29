@@ -24,6 +24,8 @@ alias gpus='git add --all && git commit -m "nb" && git push origin master'
 alias siz='du -sbh *'
 
 alias off='sudo shutdown -P now'
+alias sus='systemctl suspend'
+alias hib='systemctl hibernate'
 
 alias refresh='source $HOME/.bashrc'
 alias hh='cat $HOME/s/dotfiles/alianew.sh'
