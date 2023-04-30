@@ -23,7 +23,8 @@ alias gpus='git add --all && git commit -m "nb" && git push origin master'
 
 alias siz='du -sbh *'
 
-alias off='sudo shutdown -P now'
+#alias off='sudo shutdown -P now'
+alias off='poweroff'
 alias sus='systemctl suspend'
 alias hib='systemctl hibernate'
 
