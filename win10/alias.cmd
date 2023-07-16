@@ -38,6 +38,7 @@ DOSKEY deldir=rm -r $*
 DOSKEY qq=exit
 
 DOSKEY src=R: $T cd s $T cd c
+DOSKEY log=H: $T cd LOGS
 DOSKEY mr=R: $T cd s $T cd c $T cd 666 $T cd vm $T cd 666MR
 DOSKEY site=R: $T cd Work $T cd git $T cd noizhardware.github.io
 
@@ -49,6 +50,7 @@ DOSKEY gpus=git add --all $T git commit -m "nj" $T git push origin master
 
 :: other
 DOSKEY wea=curl wttr.in/milan
+DOSKEY speed=R:\Programzz\utilities\ookla-speedtest-1.2.0-win64\speedtest.exe
 
 :: DOSKEY tapc=R:\s\c\tapCounter\tapcounter.exe
 DOSKEY tw=R: $T cd s $T cd c $T cd twBao $T twbao nj $*

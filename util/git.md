@@ -1,5 +1,8 @@
 - if `git pull` doesn't work try `git pull origin master`
 
+One of the more helpful options is -p or --patch, which shows the difference (the patch output) introduced in each commit. You can also limit the number of log entries displayed, such as using -2 to show only the last two entries.
+`git log -p -2`
+
 ## Adding files
 `git add --all` == `git add -A` adds all changes and deletes
 `git add .` adds only changes
