@@ -34,6 +34,8 @@ alias eda='nano $HOME/s/dotfiles/alianew.sh'
 
 # sudo apt install speedtest-cli
 alias speed='speedtest-cli --secure'
+# sudo apt install lm-sensors
+alias temp='sensors'
 
 alias qq='exit'
 
