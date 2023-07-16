@@ -1,0 +1,23 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"Clickable URLs",
+		"LaTeXTools",
+		"MarkdownEditing",
+		"MarkdownPreview",
+		"OpenGL Shading Language (GLSL)",
+		"Package Control",
+		"PowerShell",
+		"Shader Syntax (GLSL HLSL Cg)",
+		"Status Bar File Size",
+		"Terminus",
+		"Theme - Afterglow",
+		"Theme - Autumn",
+		"Theme - Spacegray",
+		"x86 and x86_64 Assembly",
+	],
+}

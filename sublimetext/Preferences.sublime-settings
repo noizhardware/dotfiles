@@ -1,0 +1,71 @@
+{
+	"color_scheme": "Packages/Theme - Spacegray/base16-eighties.dark.tmTheme",
+	"theme": "Adaptive.sublime-theme",
+	"font_size": 15,
+	"ignored_packages":
+	[
+		"Vintage",
+	],
+	"highlight_modified_tabs": true,
+	/* Valid values are “smooth”, “phase”, “blink”, “wide” and “solid”.*/
+	"caret_style": "blink",
+	/*"highlight_modified_tabs": true,*/
+	"always_show_minimap_viewport": true,
+
+	"tab_size": 4,
+	"translate_tabs_to_spaces": false,
+	"detect_indentation": false,
+	"word_wrap": true,
+
+	"fade_fold_buttons": false,
+	"mde.auto_fold_link.enabled": false,
+	"mde.keymap_disable.fold_section": true,
+	"mde.keymap_disable.show_fold_all_sections": true,
+
+// folder_exclude_patterns and file_exclude_patterns control which files
+	// are listed in folders on the side bar. These can also be set on a per-
+	// project basis.
+	//"folder_exclude_patterns": [".svn", ".git", ".hg", "CVS", ".Trash", ".Trash-*"],
+	"folder_exclude_patterns": [".svn", ".hg", "CVS", ".Trash", ".Trash-*"],
+	"file_exclude_patterns": [".DS_Store", "desktop.ini"],
+	// These files will still show up in the side bar, but won't be included in
+	// Goto Anything or Find in Files
+	"binary_file_patterns": ["*.jpg", "*.jpeg", "*.png", "*.gif", "*.ttf", "*.tga", "*.dds", "*.ico", "*.eot", "*.pdf", "*.swf", "*.jar", "*.zip"],
+
+	// MarkdownEditing:
+	// Automatically switches list bullet when indenting blank list item with <Tab>.
+	"mde.list_indent_auto_switch_bullet": false,
+
+	// When enabled, hovering over a word will show a popup listing all
+	// possible locations for the definition symbol. Requires index_files.
+	"show_definitions": false,
+
+	// Enable auto complete to be triggered automatically when typing.
+	"auto_complete": false,
+
+
+	// set vertical rulers in specified columns.
+    // Use "rulers": [80] for just one ruler
+    // default value is []
+    //"rulers": [80],
+
+    // turn on word wrap for source and text
+    // default value is "auto", which means off for source and on for text
+    //"word_wrap": true,
+
+    // set word wrapping at this column
+    // default value is 0, meaning wrapping occurs at window width
+    //"wrap_width": 80
+
+    "show_tab_close_buttons": false,
+	// Hides the buttons for scrolling tabs left/right, requiring use of a
+	// trackpad or mouse scroll wheel
+	"hide_tab_scrolling_buttons": true,
+		// Hides the new tab button
+	"hide_new_tab_button": true,
+
+	/*"auto_complete": false,*/
+	"tab_completion": false,
+
+	"update_check": false,
+}

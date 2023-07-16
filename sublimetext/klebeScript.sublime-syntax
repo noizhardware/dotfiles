@@ -1,0 +1,55 @@
+%YAML 1.2
+---
+# See http://www.sublimetext.com/docs/syntax.html
+file_extensions:
+  - kle
+scope: source.klebeScript
+# version 2022i22-0825
+
+contexts:
+  main:
+    # Strings begin and end with quotes, and use backslashes as an escape
+    # character
+    - match: '"'
+      scope: punctuation.definition.string.begin.klebeScript
+      push: double_quoted_string
+
+    # Comments begin with a '--' and finish at the end of the line
+    - match: '--'
+      scope: punctuation.definition.comment.klebeScript
+      push: line_comment
+
+    # Keywords
+    - match: '\b(hlt|nop|isr|ism|jra|jraT|jraR|jraTK|jraRK|jrz|jrzT|jrzR|jrzTK|jrzRK|jma|jmaT|jmaR|jmaTK|jmaRK|jmz|jmzT|jmzR|jmzTK|jmzRK|cra|craT|craR|craTK|craRK|crz|crzT|crzR|crzTK|crzRK|cma|cmaT|cmaR|cmaTK|cmaRK|cmz|cmzT|cmzR|cmzTK|cmzRK|rat|rat2|ratT|rat2T|ratTK|rat2TK|rzt|rzt2|rztT|rzt2T|rztTK|rzt2TK|mat|mat2|matT|mat2T|matTK|mat2TK|mzt|mzt2|mztT|mzt2T|mztTK|mzt2TK|dzt|dzt2|dztT|dzt2T|dztTK|dzt2TK|tma|tma2|tmaT|tma2T|tmaTK|tma2TK|tmz|tmz2|tmzT|tmz2T|tmzTK|tmz2TK|tdz|tdz2|tdzK|tdz2K|tdzT|tdz2T|tdzTK|tdz2TK|add|add2|addK|addR|addRK|add2K|add2R|add2RK|sub|sub2|subK|subR|subRK|sub2K|sub2R|sub2RK|mul|mul2|mulK|mul2K|div|div2|divK|div2K|inc|inc2|incK|inc2K|incR|inc2R|incRK|inc2RK|dec|dec2|decK|dec2K|decR|dec2R|decRK|dec2RK|car|car2|and|and2|andK|and2K|not|not2|notK|not2K|oro|oro2|oroK|oro2K|xor|xor2|xorK|xor2K|shl|shl2|shlK|shl2K|shr|shr2|shrK|shr2K|equ|equ2|equK|equ2K|neq|neq2|neqK|neq2K|lth|lth2|lthK|lth2K|gth|gth2|gthK|gth2K|dup|dup2|dupR|dup2R|tri|tri2|triR|tri2R|dro|dro2|droR|dro2R|ovr|ovr2|swa|swa2|swaK|swa2K|brb|brb2|ntx|ntx2)\b'
+      scope: keyword.MR_Assembly
+
+    # Numbers
+    - match: '0[(x|d|dd|b)][0-9a-fA-F]+'
+      scope: constant.numeric.klebeScript
+
+    #Labels
+    - match: '^\..*'
+      scope: entity.name.function.label.klebeScript
+    # Label calls
+    - match: '\B@\w+'
+      scope: entity.name.class.label.klebeScript
+
+    # preprocessor
+    - match: ':\S+\b'
+      scope: entity.name.tag.preprocessor.klebeScript
+    # %names
+    - match: '%\S+\b'
+      scope: entity.name.function.name.klebeScript
+
+  double_quoted_string:
+    - meta_scope: string.quoted.double.klebeScript
+    - match: '\\.'
+      scope: constant.character.escape.klebeScript
+    - match: '"'
+      scope: punctuation.definition.string.end.klebeScript
+      pop: true
+
+  line_comment:
+    - meta_scope: comment.line.klebeScript
+    - match: $
+      pop: true

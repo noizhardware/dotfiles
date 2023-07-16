@@ -1,0 +1,35 @@
+%YAML 1.2
+---
+# See http://www.sublimetext.com/docs/syntax.html
+file_extensions:
+  - MASS
+scope: source.MASS
+# version 2022i29-1225
+
+contexts:
+  main:
+    # Comments begin with a '--' and finish at the end of the line
+    - match: '--'
+      scope: punctuation.definition.comment.MASS
+      push: line_comment
+
+    # .js Header open
+    - match: '^[MASS.].*'
+      scope: entity.name.function.jsHeaderOpen.MASS
+    # .js Header close
+    - match: '^\`$'
+      scope: entity.name.function.jsHeaderClose.MASS
+
+    # preprocessor
+    - match: '#\S+\b'
+      scope: entity.name.tag.preprocessor.MASS
+    # MASS blocks
+    - match: '^[^  ]{1,}'
+      scope: constant.numeric.blockHeader.MASS
+    - match: '^[ ]{2,}.{0,}[ ]{2,}'
+      scope: keyword.elementName.MASS
+
+  line_comment:
+    - meta_scope: comment.line.MASS
+    - match: $
+      pop: true

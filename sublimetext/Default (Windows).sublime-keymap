@@ -1,0 +1,27 @@
+[
+	{ "keys": ["alt+right"], "command": "clone_file", "args": {"add_to_selection": true} }, /* duplicates current open file in another column */
+	{ "keys": ["ctrl+shift+m"], "command": "markdown_preview", "args": {"target": "browser", "parser":"markdown"} },
+	{ "keys": ["alt+enter"], "command": "open_url_under_cursor" },
+	{ 
+        "keys": ["ctrl+1"], "command": "toggle_terminus_panel", "args": {
+            "cwd": "${file_path:${folder}}"
+        }
+    },
+    { 
+    	"keys": ["ctrl+w"], "command": "terminus_close", "context": [{ "key": "terminus_view"}]
+	},
+	{"keys": ["shift+enter"], "command": "toggle_markdown_checkbox"},
+	{"keys": ["shift+backspace"], "command": "tilde_markdown_checkbox"},
+
+	{"keys": ["alt+a"], "command": "archive_to_file"},
+	{"keys": ["alt+q"], "command": "delete_and_archive_to_file"},
+	{"keys": ["alt+w"], "command": "delete_and_archive_to_file_no_date"},
+	
+	{"keys": ["alt+down"], "command": "jump_to_commentmark"},
+	{ "keys": ["alt+enter"], "command": "mde_open_page", "context":
+		[
+			{ "key": "selector", "operator": "equal", "operand": "meta.link.reference.wiki.description.markdown", "match_all": true },
+			{ "key": "setting.mde.keymap_disable.open_page", "operator": "not_equal", "operand": true }
+		]
+	},
+]

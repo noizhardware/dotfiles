@@ -1,0 +1,22 @@
+/* https://facelessuser.github.io/MarkdownPreview/usage/ */
+{
+	/*"github_mode": "gfm",*/
+
+	"js": [
+        "R:/htmlExports/css/enableCheckboxes.js"
+    ],
+
+	/*
+		Sets the default css file to embed in the HTML:
+		default - Use the builtin CSS or github CSS, depending on parser config (markdown.css or github.css)
+		other - Set an absolute path or url to any css file
+	*/
+	/*"css": "default",*/
+	"css": "R:/htmlExports/css/ghexport.css",
+	/*
+		Allow CSS overrides
+		true - a .css file with the same name as the markdown file, in the same folder, will override the default css
+		false - Matching files ignored
+	*/
+	"allow_css_overrides": true,
+}

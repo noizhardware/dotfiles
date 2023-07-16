@@ -1,0 +1,46 @@
+// Documentation at https://www.sublimetext.com/docs/color_schemes.html
+{
+	"variables":
+	{
+		"safetyOrange" : "#ff7900",
+	},
+	"globals":
+	{
+	},
+	"rules":
+	[
+		{
+			"name" : "Lists",
+			"scope" : "markup.list",
+			"foreground" : "#eeefff",
+			"caret" : "#ff7900",
+		},
+		{
+			"name" : "Link Url",
+			"scope" : "meta.link",
+			"foreground" : "var(safetyOrange)",
+		},
+		{
+			"name" : "Invalid",
+			"scope" : "invalid.illegal",
+			"background" : "white",
+			"foreground" : "red",
+		},
+		/*{
+			"name" : "Wikilink",
+			"scope" : "markdown.extensions.wikilinks",
+			"foreground" : "safetyOrange",
+		},*/
+		{
+			"name" : "Wikilink",
+			"scope" : "wikilink",
+			"foreground" : "var(safetyOrange)",
+		},
+		/*{
+			"name": "Markdown: Link Description",
+			"scope": "(meta.image.inline.description.markdown, meta.image.reference.description.markdown, meta.link.inline.description.markdown, meta.link.reference.description.markdown, meta.link.reference.literal.description.markdown, meta.link.reference.wiki.description.markdown) - comment - constant - entity - punctuation - string - markup.strikethrough",
+			"foreground": "var(safetyOrange)",
+		},*/
+
+	]
+}
