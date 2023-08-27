@@ -51,9 +51,11 @@ DOSKEY gpus=git add --all $T git commit -m "nj" $T git push origin master
 :: other
 DOSKEY wea=curl wttr.in/milan
 DOSKEY speed=R:\Programzz\utilities\ookla-speedtest-1.2.0-win64\speedtest.exe
+DOSKEY pin=ping example.com
+DOSKEY typ=R: $T cd s $T cd C $T cd TypingTest $T typ.exe
 
 :: DOSKEY tapc=R:\s\c\tapCounter\tapcounter.exe
-DOSKEY tw=R: $T cd s $T cd c $T cd twBao $T twbao nj $*
+DOSKEY tw=cd .. $T cd .. $T cd .. $T cd .. $T cd .. $T R: $T cd s $T cd c $T cd twBao $T twbao nj $*
 
 :: Common directories
 
