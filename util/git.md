@@ -39,6 +39,10 @@ for binary files: you can choose which file to keep
 - `git checkout --theirs -- path/to/conflicted-file.txt` to keep the version from the branch you're trying to merge
 - `git checkout --ours -- path/to/conflicted-file.txt`  to keep the version present in the current branch
 
+to revert a commit BEFORE pushing it to origin:
+`git reset HEAD~1`
+change the number to revert more commits. Check with `git log` and `git status`
+
 ## Revert/Reset to a previous commit
 with `git log` you will see each commit have their SHA-1 checksum
 	
