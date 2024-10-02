@@ -57,6 +57,7 @@ DOSKEY typ=R: $T cd s $T cd C $T cd TypingTest $T typ.exe
 :: DOSKEY tapc=R:\s\c\tapCounter\tapcounter.exe
 DOSKEY tw=cd .. $T cd .. $T cd .. $T cd .. $T cd .. $T R: $T cd s $T cd c $T cd twBao $T twbao nj $*
 DOSKEY twsh=curl "https://www.noizhardware.com/etc/tw.txt" --ssl-no-revoke
+DOSKEY twnews=curl "https://registry.twtxt.org/api/plain/tweets" --ssl-no-revoke
 
 :: Common directories
 
