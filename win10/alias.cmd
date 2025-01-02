@@ -1,5 +1,6 @@
 @echo off
 
+:: R:\Work\git\dotfiles\win10\alias.cmd
 :: Temporary system path at cmd startup
 
 set PATH=%PATH%;"R:\s\c\kalk\"
@@ -20,6 +21,7 @@ set PATH=%PATH%;"R:\s\squishy-0.2.0"
 set PATH=%PATH%;"R:\s\squishy-0.1.3"
 set PATH=%PATH%;"C:\Program Files\Python311"
 set PATH=%PATH%;"R:\Programzz\coding\shader\glslViewer-3.2.2-win64-AMD64\bin"
+set PATH=%PATH%;"C:\Program Files\AutoHotkey"
 
 :: Add to path by command
 ::DOSKEY add_python26=set PATH=%PATH%;"C:\Python26\"
@@ -53,6 +55,7 @@ DOSKEY wea=curl wttr.in/milan
 DOSKEY speed=R:\Programzz\utilities\ookla-speedtest-1.2.0-win64\speedtest.exe
 DOSKEY pin=ping example.com
 DOSKEY typ=R: $T cd s $T cd C $T cd TypingTest $T typ.exe
+DOSKEY autohot=R:\Work\git\dotfiles\win10\autohot00.cmd
 
 :: DOSKEY tapc=R:\s\c\tapCounter\tapcounter.exe
 DOSKEY tw=cd .. $T cd .. $T cd .. $T cd .. $T cd .. $T R: $T cd s $T cd c $T cd twBao $T twbao nj $*
