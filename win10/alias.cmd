@@ -22,6 +22,7 @@ set PATH=%PATH%;"R:\s\squishy-0.1.3"
 set PATH=%PATH%;"C:\Program Files\Python311"
 set PATH=%PATH%;"R:\Programzz\coding\shader\glslViewer-3.2.2-win64-AMD64\bin"
 set PATH=%PATH%;"C:\Program Files\AutoHotkey"
+::set PATH=%PATH%;"R:\Programzz\utilities\ytdlp"
 
 :: Add to path by command
 ::DOSKEY add_python26=set PATH=%PATH%;"C:\Python26\"
@@ -56,8 +57,11 @@ DOSKEY speed=R:\Programzz\utilities\ookla-speedtest-1.2.0-win64\speedtest.exe
 DOSKEY pin=ping example.com
 DOSKEY typ=R: $T cd s $T cd C $T cd TypingTest $T typ.exe
 DOSKEY autohot=R:\Work\git\dotfiles\win10\autohot00.cmd
+::DOSKEY yt3=R:\Programzz\utilities\ytdlp\yt-dlp.exe -f 140 --ffmpeg-location R:\Programzz\utilities\YoutubeDownloader\ffmpeg.exe -o "~/YouTube/" --print after_move:filepath $*
+DOSKEY yt3=R: $T cd __ytmp3 $T R:\Programzz\utilities\ytdlp\yt-dlp.exe -f 140 --ffmpeg-location R:\Programzz\utilities\YoutubeDownloader\ffmpeg.exe --print after_move:filepath $*
 
 :: DOSKEY tapc=R:\s\c\tapCounter\tapcounter.exe
+:: $* represents user command parameters
 DOSKEY tw=cd .. $T cd .. $T cd .. $T cd .. $T cd .. $T R: $T cd s $T cd c $T cd twBao $T twbao nj $*
 DOSKEY twsh=curl "https://www.noizhardware.com/etc/tw.txt" --ssl-no-revoke
 DOSKEY twnews=curl "https://registry.twtxt.org/api/plain/tweets" --ssl-no-revoke
