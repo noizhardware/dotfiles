@@ -3,6 +3,7 @@
 :: R:\Work\git\dotfiles\win10\alias.cmd
 :: Temporary system path at cmd startup
 
+set PATH=%PATH%;"R:\Work\git\dotfiles\win10\"
 set PATH=%PATH%;"R:\s\c\kalk\"
 set PATH=%PATH%;"R:\s\c\crow\"
 set PATH=%PATH%;"R:\s\c\dok\"
@@ -59,6 +60,7 @@ DOSKEY typ=R: $T cd s $T cd C $T cd TypingTest $T typ.exe
 DOSKEY autohot=R:\Work\git\dotfiles\win10\autohot00.cmd
 ::DOSKEY yt3=R:\Programzz\utilities\ytdlp\yt-dlp.exe -f 140 --ffmpeg-location R:\Programzz\utilities\YoutubeDownloader\ffmpeg.exe -o "~/YouTube/" --print after_move:filepath $*
 DOSKEY yt3=R: $T cd __ytmp3 $T R:\Programzz\utilities\ytdlp\yt-dlp.exe -f 140 --ffmpeg-location R:\Programzz\utilities\YoutubeDownloader\ffmpeg.exe --print after_move:filepath $*
+::DOSKEY yt3=ytmp3 $*
 
 :: DOSKEY tapc=R:\s\c\tapCounter\tapcounter.exe
 :: $* represents user command parameters
