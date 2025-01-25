@@ -1,6 +1,18 @@
 ;; https://github.com/jtroo/kanata/blob/main/docs/config.adoc
+
+
 ;; 2025a18-1534
-;; 2025a25-1951
+;; 2025a20-1525
+
+;;;; defsrc is still necessary
+;;(defcfg
+;;  process-unmapped-keys yes
+;;)
+;;
+;;;; these are the keys I want kanata to process
+;;(defsrc
+;;  a s d f j k l ; esc 1 q
+;;)
 
 (defsrc)
 (defcfg process-unmapped-keys yes)
@@ -10,6 +22,23 @@
   tap-time-click 50
   hold-time 400
 )
+
+;; consider a HOLD if keypress is between tap-time and hold-time
+
+;;(defalias
+;;  ;; escctrl (tap-hold 100 100 esc lctl)
+;;  1 (multi f24 (tap-hold $tap-time-click $hold-time 1 mltp)) ;; hold 1 >> LClick
+;;  esc (multi f24 (tap-hold $tap-time $hold-time esc mlft)) ;; hold ESC >> hold LClick
+;;  a (multi f24 (tap-hold $tap-time $hold-time a lsft))
+;;  q_maus (multi f24 (tap-hold $tap-time $hold-time q (layer-while-held maus)))
+;;  s (multi f24 (tap-hold $tap-time $hold-time s lmet))
+;;  d (multi f24 (tap-hold $tap-time $hold-time d lalt))
+;;  f (multi f24 (tap-hold $tap-time $hold-time f lctl))
+;;  j (multi f24 (tap-hold $tap-time $hold-time j rctl))
+;;  k (multi f24 (tap-hold $tap-time $hold-time k ralt))
+;;  l (multi f24 (tap-hold $tap-time $hold-time l rmet))
+;;  ; (multi f24 (tap-hold $tap-time $hold-time ; rsft))
+;;)
 
 (deflayermap (base)
 	;;1 (multi f24 (tap-hold $tap-time-click $hold-time 1 mltp)) ;; hold 1 >> LClick
@@ -57,3 +86,14 @@
 	2 (macro M-x u s) ;; sleep
 	esc XX ;; no-op
 )
+
+
+;; create a layer by grouping keys
+;;(deflayer base
+;;  ;;@escctrl @a @s @d @f @j @k @l @;
+;;  @a @s @d @f @j @k @l @; @esc @1 @q_maus
+;;)
+
+;;(deflayer maus
+;;	a s d f j k l ; @esc_lc 1 XX
+;;)
