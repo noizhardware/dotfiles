@@ -1,9 +1,13 @@
 ;; https://github.com/jtroo/kanata/blob/main/docs/config.adoc
+;; key names https://github.com/jtroo/kanata/blob/main/parser/src/keys/mod.rs
 ;; 2025a18-1534
-;; 2025a25-1951
+;; 2025a28-1440
 
 (defsrc)
-(defcfg process-unmapped-keys yes)
+(defcfg
+	process-unmapped-keys yes
+	danger-enable-cmd yes
+)
 
 (defvar
   tap-time 90
@@ -14,13 +18,16 @@
 (deflayermap (base)
 	;;1 (multi f24 (tap-hold $tap-time-click $hold-time 1 mltp)) ;; hold 1 >> LClick
 	;;esc (multi f24 (tap-hold $tap-time $hold-time esc mlft)) ;; hold ESC >> hold LClick
-	r (multi f24 (tap-hold 500 600 r lrld)) ;; live reload
-	e (multi f24 (tap-hold $tap-time $hold-time e enter)) ;; hold e >> ENTER
+	6 (multi f24 (tap-hold 500 600 6 lrld)) ;; live reload
+	r (multi f24 (tap-hold $tap-time $hold-time r (macro enter))) ;; hold r >> single tap ENTER
 	1 (multi f24 (tap-hold $tap-time $hold-time 1 (layer-while-held maus)))
 	2 (multi f24 (tap-hold $tap-time $hold-time 2 (layer-while-held browser)))
+	grv (multi f24 (tap-hold $tap-time $hold-time grv (layer-while-held chars)))
+	/ (multi f24 (tap-hold $tap-time $hold-time / (layer-while-held media)))
 	esc (multi f24 (tap-hold 1000 1500 esc (layer-while-held power)))
 
 	;;; HOME ROW MODS
+	e (multi f24 (tap-hold $tap-time $hold-time e (macro esc))) ;; hold e >> single tap ESC
 	a (multi f24 (tap-hold $tap-time $hold-time a lsft))
 	s (multi f24 (tap-hold $tap-time $hold-time s lmet))
 	d (multi f24 (tap-hold $tap-time $hold-time d lalt))
@@ -31,9 +38,37 @@
 	; (multi f24 (tap-hold $tap-time $hold-time ; rsft))
 )
 
+(deflayermap (media)
+	m VolumeMute
+	, VolumeDown
+	. VolumeUp
+	spc MediaPlayPause
+	k (cmd R:\Work\git\dotfiles\win10\startKalk.cmd) ;; cmd is not enabled for this kanata executable. Use a cmd_allowed prebuilt executable or compile with the feature: cmd.
+	bspc A-F4
+	/ XX ;; no-op
+)
+
+(deflayermap (chars)
+	a (unicode à)
+	w (unicode è)
+	e (unicode é)
+	r (unicode €)
+	u (unicode ù)
+	i (unicode ì)
+	o (unicode ò)
+	p (unicode ó)
+	s (unicode §) ;; section sign
+	l (unicode λ)
+	f (unicode ƒ)
+	m (unicode μ)
+	ent kprt ;; numpad enter
+	grv XX ;; no-op
+)
+
 (deflayermap (maus)
 	2 (macro C-(mltp)) ;; Ctrl + LClick
 	esc mlft ;; LClick HOLD
+	3 mrgt ;; RClick HOLD
 	q mmtp ;; MClick tap
 	w (tap-hold 1 200 lctl lctl) ;; hold Ctrl ; for EAGLE panning
 	1 XX ;; no-op
@@ -43,8 +78,9 @@
 	esc C-w
 	1 C-pgup
 	3 C-pgdn
-	;;4 (macro C-(mltp)) ;; Ctrl + LClick
-	4 C-mlft ;; Ctrl + LClick HOLD
+	4 (macro C-(mltp)) ;; Ctrl + LClick
+	;;4 (tap-hold 1 200 (macro lctl mlft) (macro lctl mlft)) 
+	;;4 C-mlft ;; Ctrl + LClick HOLD
 	q A-left ;; back
 	e A-right ;; fwd
 	r C-r ;; reload page
@@ -53,7 +89,7 @@
 )
 
 (deflayermap (power)
-	1 (macro M-x u h) ;; hybernate
-	2 (macro M-x u s) ;; sleep
+	1 (macro M-x u s) ;; sleep
+	2 (macro M-x u h) ;; hybernate
 	esc XX ;; no-op
 )
