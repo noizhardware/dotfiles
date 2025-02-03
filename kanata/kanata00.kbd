@@ -24,6 +24,7 @@
 	2 (multi f24 (tap-hold $tap-time $hold-time 2 (layer-while-held browser)))
 	grv (multi f24 (tap-hold $tap-time $hold-time grv (layer-while-held chars)))
 	/ (multi f24 (tap-hold $tap-time $hold-time / (layer-while-held media)))
+	\ (multi f24 (tap-hold $tap-time $hold-time \ (layer-while-held blank)))
 	esc (multi f24 (tap-hold 1000 1500 esc (layer-while-held power)))
 
 	;;; HOME ROW MODS
@@ -36,6 +37,10 @@
 	k (multi f24 (tap-hold $tap-time $hold-time k ralt))
 	l (multi f24 (tap-hold $tap-time $hold-time l rmet))
 	; (multi f24 (tap-hold $tap-time $hold-time ; rsft))
+)
+
+(deflayermap (blank)
+	\ XX ;; no-op
 )
 
 (deflayermap (media)
@@ -81,7 +86,7 @@
 	4 (macro C-(mltp)) ;; Ctrl + LClick
 	;;4 (tap-hold 1 200 (macro lctl mlft) (macro lctl mlft)) 
 	;;4 C-mlft ;; Ctrl + LClick HOLD
-	q A-left ;; back
+	tab A-left ;; back
 	e A-right ;; fwd
 	r C-r ;; reload page
 	spc mlft ;; LClick HOLD
