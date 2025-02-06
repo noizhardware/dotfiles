@@ -1,7 +1,7 @@
 ;; https://github.com/jtroo/kanata/blob/main/docs/config.adoc
 ;; key names https://github.com/jtroo/kanata/blob/main/parser/src/keys/mod.rs
 ;; 2025a18-1534
-;; 2025a28-1440
+;; 2025b05-1912
 
 (defsrc)
 (defcfg
@@ -22,6 +22,7 @@
 	r (multi f24 (tap-hold $tap-time $hold-time r (macro enter))) ;; hold r >> single tap ENTER
 	1 (multi f24 (tap-hold $tap-time $hold-time 1 (layer-while-held maus)))
 	2 (multi f24 (tap-hold $tap-time $hold-time 2 (layer-while-held browser)))
+	5 (multi f24 (tap-hold $tap-time $hold-time 5 (layer-while-held specops)))
 	grv (multi f24 (tap-hold $tap-time $hold-time grv (layer-while-held chars)))
 	/ (multi f24 (tap-hold $tap-time $hold-time / (layer-while-held media)))
 	\ (multi f24 (tap-hold $tap-time $hold-time \ (layer-while-held blank)))
@@ -44,16 +45,31 @@
 )
 
 (deflayermap (media)
+	/ XX ;; no-op
 	m VolumeMute
 	, VolumeDown
 	. VolumeUp
 	spc MediaPlayPause
 	k (cmd R:\Work\git\dotfiles\win10\startKalk.cmd) ;; cmd is not enabled for this kanata executable. Use a cmd_allowed prebuilt executable or compile with the feature: cmd.
 	bspc A-F4
-	/ XX ;; no-op
+)
+
+(defalias
+  ;; bash: type date-time as YYYY-MM-DD HH:MM
+  printDate_bash (cmd-output-keys bash -c "date +'%F %R' | sed 's/./& /g' | sed 's/:/S-;/g' | sed 's/\(.\{20\}\)\(.*\)/\(\1 spc \2\)/'")
+
+  ;; powershell: type date-time as YYYY-MM-DD HH:MM
+  printDate_powershell (cmd-output-keys powershell.exe "echo '(' (((Get-Date -Format 'yyyy-MM-dd HH:mm').toCharArray() -join ' ').insert(20, ' spc ') -replace ':','S-;') ')'")
+)
+
+(deflayermap (specops)
+	5 XX ;; no-op
+	n (macro A-h w ArrowDown ArrowDown ArrowDown ArrowDown ArrowDown ArrowDown ent 1000 C-a r e a d m e . m d C-a) ;; new file, ready to rename
+	d @printDate_powershell
 )
 
 (deflayermap (chars)
+	grv XX ;; no-op
 	a (unicode à)
 	w (unicode è)
 	e (unicode é)
@@ -67,19 +83,19 @@
 	f (unicode ƒ)
 	m (unicode μ)
 	ent kprt ;; numpad enter
-	grv XX ;; no-op
 )
 
 (deflayermap (maus)
+	1 XX ;; no-op
 	2 (macro C-(mltp)) ;; Ctrl + LClick
 	esc mlft ;; LClick HOLD
 	3 mrgt ;; RClick HOLD
 	q mmtp ;; MClick tap
 	w (tap-hold 1 200 lctl lctl) ;; hold Ctrl ; for EAGLE panning
-	1 XX ;; no-op
 )
 
 (deflayermap (browser)
+	2 XX ;; no-op
 	esc C-w
 	1 C-pgup
 	3 C-pgdn
@@ -90,11 +106,10 @@
 	e A-right ;; fwd
 	r C-r ;; reload page
 	spc mlft ;; LClick HOLD
-	2 XX ;; no-op
 )
 
 (deflayermap (power)
-	1 (macro M-x u s) ;; sleep
-	2 (macro M-x u h) ;; hybernate
 	esc XX ;; no-op
+	1 (macro M-x 10 u 10 s) ;; sleep
+	2 (macro M-x 10 u 10 h) ;; hybernate
 )
