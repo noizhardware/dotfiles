@@ -1,12 +1,12 @@
 ;; https://github.com/jtroo/kanata/blob/main/docs/config.adoc
 ;; key names https://github.com/jtroo/kanata/blob/main/parser/src/keys/mod.rs
 ;; 2025a18-1534
-;; 2025b05-1912
+;; 2025b11-2110
 
 (defsrc)
 (defcfg
 	process-unmapped-keys yes
-	danger-enable-cmd yes
+	;;danger-enable-cmd yes
 )
 
 (defvar
@@ -50,22 +50,24 @@
 	, VolumeDown
 	. VolumeUp
 	spc MediaPlayPause
-	k (cmd R:\Work\git\dotfiles\win10\startKalk.cmd) ;; cmd is not enabled for this kanata executable. Use a cmd_allowed prebuilt executable or compile with the feature: cmd.
+	;;k (cmd R:\Work\git\dotfiles\win10\startKalk.cmd) ;; cmd is not enabled for this kanata executable. Use a cmd_allowed prebuilt executable or compile with the feature: cmd.
 	bspc A-F4
 )
 
 (defalias
   ;; bash: type date-time as YYYY-MM-DD HH:MM
-  printDate_bash (cmd-output-keys bash -c "date +'%F %R' | sed 's/./& /g' | sed 's/:/S-;/g' | sed 's/\(.\{20\}\)\(.*\)/\(\1 spc \2\)/'")
+  ;;printDate_bash (cmd-output-keys bash -c "date +'%F %R' | sed 's/./& /g' | sed 's/:/S-;/g' | sed 's/\(.\{20\}\)\(.*\)/\(\1 spc \2\)/'")
 
   ;; powershell: type date-time as YYYY-MM-DD HH:MM
-  printDate_powershell (cmd-output-keys powershell.exe "echo '(' (((Get-Date -Format 'yyyy-MM-dd HH:mm').toCharArray() -join ' ').insert(20, ' spc ') -replace ':','S-;') ')'")
+  ;;printDate_powershell (cmd-output-keys powershell.exe "echo '(' (((Get-Date -Format 'yyyy-MM-dd HH:mm').toCharArray() -join ' ').insert(20, ' spc ') -replace ':','S-;') ')'")
 )
-
+(defalias
+	newfile (macro A-h w ArrowDown ArrowDown ArrowDown ArrowDown ArrowDown ArrowDown ent 1000 C-a S-r S-e S-a S-d S-m S-e . m d C-a) ;; new file, ready to rename
+)
 (deflayermap (specops)
 	5 XX ;; no-op
-	n (macro A-h w ArrowDown ArrowDown ArrowDown ArrowDown ArrowDown ArrowDown ent 1000 C-a r e a d m e . m d C-a) ;; new file, ready to rename
-	d @printDate_powershell
+	n @newfile
+	;;d @printDate_powershell
 )
 
 (deflayermap (chars)
@@ -96,9 +98,9 @@
 
 (deflayermap (browser)
 	2 XX ;; no-op
-	esc C-w
-	1 C-pgup
-	3 C-pgdn
+	esc C-w ;; close tab
+	1 C-pgup ;; tab left
+	3 C-pgdn ;; tab right
 	4 (macro C-(mltp)) ;; Ctrl + LClick
 	;;4 (tap-hold 1 200 (macro lctl mlft) (macro lctl mlft)) 
 	;;4 C-mlft ;; Ctrl + LClick HOLD
@@ -106,6 +108,7 @@
 	e A-right ;; fwd
 	r C-r ;; reload page
 	spc mlft ;; LClick HOLD
+	t (macro C-(t)) ;; new tab
 )
 
 (deflayermap (power)

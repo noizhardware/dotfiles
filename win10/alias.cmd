@@ -24,6 +24,9 @@ set PATH=%PATH%;"C:\Program Files\Python311"
 set PATH=%PATH%;"R:\Programzz\coding\shader\glslViewer-3.2.2-win64-AMD64\bin"
 set PATH=%PATH%;"C:\Program Files\AutoHotkey"
 set PATH=%PATH%;"R:\Programzz\utilities\ytdlp"
+set PATH=%PATH%;"C:\msys64\mingw64\include\gtk-3.0\gtk"
+set PATH=%PATH%;"C:\msys64\mingw64\include\gtk-3.0\gdk"
+set PATH=%PATH%;"C:\msys64\mingw64\include\gtk-3.0"
 
 :: Add to path by command
 ::DOSKEY add_python26=set PATH=%PATH%;"C:\Python26\"
