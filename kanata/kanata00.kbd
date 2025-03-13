@@ -1,11 +1,15 @@
 ;; https://github.com/jtroo/kanata/blob/main/docs/config.adoc
 ;; key names https://github.com/jtroo/kanata/blob/main/parser/src/keys/mod.rs
-;; 2025a18-1534
-;; 2025b11-2110
+;; created 2025a18-1534
+;; current 2025c13-1119
+
+;; load with (include R:\Work\git\dotfiles\kanata\kanata00.kbd)
+
 
 (defsrc)
 (defcfg
 	process-unmapped-keys yes
+	concurrent-tap-hold yes ;; for chords
 	;;danger-enable-cmd yes
 )
 
@@ -13,35 +17,118 @@
   tap-time 90
   tap-time-click 50
   hold-time 400
+  chord-time 100
 )
 
 (deflayermap (base)
 	;;1 (multi f24 (tap-hold $tap-time-click $hold-time 1 mltp)) ;; hold 1 >> LClick
 	;;esc (multi f24 (tap-hold $tap-time $hold-time esc mlft)) ;; hold ESC >> hold LClick
-	6 (multi f24 (tap-hold 500 600 6 lrld)) ;; live reload
-	r (multi f24 (tap-hold $tap-time $hold-time r (macro enter))) ;; hold r >> single tap ENTER
+	0 (multi f24 (tap-hold 500 600 0 lrld)) ;; live reload
+
+	;;; LAYER switching
 	1 (multi f24 (tap-hold $tap-time $hold-time 1 (layer-while-held maus)))
 	2 (multi f24 (tap-hold $tap-time $hold-time 2 (layer-while-held browser)))
+	3 (multi f24 (tap-hold $tap-time $hold-time 3 (layer-while-held arrows)))
 	5 (multi f24 (tap-hold $tap-time $hold-time 5 (layer-while-held specops)))
+	6 (multi f24 (tap-hold $tap-time $hold-time 6 (layer-while-held inventor)))
 	grv (multi f24 (tap-hold $tap-time $hold-time grv (layer-while-held chars)))
 	/ (multi f24 (tap-hold $tap-time $hold-time / (layer-while-held media)))
 	\ (multi f24 (tap-hold $tap-time $hold-time \ (layer-while-held blank)))
+	' (multi f24 (tap-hold $tap-time $hold-time ' (layer-while-held numpad)))
+	= (multi f24 (tap-hold $tap-time $hold-time = (layer-while-held homend)))
+	
 	esc (multi f24 (tap-hold 1000 1500 esc (layer-while-held power)))
 
-	;;; HOME ROW MODS
+	;;; HOLD
 	e (multi f24 (tap-hold $tap-time $hold-time e (macro esc))) ;; hold e >> single tap ESC
-	a (multi f24 (tap-hold $tap-time $hold-time a lsft))
-	s (multi f24 (tap-hold $tap-time $hold-time s lmet))
+	r (multi f24 (tap-hold $tap-time $hold-time r (macro enter))) ;; hold r >> single tap ENTER
+	s (multi f24 (tap-hold $tap-time $hold-time s (macro C-s))) ;; hold s >> Ctrl+S (save)
+	a (multi f24 (tap-hold $tap-time $hold-time a (macro C-S-s))) ;; hold a >> Ctrl+Shift+S (save As)
+	z (multi f24 (tap-hold $tap-time $hold-time z (macro C-S-z))) ;; hold z >> Ctrl+Shift+Z (screenshot)
+	x (multi f24 (tap-hold $tap-time $hold-time x (macro C-S-a 300 ArrowDown 25 spc))) ;; hold x >> Ctrl+Shift+A (fullscreen screenshot) + autosave
+	c (multi f24 (tap-hold $tap-time $hold-time c (macro C-c))) ;; hold c >> Ctrl+C (copy)
+	v (multi f24 (tap-hold $tap-time $hold-time v (macro C-v))) ;; hold v >> Ctrl+V (paste)
+   
+	;;; HOME ROW MODS
+	;; a (multi f24 (tap-hold $tap-time $hold-time a lsft))
+	;; s (multi f24 (tap-hold $tap-time $hold-time s lmet))
 	d (multi f24 (tap-hold $tap-time $hold-time d lalt))
 	f (multi f24 (tap-hold $tap-time $hold-time f lctl))
 	j (multi f24 (tap-hold $tap-time $hold-time j rctl))
 	k (multi f24 (tap-hold $tap-time $hold-time k ralt))
-	l (multi f24 (tap-hold $tap-time $hold-time l rmet))
-	; (multi f24 (tap-hold $tap-time $hold-time ; rsft))
+	;; l (multi f24 (tap-hold $tap-time $hold-time l rmet))
+	;; ; (multi f24 (tap-hold $tap-time $hold-time ; rsft))
 )
 
-(deflayermap (blank)
-	\ XX ;; no-op
+(defchordsv2
+	;; volume
+	(. l) VolumeUp $chord-time first-release (blank)
+	(, k) VolumeDown $chord-time first-release (blank)
+	(m j) VolumeMute $chord-time first-release (blank)
+	
+	;; maus
+	(esc 1) mlft $chord-time first-release (blank)
+	(1 2) mrgt $chord-time first-release (blank)
+	
+	;; sys
+	(tab q) (macro C-A-tab) $chord-time first-release (blank)
+	(q esc) ent $chord-time first-release (blank)
+	(bspc `) (macro A-F4) $chord-time first-release (blank)
+	(3 4 5) (macro A-F4) $chord-time first-release (blank)
+	
+	;; special chars
+	(a q) (unicode à) $chord-time first-release (blank)
+	(e 3) (unicode è) $chord-time first-release (blank)
+	(r 4) (unicode é) $chord-time first-release (blank)
+	(i 9) (unicode ì) $chord-time first-release (blank)
+	(o 0) (unicode ò) $chord-time first-release (blank)
+	(u 8) (unicode ù) $chord-time first-release (blank)
+	
+	(w e) (unicode €) $chord-time first-release (blank)
+	(z a) (unicode ẓ) $chord-time first-release (blank)
+
+	(ent \) NumpadEnter $chord-time first-release (blank)
+
+  ;; arrows
+	(a s) ArrowLeft $chord-time first-release (blank)
+	(s d) ArrowRight $chord-time first-release (blank)
+	(s w) ArrowUp $chord-time first-release (blank)
+	(s x) ArrowDown $chord-time first-release (blank)
+)
+
+(deflayermap (numpad)
+	' XX ;; no-op
+	1 1
+	2 2
+	3 3
+	q 4
+	w 5
+	e 6
+	a 7
+	s 8
+	d 9
+	c 0
+)
+
+(deflayermap (homend)
+	= XX ;; no-op
+	- home
+	bspc end
+)
+
+(deflayermap (arrows)
+	3 XX ;; no-op
+	2 ArrowLeft
+	4 ArrowRight
+	q ArrowUp
+	e ArrowDown
+)
+
+(deflayermap (inventor)
+	6 XX ;; no-op
+	7 f4
+	spc (multi f4 mlft)
+
 )
 
 (deflayermap (media)
@@ -85,6 +172,8 @@
 	f (unicode ƒ)
 	m (unicode μ)
 	ent kprt ;; numpad enter
+	0 (unicode °)
+	z (unicode ẓ)
 )
 
 (deflayermap (maus)
@@ -105,7 +194,7 @@
 	;;4 (tap-hold 1 200 (macro lctl mlft) (macro lctl mlft)) 
 	;;4 C-mlft ;; Ctrl + LClick HOLD
 	tab A-left ;; back
-	e A-right ;; fwd
+	w A-right ;; fwd
 	r C-r ;; reload page
 	spc mlft ;; LClick HOLD
 	t (macro C-(t)) ;; new tab
@@ -113,6 +202,56 @@
 
 (deflayermap (power)
 	esc XX ;; no-op
-	1 (macro M-x 10 u 10 s) ;; sleep
-	2 (macro M-x 10 u 10 h) ;; hybernate
+	1 (macro M-x 25 u 25 s) ;; sleep
+	2 (macro M-x 25 u 25 h) ;; hybernate
+)
+
+(deflayermap (blank)
+	\ XX ;; no-op
+	1 1
+	2 2
+	3 3
+	4 4
+	5 5
+	6 6
+	7 7
+	8 8
+	9 9
+	0 0
+	- -
+	= =
+	` `
+	q q
+	w w
+	e e
+	r r
+	t t
+	y y
+	u u
+	i i
+	o o
+	p p
+	[ [
+	] ]
+	a a
+	s s
+	d d
+	f f
+	g g
+	h h
+	j j
+	k k
+	l l
+	; ;
+	' '
+	z z
+	x x
+	c c
+	v v
+	b b
+	n n
+	m m
+	, ,
+	. .
+	/ /
 )
