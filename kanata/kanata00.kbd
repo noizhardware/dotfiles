@@ -1,7 +1,7 @@
 ;; https://github.com/jtroo/kanata/blob/main/docs/config.adoc
 ;; key names https://github.com/jtroo/kanata/blob/main/parser/src/keys/mod.rs
 ;; created 2025a18-1534
-;; current 2025c13-1119
+;; current 2025c14-1102
 
 ;; load with (include R:\Work\git\dotfiles\kanata\kanata00.kbd)
 
@@ -17,7 +17,7 @@
   tap-time 90
   tap-time-click 50
   hold-time 400
-  chord-time 100
+  chord-time 38
 )
 
 (deflayermap (base)
@@ -45,7 +45,7 @@
 	s (multi f24 (tap-hold $tap-time $hold-time s (macro C-s))) ;; hold s >> Ctrl+S (save)
 	a (multi f24 (tap-hold $tap-time $hold-time a (macro C-S-s))) ;; hold a >> Ctrl+Shift+S (save As)
 	z (multi f24 (tap-hold $tap-time $hold-time z (macro C-S-z))) ;; hold z >> Ctrl+Shift+Z (screenshot)
-	x (multi f24 (tap-hold $tap-time $hold-time x (macro C-S-a 300 ArrowDown 25 spc))) ;; hold x >> Ctrl+Shift+A (fullscreen screenshot) + autosave
+	x (multi f24 (tap-hold $tap-time $hold-time x (macro C-S-a 500 ArrowDown 40 spc))) ;; hold x >> Ctrl+Shift+A (fullscreen screenshot) + autosave
 	c (multi f24 (tap-hold $tap-time $hold-time c (macro C-c))) ;; hold c >> Ctrl+C (copy)
 	v (multi f24 (tap-hold $tap-time $hold-time v (macro C-v))) ;; hold v >> Ctrl+V (paste)
    
@@ -62,38 +62,46 @@
 
 (defchordsv2
 	;; volume
-	(. l) VolumeUp $chord-time first-release (blank)
-	(, k) VolumeDown $chord-time first-release (blank)
-	(m j) VolumeMute $chord-time first-release (blank)
+	(. /) VolumeUp $chord-time first-release (blank)
+	(. ,) VolumeDown $chord-time first-release (blank)
+	(m ,) VolumeMute $chord-time first-release (blank)
 	
 	;; maus
 	(esc 1) mlft $chord-time first-release (blank)
+	(esc 1 2) (macro C-(mltp)) $chord-time first-release (blank)
+	(tab 1) (macro mlft mlft) $chord-time first-release (blank)
 	(1 2) mrgt $chord-time first-release (blank)
+	(CapsLock a) mousewheelup $chord-time first-release (blank)
+	(lshift z) mousewheeldown $chord-time first-release (blank)
 	
 	;; sys
 	(tab q) (macro C-A-tab) $chord-time first-release (blank)
-	(q esc) ent $chord-time first-release (blank)
+	(tab q w) ent $chord-time first-release (blank)
+	;;(q esc) ent $chord-time first-release (blank)
+	;;(q CapsLock) ent $chord-time first-release (blank)
 	(bspc `) (macro A-F4) $chord-time first-release (blank)
 	(3 4 5) (macro A-F4) $chord-time first-release (blank)
 	
 	;; special chars
 	(a q) (unicode à) $chord-time first-release (blank)
 	(e 3) (unicode è) $chord-time first-release (blank)
-	(r 4) (unicode é) $chord-time first-release (blank)
+	(e 2) (unicode é) $chord-time first-release (blank)
 	(i 9) (unicode ì) $chord-time first-release (blank)
 	(o 0) (unicode ò) $chord-time first-release (blank)
 	(u 8) (unicode ù) $chord-time first-release (blank)
 	
-	(w e) (unicode €) $chord-time first-release (blank)
+	(r 4) (unicode €) $chord-time first-release (blank)
 	(z a) (unicode ẓ) $chord-time first-release (blank)
 
 	(ent \) NumpadEnter $chord-time first-release (blank)
 
-  ;; arrows
+	;; arrows
 	(a s) ArrowLeft $chord-time first-release (blank)
 	(s d) ArrowRight $chord-time first-release (blank)
 	(s w) ArrowUp $chord-time first-release (blank)
 	(s x) ArrowDown $chord-time first-release (blank)
+	(rshift ArrowUp) home $chord-time first-release (blank)
+	(ArrowUp pgdn) end $chord-time first-release (blank)
 )
 
 (deflayermap (numpad)
