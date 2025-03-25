@@ -17,7 +17,7 @@
   tap-time 90
   tap-time-click 50
   hold-time 400
-  chord-time 38
+  chord-time 40
 )
 
 (deflayermap (base)
@@ -45,7 +45,8 @@
 	s (multi f24 (tap-hold $tap-time $hold-time s (macro C-s))) ;; hold s >> Ctrl+S (save)
 	a (multi f24 (tap-hold $tap-time $hold-time a (macro C-S-s))) ;; hold a >> Ctrl+Shift+S (save As)
 	z (multi f24 (tap-hold $tap-time $hold-time z (macro C-S-z))) ;; hold z >> Ctrl+Shift+Z (screenshot)
-	x (multi f24 (tap-hold $tap-time $hold-time x (macro C-S-a 500 ArrowDown 40 spc))) ;; hold x >> Ctrl+Shift+A (fullscreen screenshot) + autosave
+	b (multi f24 (tap-hold $tap-time $hold-time b (macro C-S-a 500 ArrowDown 40 spc))) ;; hold b >> Ctrl+Shift+A (fullscreen screenshot) + autosave
+	x (multi f24 (tap-hold $tap-time $hold-time x (macro C-x))) ;; hold x >> Ctrl+X (cut)
 	c (multi f24 (tap-hold $tap-time $hold-time c (macro C-c))) ;; hold c >> Ctrl+C (copy)
 	v (multi f24 (tap-hold $tap-time $hold-time v (macro C-v))) ;; hold v >> Ctrl+V (paste)
    
