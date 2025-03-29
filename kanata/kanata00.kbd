@@ -3,12 +3,13 @@
 ;; created 2025a18-1534
 ;; current 2025c14-1102
 
-;; load with (include R:\Work\git\dotfiles\kanata\kanata00.kbd)
+;; load with;
+;; 	(include R:\Work\git\dotfiles\kanata\kanata00.kbd)
 
 
 (defsrc)
 (defcfg
-	process-unmapped-keys yes
+	process-unmapped-keys yes ;; so I don't need to fill (defsrc)
 	concurrent-tap-hold yes ;; for chords
 	;;danger-enable-cmd yes
 )
