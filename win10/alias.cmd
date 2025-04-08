@@ -28,6 +28,7 @@ set PATH=%PATH%;"C:\msys64\mingw64\include\gtk-3.0\gtk"
 set PATH=%PATH%;"C:\msys64\mingw64\include\gtk-3.0\gdk"
 set PATH=%PATH%;"C:\msys64\mingw64\include\gtk-3.0"
 set PATH=%PATH%;"C:\Users\ninja\AppData\Roaming\Python\Python311\Scripts"
+set PATH=%PATH%;"R:\Programzz\utilities\ytdlp\ffmpeg-2025-01-13-git-851a84650e-full_build\bin"
 :: Add to path by command
 ::DOSKEY add_python26=set PATH=%PATH%;"C:\Python26\"
 ::DOSKEY add_python33=set PATH=%PATH%;"C:\Python33\"

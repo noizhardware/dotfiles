@@ -1,7 +1,7 @@
 ;; https://github.com/jtroo/kanata/blob/main/docs/config.adoc
 ;; key names https://github.com/jtroo/kanata/blob/main/parser/src/keys/mod.rs
 ;; created 2025a18-1534
-;; current 2025c14-1102
+;; current 2025d07-1800
 
 ;; load with;
 ;; 	(include R:\Work\git\dotfiles\kanata\kanata00.kbd)
@@ -16,9 +16,11 @@
 
 (defvar
   tap-time 90
+  tap-tapdance 140
   tap-time-click 50
   hold-time 400
   chord-time 40
+  power-time 50
 )
 
 (deflayermap (base)
@@ -43,14 +45,20 @@
 	;;; HOLD
 	e (multi f24 (tap-hold $tap-time $hold-time e (macro esc))) ;; hold e >> single tap ESC
 	r (multi f24 (tap-hold $tap-time $hold-time r (macro enter))) ;; hold r >> single tap ENTER
-	s (multi f24 (tap-hold $tap-time $hold-time s (macro C-s))) ;; hold s >> Ctrl+S (save)
+	;;s (multi f24 (tap-hold $tap-time $hold-time s (macro C-s))) ;; hold s >> Ctrl+S (save)
 	a (multi f24 (tap-hold $tap-time $hold-time a (macro C-S-s))) ;; hold a >> Ctrl+Shift+S (save As)
 	z (multi f24 (tap-hold $tap-time $hold-time z (macro C-S-z))) ;; hold z >> Ctrl+Shift+Z (screenshot)
 	b (multi f24 (tap-hold $tap-time $hold-time b (macro C-S-a 500 ArrowDown 40 spc))) ;; hold b >> Ctrl+Shift+A (fullscreen screenshot) + autosave
 	x (multi f24 (tap-hold $tap-time $hold-time x (macro C-x))) ;; hold x >> Ctrl+X (cut)
 	c (multi f24 (tap-hold $tap-time $hold-time c (macro C-c))) ;; hold c >> Ctrl+C (copy)
 	v (multi f24 (tap-hold $tap-time $hold-time v (macro C-v))) ;; hold v >> Ctrl+V (paste)
-   
+
+	;;; TAP-DANCE
+	;;s (tap-dance $tap-tapdance (s (macro s s) (macro C-s)))
+	s (tap-dance $tap-tapdance (s (macro C-s)))
+	w (tap-dance $tap-tapdance (w (macro C-w)))
+	9 (tap-dance $tap-tapdance (9 (macro C-9)))
+
 	;;; HOME ROW MODS
 	;; a (multi f24 (tap-hold $tap-time $hold-time a lsft))
 	;; s (multi f24 (tap-hold $tap-time $hold-time s lmet))
@@ -188,9 +196,9 @@
 
 (deflayermap (maus)
 	1 XX ;; no-op
-	2 (macro C-(mltp)) ;; Ctrl + LClick
+	;;2 (macro C-(mltp)) ;; Ctrl + LClick
 	esc mlft ;; LClick HOLD
-	3 mrgt ;; RClick HOLD
+	2 mrgt ;; RClick HOLD
 	q mmtp ;; MClick tap
 	w (tap-hold 1 200 lctl lctl) ;; hold Ctrl ; for EAGLE panning
 )
@@ -212,8 +220,8 @@
 
 (deflayermap (power)
 	esc XX ;; no-op
-	1 (macro M-x 25 u 25 s) ;; sleep
-	2 (macro M-x 25 u 25 h) ;; hybernate
+	1 (macro M-x $power-time u $power-time s) ;; sleep
+	2 (macro M-x $power-time u $power-time h) ;; hybernate
 )
 
 (deflayermap (blank)
