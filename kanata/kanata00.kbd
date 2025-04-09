@@ -29,45 +29,48 @@
 	0 (multi f24 (tap-hold 500 600 0 lrld)) ;; live reload
 
 	;;; LAYER switching
-	1 (multi f24 (tap-hold $tap-time $hold-time 1 (layer-while-held maus)))
-	2 (multi f24 (tap-hold $tap-time $hold-time 2 (layer-while-held browser)))
-	3 (multi f24 (tap-hold $tap-time $hold-time 3 (layer-while-held arrows)))
-	5 (multi f24 (tap-hold $tap-time $hold-time 5 (layer-while-held specops)))
-	6 (multi f24 (tap-hold $tap-time $hold-time 6 (layer-while-held inventor)))
-	grv (multi f24 (tap-hold $tap-time $hold-time grv (layer-while-held chars)))
-	/ (multi f24 (tap-hold $tap-time $hold-time / (layer-while-held media)))
-	\ (multi f24 (tap-hold $tap-time $hold-time \ (layer-while-held blank)))
-	' (multi f24 (tap-hold $tap-time $hold-time ' (layer-while-held numpad)))
-	= (multi f24 (tap-hold $tap-time $hold-time = (layer-while-held homend)))
-	
-	esc (multi f24 (tap-hold 1000 1500 esc (layer-while-held power)))
+		1 (multi f24 (tap-hold $tap-time $hold-time 1 (layer-while-held maus)))
+		2 (multi f24 (tap-hold $tap-time $hold-time 2 (layer-while-held browser)))
+		3 (multi f24 (tap-hold $tap-time $hold-time 3 (layer-while-held arrows)))
+		5 (multi f24 (tap-hold $tap-time $hold-time 5 (layer-while-held specops)))
+		6 (multi f24 (tap-hold $tap-time $hold-time 6 (layer-while-held inventor)))
+		grv (multi f24 (tap-hold $tap-time $hold-time grv (layer-while-held chars)))
+		/ (multi f24 (tap-hold $tap-time $hold-time / (layer-while-held media)))
+		\ (multi f24 (tap-hold $tap-time $hold-time \ (layer-while-held blank)))
+		' (multi f24 (tap-hold $tap-time $hold-time ' (layer-while-held numpad)))
+		= (multi f24 (tap-hold $tap-time $hold-time = (layer-while-held homend)))
+		
+		esc (multi f24 (tap-hold 1000 1500 esc (layer-while-held power)))
 
 	;;; HOLD
-	e (multi f24 (tap-hold $tap-time $hold-time e (macro esc))) ;; hold e >> single tap ESC
-	r (multi f24 (tap-hold $tap-time $hold-time r (macro enter))) ;; hold r >> single tap ENTER
-	;;s (multi f24 (tap-hold $tap-time $hold-time s (macro C-s))) ;; hold s >> Ctrl+S (save)
-	a (multi f24 (tap-hold $tap-time $hold-time a (macro C-S-s))) ;; hold a >> Ctrl+Shift+S (save As)
-	z (multi f24 (tap-hold $tap-time $hold-time z (macro C-S-z))) ;; hold z >> Ctrl+Shift+Z (screenshot)
-	b (multi f24 (tap-hold $tap-time $hold-time b (macro C-S-a 500 ArrowDown 40 spc))) ;; hold b >> Ctrl+Shift+A (fullscreen screenshot) + autosave
-	x (multi f24 (tap-hold $tap-time $hold-time x (macro C-x))) ;; hold x >> Ctrl+X (cut)
-	c (multi f24 (tap-hold $tap-time $hold-time c (macro C-c))) ;; hold c >> Ctrl+C (copy)
-	v (multi f24 (tap-hold $tap-time $hold-time v (macro C-v))) ;; hold v >> Ctrl+V (paste)
+		e (multi f24 (tap-hold $tap-time $hold-time e (macro esc))) ;; hold e >> single tap ESC
+		r (multi f24 (tap-hold $tap-time $hold-time r (macro enter))) ;; hold r >> single tap ENTER
+		s (multi f24 (tap-hold $tap-time $hold-time s (macro C-s))) ;; hold s >> Ctrl+S (save)
+		a (multi f24 (tap-hold $tap-time $hold-time a (macro C-S-s))) ;; hold a >> Ctrl+Shift+S (save As)
+		z (multi f24 (tap-hold $tap-time $hold-time z (macro C-S-z))) ;; hold z >> Ctrl+Shift+Z (screenshot)
+		b (multi f24 (tap-hold $tap-time $hold-time b (macro C-S-a 500 ArrowDown 40 spc))) ;; hold b >> Ctrl+Shift+A (fullscreen screenshot) + autosave
+		x (multi f24 (tap-hold $tap-time $hold-time x (macro C-x))) ;; hold x >> Ctrl+X (cut)
+		c (multi f24 (tap-hold $tap-time $hold-time c (macro C-c))) ;; hold c >> Ctrl+C (copy)
+		v (multi f24 (tap-hold $tap-time $hold-time v (macro C-v))) ;; hold v >> Ctrl+V (paste)
+		p (multi f24 (tap-hold $tap-time $hold-time p (macro C-p))) ;; hold p >> Ctrl+P (SublimeSearch)
+		d (multi f24 (tap-hold $tap-time $hold-time d (macro M-d))) ;; hold d >> Win+D (desktop)
+		;;lalt (multi f24 (tap-hold $tap-time $hold-time (layer-switch $flayer) lalt)) ;; hold lalt=lalt / tap=Flayer
+
 
 	;;; TAP-DANCE
-	;;s (tap-dance $tap-tapdance (s (macro s s) (macro C-s)))
-	s (tap-dance $tap-tapdance (s (macro C-s)))
-	w (tap-dance $tap-tapdance (w (macro C-w)))
-	9 (tap-dance $tap-tapdance (9 (macro C-9)))
+		;;s (tap-dance $tap-tapdance (s (macro C-s)))
+		w (tap-dance $tap-tapdance (w (macro C-w)))
+		9 (tap-dance $tap-tapdance (9 (macro C-9)))
 
 	;;; HOME ROW MODS
-	;; a (multi f24 (tap-hold $tap-time $hold-time a lsft))
-	;; s (multi f24 (tap-hold $tap-time $hold-time s lmet))
-	d (multi f24 (tap-hold $tap-time $hold-time d lalt))
-	f (multi f24 (tap-hold $tap-time $hold-time f lctl))
-	j (multi f24 (tap-hold $tap-time $hold-time j rctl))
-	k (multi f24 (tap-hold $tap-time $hold-time k ralt))
-	;; l (multi f24 (tap-hold $tap-time $hold-time l rmet))
-	;; ; (multi f24 (tap-hold $tap-time $hold-time ; rsft))
+		;; a (multi f24 (tap-hold $tap-time $hold-time a lsft))
+		;; s (multi f24 (tap-hold $tap-time $hold-time s lmet))
+		;;d (multi f24 (tap-hold $tap-time $hold-time d lalt))
+		f (multi f24 (tap-hold $tap-time $hold-time f lctl))
+		j (multi f24 (tap-hold $tap-time $hold-time j rctl))
+		;;k (multi f24 (tap-hold $tap-time $hold-time k ralt))
+		;; l (multi f24 (tap-hold $tap-time $hold-time l rmet))
+		;; ; (multi f24 (tap-hold $tap-time $hold-time ; rsft))
 )
 
 (defchordsv2
@@ -113,6 +116,11 @@
 	(rshift ArrowUp) home $chord-time first-release (blank)
 	(ArrowUp pgdn) end $chord-time first-release (blank)
 )
+
+;;(deflayermap (flayer)
+;;	lalt XX ;; no-op
+;;	2 (macro F2 (layer-switch $base))
+;;)
 
 (deflayermap (numpad)
 	' XX ;; no-op
