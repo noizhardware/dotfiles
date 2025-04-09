@@ -9,6 +9,7 @@ killdir(){
 alias vol='gnome-alsamixer'
 
 alias disk='df -h | grep Size && df -h | grep sda1'
+alias version='lsb_release -a'
 
 alias todo='cat $HOME/s/TODO.txt'
 alias tode='nano $HOME/s/TODO.txt'
