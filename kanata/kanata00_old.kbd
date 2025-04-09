@@ -1,0 +1,99 @@
+;; https://github.com/jtroo/kanata/blob/main/docs/config.adoc
+
+
+;; 2025a18-1534
+;; 2025a20-1525
+
+;;;; defsrc is still necessary
+;;(defcfg
+;;  process-unmapped-keys yes
+;;)
+;;
+;;;; these are the keys I want kanata to process
+;;(defsrc
+;;  a s d f j k l ; esc 1 q
+;;)
+
+(defsrc)
+(defcfg process-unmapped-keys yes)
+
+(defvar
+  tap-time 90
+  tap-time-click 50
+  hold-time 400
+)
+
+;; consider a HOLD if keypress is between tap-time and hold-time
+
+;;(defalias
+;;  ;; escctrl (tap-hold 100 100 esc lctl)
+;;  1 (multi f24 (tap-hold $tap-time-click $hold-time 1 mltp)) ;; hold 1 >> LClick
+;;  esc (multi f24 (tap-hold $tap-time $hold-time esc mlft)) ;; hold ESC >> hold LClick
+;;  a (multi f24 (tap-hold $tap-time $hold-time a lsft))
+;;  q_maus (multi f24 (tap-hold $tap-time $hold-time q (layer-while-held maus)))
+;;  s (multi f24 (tap-hold $tap-time $hold-time s lmet))
+;;  d (multi f24 (tap-hold $tap-time $hold-time d lalt))
+;;  f (multi f24 (tap-hold $tap-time $hold-time f lctl))
+;;  j (multi f24 (tap-hold $tap-time $hold-time j rctl))
+;;  k (multi f24 (tap-hold $tap-time $hold-time k ralt))
+;;  l (multi f24 (tap-hold $tap-time $hold-time l rmet))
+;;  ; (multi f24 (tap-hold $tap-time $hold-time ; rsft))
+;;)
+
+(deflayermap (base)
+	;;1 (multi f24 (tap-hold $tap-time-click $hold-time 1 mltp)) ;; hold 1 >> LClick
+	;;esc (multi f24 (tap-hold $tap-time $hold-time esc mlft)) ;; hold ESC >> hold LClick
+	r (multi f24 (tap-hold 500 600 r lrld)) ;; live reload
+	e (multi f24 (tap-hold $tap-time $hold-time e enter)) ;; hold e >> ENTER
+	1 (multi f24 (tap-hold $tap-time $hold-time 1 (layer-while-held maus)))
+	2 (multi f24 (tap-hold $tap-time $hold-time 2 (layer-while-held browser)))
+	esc (multi f24 (tap-hold 1000 1500 esc (layer-while-held power)))
+
+	;;; HOME ROW MODS
+	a (multi f24 (tap-hold $tap-time $hold-time a lsft))
+	s (multi f24 (tap-hold $tap-time $hold-time s lmet))
+	d (multi f24 (tap-hold $tap-time $hold-time d lalt))
+	f (multi f24 (tap-hold $tap-time $hold-time f lctl))
+	j (multi f24 (tap-hold $tap-time $hold-time j rctl))
+	k (multi f24 (tap-hold $tap-time $hold-time k ralt))
+	l (multi f24 (tap-hold $tap-time $hold-time l rmet))
+	; (multi f24 (tap-hold $tap-time $hold-time ; rsft))
+)
+
+(deflayermap (maus)
+	2 (macro C-(mltp)) ;; Ctrl + LClick
+	esc mlft ;; LClick HOLD
+	q mmtp ;; MClick tap
+	w (tap-hold 1 200 lctl lctl) ;; hold Ctrl ; for EAGLE panning
+	1 XX ;; no-op
+)
+
+(deflayermap (browser)
+	esc C-w
+	1 C-pgup
+	3 C-pgdn
+	;;4 (macro C-(mltp)) ;; Ctrl + LClick
+	4 C-mlft ;; Ctrl + LClick HOLD
+	q A-left ;; back
+	e A-right ;; fwd
+	r C-r ;; reload page
+	spc mlft ;; LClick HOLD
+	2 XX ;; no-op
+)
+
+(deflayermap (power)
+	1 (macro M-x u h) ;; hybernate
+	2 (macro M-x u s) ;; sleep
+	esc XX ;; no-op
+)
+
+
+;; create a layer by grouping keys
+;;(deflayer base
+;;  ;;@escctrl @a @s @d @f @j @k @l @;
+;;  @a @s @d @f @j @k @l @; @esc @1 @q_maus
+;;)
+
+;;(deflayer maus
+;;	a s d f j k l ; @esc_lc 1 XX
+;;)

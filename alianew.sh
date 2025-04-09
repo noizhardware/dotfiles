@@ -27,6 +27,7 @@ alias siz='du -sbh *'
 #alias off='sudo shutdown -P now'
 alias off='poweroff'
 alias sus='systemctl suspend'
+alias sleep='systemctl suspend'
 alias hib='systemctl hibernate'
 
 alias refresh='source $HOME/.bashrc'
