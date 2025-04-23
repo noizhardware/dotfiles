@@ -1,7 +1,7 @@
 ;; https://github.com/jtroo/kanata/blob/main/docs/config.adoc
 ;; key names https://github.com/jtroo/kanata/blob/main/parser/src/keys/mod.rs
 ;; created 2025a18-1534
-;; current 2025d07-1800
+;; current 2025d23-2346
 
 ;; load with;
 ;; 	(include R:\Work\git\dotfiles\kanata\kanata00.kbd)
@@ -16,12 +16,19 @@
 
 (defvar
   tap-time 90
+  tap-time-power 1000
   tap-tapdance 140
   tap-time-click 50
   hold-time 400
+  hold-time-power 1500
   chord-time 40
-  power-time 50
+  power-menu-time 400
+  menu-time 450
 )
+
+(defseq pad-space (ArrowRight ArrowDown))
+(defvirtualkeys pad-space (multi spc sldr))
+(defalias lcl (tap-hold-release 200 200 sldr lctl))
 
 (deflayermap (base)
 	;;1 (multi f24 (tap-hold $tap-time-click $hold-time 1 mltp)) ;; hold 1 >> LClick
@@ -31,7 +38,7 @@
 	;;; LAYER switching
 		1 (multi f24 (tap-hold $tap-time $hold-time 1 (layer-while-held maus)))
 		2 (multi f24 (tap-hold $tap-time $hold-time 2 (layer-while-held browser)))
-		3 (multi f24 (tap-hold $tap-time $hold-time 3 (layer-while-held arrows)))
+		;;3 (multi f24 (tap-hold $tap-time $hold-time 3 (layer-while-held arrows)))
 		5 (multi f24 (tap-hold $tap-time $hold-time 5 (layer-while-held specops)))
 		6 (multi f24 (tap-hold $tap-time $hold-time 6 (layer-while-held inventor)))
 		grv (multi f24 (tap-hold $tap-time $hold-time grv (layer-while-held chars)))
@@ -39,8 +46,13 @@
 		\ (multi f24 (tap-hold $tap-time $hold-time \ (layer-while-held blank)))
 		' (multi f24 (tap-hold $tap-time $hold-time ' (layer-while-held numpad)))
 		= (multi f24 (tap-hold $tap-time $hold-time = (layer-while-held homend)))
+		l (multi f24 (tap-hold $tap-time $hold-time l (layer-while-held system)))
+		;;] (multi f24 (tap-hold $tap-time $hold-time ] (layer-switch paddle)))
+		] (multi f24 (tap-hold $tap-time $hold-time ] sldr))
+		;;lctl @lcl
+
 		
-		esc (multi f24 (tap-hold 1000 1500 esc (layer-while-held power)))
+		esc (multi f24 (tap-hold $tap-time $hold-time esc (layer-while-held power)))
 
 	;;; HOLD
 		e (multi f24 (tap-hold $tap-time $hold-time e (macro esc))) ;; hold e >> single tap ESC
@@ -54,13 +66,13 @@
 		v (multi f24 (tap-hold $tap-time $hold-time v (macro C-v))) ;; hold v >> Ctrl+V (paste)
 		p (multi f24 (tap-hold $tap-time $hold-time p (macro C-p))) ;; hold p >> Ctrl+P (SublimeSearch)
 		d (multi f24 (tap-hold $tap-time $hold-time d (macro M-d))) ;; hold d >> Win+D (desktop)
+		w (multi f24 (tap-hold $tap-time $hold-time w (macro C-w))) ;; hold w >> Ctrl+W (close tab)
 		;;lalt (multi f24 (tap-hold $tap-time $hold-time (layer-switch $flayer) lalt)) ;; hold lalt=lalt / tap=Flayer
-
 
 	;;; TAP-DANCE
 		;;s (tap-dance $tap-tapdance (s (macro C-s)))
-		w (tap-dance $tap-tapdance (w (macro C-w)))
-		9 (tap-dance $tap-tapdance (9 (macro C-9)))
+		;;w (tap-dance $tap-tapdance (w (macro C-w)))
+		9 (tap-dance $tap-tapdance (9 (macro C-9 50 A-9)))
 
 	;;; HOME ROW MODS
 		;; a (multi f24 (tap-hold $tap-time $hold-time a lsft))
@@ -72,6 +84,8 @@
 		;; l (multi f24 (tap-hold $tap-time $hold-time l rmet))
 		;; ; (multi f24 (tap-hold $tap-time $hold-time ; rsft))
 )
+
+;;(defvirtualkeys pad-space (macro spc c i a o))
 
 (defchordsv2
 	;; volume
@@ -122,6 +136,45 @@
 ;;	2 (macro F2 (layer-switch $base))
 ;;)
 
+(deflayermap (system)
+	l XX ;; no-op
+	1 f1
+	2 f2
+	3 f3
+	4 f4
+	5 f5
+	6 f6
+	7 f7
+	8 f8
+	9 f9
+	0 f10
+	- f11
+	= f12
+	x (macro C-x) ;; cut
+	c (macro C-c) ;; copy
+	v (macro C-v) ;; paste
+	w (macro C-w) ;; close tab
+	s (macro C-s) ;; save
+	a (macro C-S-s) ;; save as
+	d (macro M-d) ;; desktop
+
+	k (macro lmeta $menu-time n i g h t $menu-time ent $menu-time tab $menu-time tab $menu-time spc $menu-time A-f4)
+
+	;; navigate windows
+		esc (macro A-F4) ;; close window
+		CapsLock (macro A-tab)
+		tab (macro C-A-tab)
+		spc (macro esc)
+
+	q ent
+	m VolumeMute
+	, VolumeDown
+	. VolumeUp
+	n @newfile
+	pgup (macro M-x $power-menu-time u $power-menu-time s) ;; sleep
+	pgdn (macro M-x $power-menu-time u $power-menu-time s) ;; hybernate
+)
+
 (deflayermap (numpad)
 	' XX ;; no-op
 	1 1
@@ -134,6 +187,12 @@
 	s 8
 	d 9
 	c 0
+)
+
+(deflayermap (paddle)
+	] XX ;; no-op
+	esc (layer-switch base)
+	ArrowRight (macro c i a o)
 )
 
 (deflayermap (homend)
@@ -207,6 +266,7 @@
 	;;2 (macro C-(mltp)) ;; Ctrl + LClick
 	esc mlft ;; LClick HOLD
 	2 mrgt ;; RClick HOLD
+	tab (macro mlft mlft) ;; double click
 	q mmtp ;; MClick tap
 	w (tap-hold 1 200 lctl lctl) ;; hold Ctrl ; for EAGLE panning
 )
@@ -228,8 +288,12 @@
 
 (deflayermap (power)
 	esc XX ;; no-op
-	1 (macro M-x $power-time u $power-time s) ;; sleep
-	2 (macro M-x $power-time u $power-time h) ;; hybernate
+	;;1 (macro M-x $power-menu-time u $power-menu-time s) ;; sleep
+	;;2 (macro M-x $power-menu-time u $power-menu-time h) ;; hybernate
+
+	1 (multi f24 (tap-hold $tap-time-power $hold-time-power XX (macro M-x $power-menu-time u $power-menu-time s))) ;; sleep
+	2 (multi f24 (tap-hold $tap-time-power $hold-time-power XX (macro M-x $power-menu-time u $power-menu-time h))) ;; hybernate
+
 )
 
 (deflayermap (blank)
