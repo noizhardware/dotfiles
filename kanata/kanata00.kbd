@@ -1,7 +1,7 @@
 ;; https://github.com/jtroo/kanata/blob/main/docs/config.adoc
 ;; key names https://github.com/jtroo/kanata/blob/main/parser/src/keys/mod.rs
 ;; created 2025a18-1534
-;; current 2025d23-2346
+;; current 2025e02-1530
 
 ;; load with;
 ;; 	(include R:\Work\git\dotfiles\kanata\kanata00.kbd)
@@ -158,13 +158,19 @@
 	a (macro C-S-s) ;; save as
 	d (macro M-d) ;; desktop
 
-	k (macro lmeta $menu-time n i g h t $menu-time ent $menu-time tab $menu-time tab $menu-time spc $menu-time A-f4)
+	p (macro C-p) ;; sublime search
+	f (macro C-f) ;; find
+	; (multi f24 (tap-hold $tap-time $hold-time XX (layer-while-held tabnums)))
+
+
+	k (macro lmeta $menu-time n i g h t $menu-time ent $menu-time tab $menu-time tab $menu-time spc $menu-time A-f4) ;; night light
 
 	;; navigate windows
 		esc (macro A-F4) ;; close window
-		CapsLock (macro A-tab)
-		tab (macro C-A-tab)
+		CapsLock (macro A-tab) ;; quick switch
+		tab (macro C-A-tab) ;; all panes
 		spc (macro esc)
+		e (macro M-e) ;; new window
 
 	q ent
 	m VolumeMute
@@ -172,7 +178,21 @@
 	. VolumeUp
 	n @newfile
 	pgup (macro M-x $power-menu-time u $power-menu-time s) ;; sleep
-	pgdn (macro M-x $power-menu-time u $power-menu-time s) ;; hybernate
+	pgdn (macro M-x $power-menu-time u $power-menu-time h) ;; hybernate
+)
+
+(deflayermap (tabnums)
+	; XX ;; no-op
+	1 (macro C-1 50 A-1)
+	2 (macro C-2 50 A-2)
+	3 (macro C-3 50 A-3)
+	4 (macro C-4 50 A-4)
+	5 (macro C-5 50 A-5)
+	6 (macro C-6 50 A-6)
+	7 (macro C-7 50 A-7)
+	8 (macro C-8 50 A-8)
+	9 (macro C-9 50 A-9)
+	' (macro C-9 50 A-9)
 )
 
 (deflayermap (numpad)

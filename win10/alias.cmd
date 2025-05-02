@@ -1,8 +1,14 @@
 @echo off
 
+:: 2025e01-1233
+:: to setup this file to run each time cmd is run;
+:: run regedit as admin
+:: go to HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Command Processor
+:: add new string, name it AutoRun, in the data field put this file's full path;
 :: R:\Work\git\dotfiles\win10\alias.cmd
-:: Temporary system path at cmd startup
 
+
+:: Temporary system path at cmd startup
 set PATH=%PATH%;"R:\Work\git\dotfiles\win10\"
 set PATH=%PATH%;"R:\s\c\kalk\"
 set PATH=%PATH%;"R:\s\c\crow\"
@@ -29,22 +35,23 @@ set PATH=%PATH%;"C:\msys64\mingw64\include\gtk-3.0\gdk"
 set PATH=%PATH%;"C:\msys64\mingw64\include\gtk-3.0"
 set PATH=%PATH%;"C:\Users\ninja\AppData\Roaming\Python\Python311\Scripts"
 set PATH=%PATH%;"R:\Programzz\utilities\ytdlp\ffmpeg-2025-01-13-git-851a84650e-full_build\bin"
+set PATH=%PATH%;"R:\Programzz\utilities\ngrok-v3-stable-windows-amd64"
 :: Add to path by command
 ::DOSKEY add_python26=set PATH=%PATH%;"C:\Python26\"
 ::DOSKEY add_python33=set PATH=%PATH%;"C:\Python33\"
 
 :: Commands : $T is the command separator, like &&
 
-DOSKEY lsd=ls -d */
-DOSKEY lsa=ls -a
-
-:: size of all files in current dir
-DOSKEY lss=find -maxdepth 1 -type f -printf "%%s\t%%f\n"
-
-DOSKEY deldir=rm -r $*
-
 DOSKEY qq=exit
 
+:: filesystem
+DOSKEY lsd=ls -d */
+DOSKEY lsa=ls -a
+:: size of all files in current dir
+DOSKEY lss=find -maxdepth 1 -type f -printf "%%s\t%%f\n"
+DOSKEY deldir=rm -r $*
+
+:: folder shortcuts
 DOSKEY src=R: $T cd s $T cd c
 DOSKEY log=H: $T cd LOGS
 DOSKEY mr=R: $T cd s $T cd c $T cd 666 $T cd vm $T cd 666MR
@@ -58,13 +65,17 @@ DOSKEY gpus=git add --all $T git commit -m "nj" $T git push origin master
 
 :: other
 DOSKEY wea=curl wttr.in/milan
-DOSKEY speed=R:\Programzz\utilities\ookla-speedtest-1.2.0-win64\speedtest.exe
-DOSKEY pin=ping example.com
 DOSKEY typ=R: $T cd s $T cd C $T cd TypingTest $T typ.exe
 DOSKEY autohot=R:\Work\git\dotfiles\win10\autohot00.cmd
 ::DOSKEY yt3=R:\Programzz\utilities\ytdlp\yt-dlp.exe -f 140 --ffmpeg-location R:\Programzz\utilities\YoutubeDownloader\ffmpeg.exe -o "~/YouTube/" --print after_move:filepath $*
 DOSKEY yt3=R: $T cd __ytmp3 $T R:\Programzz\utilities\ytdlp\yt-dlp.exe -f 140 --ffmpeg-location R:\Programzz\utilities\YoutubeDownloader\ffmpeg.exe --print after_move:filepath $*
 ::DOSKEY yt3=ytmp3 $*
+
+:: network
+DOSKEY speed=R:\Programzz\utilities\ookla-speedtest-1.2.0-win64\speedtest.exe
+DOSKEY pin=ping example.com
+DOSKEY myip=nslookup myip.opendns.com resolver1.opendns.com
+DOSKEY ports=netstat -a
 
 :: DOSKEY tapc=R:\s\c\tapCounter\tapcounter.exe
 :: $* represents user command parameters
