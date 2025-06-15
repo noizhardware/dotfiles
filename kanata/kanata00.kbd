@@ -23,7 +23,7 @@
   hold-time-power 1500
   chord-time 40
   power-menu-time 400
-  menu-time 450
+  menu-time 500
 )
 
 (defseq pad-space (ArrowRight ArrowDown))
@@ -92,6 +92,12 @@
 	(. /) VolumeUp $chord-time first-release (blank)
 	(. ,) VolumeDown $chord-time first-release (blank)
 	(m ,) VolumeMute $chord-time first-release (blank)
+
+	;; cut-copy-paste
+	(x d c) (macro C-x) $chord-time first-release (blank)
+	(c f v) (macro C-c) $chord-time first-release (blank)
+	(v g b) (macro C-v) $chord-time first-release (blank)
+	(z s x) (macro C-p 50 z k Digit0 / t e s t / t e m p l a t e . m d 50 ent) $chord-time first-release (blank)
 	
 	;; maus
 	(esc 1) mlft $chord-time first-release (blank)
@@ -161,6 +167,7 @@
 	p (macro C-p) ;; sublime search
 	f (macro C-f) ;; find
 	; (multi f24 (tap-hold $tap-time $hold-time XX (layer-while-held tabnums)))
+	r (macro C-r) ;; reload
 
 
 	k (macro lmeta $menu-time n i g h t $menu-time ent $menu-time tab $menu-time tab $menu-time spc $menu-time A-f4) ;; night light
@@ -304,6 +311,7 @@
 	r C-r ;; reload page
 	spc mlft ;; LClick HOLD
 	t (macro C-(t)) ;; new tab
+	g (macro g i) ;; Go to Inbox
 )
 
 (deflayermap (power)
