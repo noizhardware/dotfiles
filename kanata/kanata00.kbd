@@ -59,7 +59,9 @@
 		r (multi f24 (tap-hold $tap-time $hold-time r (macro enter))) ;; hold r >> single tap ENTER
 		s (multi f24 (tap-hold $tap-time $hold-time s (macro C-s))) ;; hold s >> Ctrl+S (save)
 		a (multi f24 (tap-hold $tap-time $hold-time a (macro C-S-s))) ;; hold a >> Ctrl+Shift+S (save As)
-		z (multi f24 (tap-hold $tap-time $hold-time z (macro C-S-z))) ;; hold z >> Ctrl+Shift+Z (screenshot)
+		;;z (multi f24 (tap-hold $tap-time $hold-time z (macro C-S-z))) ;; hold z >> Ctrl+Shift+Z (screenshot)
+		z (multi f24 (tap-hold $tap-time $hold-time z (macro S-PrintScreen))) ;; hold z >> Shift+Printscreen (screenshot LinuxMint)
+		t (multi f24 (tap-hold $tap-time $hold-time t (macro C-A-t))) ;; hold t >> Ctrl+Alt+T (terminal LinuxMint)
 		b (multi f24 (tap-hold $tap-time $hold-time b (macro C-S-a 500 ArrowDown 40 spc))) ;; hold b >> Ctrl+Shift+A (fullscreen screenshot) + autosave
 		x (multi f24 (tap-hold $tap-time $hold-time x (macro C-x))) ;; hold x >> Ctrl+X (cut)
 		c (multi f24 (tap-hold $tap-time $hold-time c (macro C-c))) ;; hold c >> Ctrl+C (copy)
@@ -72,7 +74,7 @@
 	;;; TAP-DANCE
 		;;s (tap-dance $tap-tapdance (s (macro C-s)))
 		;;w (tap-dance $tap-tapdance (w (macro C-w)))
-		9 (tap-dance $tap-tapdance (9 (macro C-9 50 A-9)))
+		;;9 (tap-dance $tap-tapdance (9 (macro C-9 50 A-9)))
 
 	;;; HOME ROW MODS
 		;; a (multi f24 (tap-hold $tap-time $hold-time a lsft))
