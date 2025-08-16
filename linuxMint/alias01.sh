@@ -1,6 +1,6 @@
 # usage: put `source /media/nff/RED/Work/git/dotfiles/linuxMint/alias01.sh` in `~/.bashrc` (and `~/.profile`) ; use `cd $HOME to go there`
-echo alias01 - the Ghostless Shell
-echo 2025h16-1310
+echo the Ghostless Shell
+echo alias01.sh - 2025h16-1310
 
 alias lsa='ls -a'
 alias lsd='ls -d */'
