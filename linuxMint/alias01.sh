@@ -1,6 +1,6 @@
 # usage: put `source /media/nff/RED/Work/git/dotfiles/linuxMint/alias01.sh` in `~/.bashrc` (and `~/.profile`) ; use `cd $HOME to go there`
 echo the Ghostless Shell
-echo alias01.sh - 2025h16-1310
+echo alias01.sh - 2025h24-2256
 
 # file system
 	alias lsa='ls -a'
@@ -9,7 +9,9 @@ echo alias01.sh - 2025h16-1310
 	alias disk='df -h'
 	alias siz='du -sbh *'
 	alias here='pwd'
-
+	killdir(){
+		rm -r "$1"
+	}
 
 # GIT
 	alias gsta='git status'
@@ -21,6 +23,7 @@ echo alias01.sh - 2025h16-1310
 	alias version='lsb_release -a'
 	alias sys='inxi -Fxxxrzc0 --usb' # show all system info
 	alias temp='sensors'
+	alias pin='ping example.com'
 ## POWER
 	alias off='poweroff'
 	alias sus='systemctl suspend'
@@ -41,7 +44,9 @@ echo alias01.sh - 2025h16-1310
 	alias kan='sudo ~/apps/kanata --cfg /media/nff/RED/Work/git/dotfiles/kanata/kanata00.kbd'
 	alias ka='/media/nff/RED/s/c/kalk/kalk'
 	alias kri='~/apps/krita-5.2.11-x86_64.AppImage'
-
+	alias alk='/media/nff/RED/s/c/alk/alk /media/nff/HOTdata/LOGS/alc.MASS'
+	alias sz='/media/nff/RED/s/c/alk/alk /media/nff/HOTdata/LOGS/alc.MASS -sz 240'
+	alias kg='/media/nff/RED/s/c/alk/alk /media/nff/HOTdata/LOGS/alc.MASS -kg 720'
 # PATHs quick CD
 	alias src='cd /media/nff/RED/s/c/'
 	alias log='cd /media/nff/HOTdata/LOGS'
@@ -59,5 +64,7 @@ echo alias01.sh - 2025h16-1310
 
 # opening files
 	alias oge='xdg-open /media/nff/HOTdata/LOGS/GELD.ods'
+	alias oacc='xdg-open /media/nff/RED/!documents/contabilita/acc_2025/income2025.ods'
 	alias ost='xdg-open /media/nff/RED/Work/minijack/mmix/BOMs/_stock.ods'
+	alias oml='xdg-open /media/nff/RED/Work/minijack/mailinglist.ods'
 	alias wlo='xdg-open /media/nff/RED/MUCKE/focus/whitenoiseLow.mp3'
