@@ -1,6 +1,6 @@
 # usage: put `source /media/nff/RED/Work/git/dotfiles/linuxMint/alias01.sh` in `~/.bashrc` (and `~/.profile`) ; use `cd $HOME to go there`
 echo the Ghostless Shell
-echo alias01.sh - 2025h24-2256
+echo alias01.sh - 2025h08-0946
 
 # file system
 	alias lsa='ls -a'
@@ -24,6 +24,7 @@ echo alias01.sh - 2025h24-2256
 	alias sys='inxi -Fxxxrzc0 --usb' # show all system info
 	alias temp='sensors'
 	alias pin='ping example.com'
+	alias speed='speedtest-cli'
 ## POWER
 	alias off='poweroff'
 	alias sus='systemctl suspend'
@@ -67,4 +68,8 @@ echo alias01.sh - 2025h24-2256
 	alias oacc='xdg-open /media/nff/RED/!documents/contabilita/acc_2025/income2025.ods'
 	alias ost='xdg-open /media/nff/RED/Work/minijack/mmix/BOMs/_stock.ods'
 	alias oml='xdg-open /media/nff/RED/Work/minijack/mailinglist.ods'
+	alias opri='xdg-open /media/nff/RED/Work/minijack/mmix/prices.ods'
+	alias omod='xdg-open /media/nff/RED/Work/minijack/mmix/BOMs/_module_addup_02.ods'
 	alias wlo='xdg-open /media/nff/RED/MUCKE/focus/whitenoiseLow.mp3'
+	alias obom='xdg-open /media/nff/HOTdata/EAGLE/BRD/JLCPCB/example-assembly/example-BOM.csv'
+	alias oass='xdg-open /media/nff/HOTdata/EAGLE/BRD/JLCPCB/example-assembly/example-assembly.csv'
