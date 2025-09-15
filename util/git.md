@@ -35,6 +35,18 @@ edit it as you like, solve the conflict, then
 `git commit -m "I solved that conflict!"`
 then you can also delete the old branch
 
+revert to origin's master branch's version of file
+`git checkout -- filename` (if you did not commit the file, or add it to the index)
+you added it to the index, but did not commit it;
+```
+git reset HEAD filename
+git checkout -- filename
+```
+`git checkout origin/master filename` Assuming you did commit it
+`git reset --hard origin/master` Assuming you want to blow away all commits from your branch (VERY DESTRUCTIVE):
+
+
+
 for binary files: you can choose which file to keep
 - `git checkout --theirs -- path/to/conflicted-file.txt` to keep the version from the branch you're trying to merge
 - `git checkout --ours -- path/to/conflicted-file.txt`  to keep the version present in the current branch

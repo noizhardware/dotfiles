@@ -1,6 +1,7 @@
 # usage: put `source /media/nff/RED/Work/git/dotfiles/linuxMint/alias01.sh` in `~/.bashrc` (and `~/.profile`) ; use `cd $HOME to go there`
 echo the Ghostless Shell
-echo alias01.sh - 2025h09-1704
+echo $BASH_SOURCE
+echo 2025h09-1704
 
 # file system
 	alias lsa='ls -a'
@@ -65,6 +66,7 @@ echo alias01.sh - 2025h09-1704
 
 # opening files
 	alias oge='xdg-open /media/nff/HOTdata/LOGS/GELD.ods'
+	alias oin='xdg-open /media/nff/RED/!documents/contabilita/acc_2025/incoming.ods'
 	alias oacc='xdg-open /media/nff/RED/!documents/contabilita/acc_2025/income2025.ods'
 	alias ost='xdg-open /media/nff/RED/Work/minijack/mmix/BOMs/_stock.ods'
 	alias oml='xdg-open /media/nff/RED/Work/minijack/mailinglist.ods'
