@@ -1,7 +1,7 @@
 # usage: put `source /media/nff/RED/Work/git/dotfiles/linuxMint/alias01.sh` in `~/.bashrc` (and `~/.profile`) ; use `cd $HOME to go there`
 echo the Ghostless Shell
 echo $BASH_SOURCE
-echo 2025h09-1704
+echo 2025i22-1159
 
 # file system
 	alias lsa='ls -a'
@@ -22,7 +22,7 @@ echo 2025h09-1704
 
 #SYSTEM
 	alias version='lsb_release -a'
-	alias sys='inxi -Fxxxrzc0 --usb' # show all system info
+	alias sys='inxi -Fxxxrzc0 --usb ; mokutil --sb-state ' # show all system info
 	alias temp='sensors'
 	alias pin='ping example.com'
 	alias speed='speedtest-cli | grep -e Download -e Upload -e ms'
