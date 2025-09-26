@@ -1,7 +1,7 @@
 # usage: put `source /media/nff/RED/Work/git/dotfiles/linuxMint/alias01.sh` in `~/.bashrc` (and `~/.profile`) ; use `cd $HOME to go there`
 echo the Ghostless Shell
 echo $BASH_SOURCE
-echo 2025i22-1159
+echo 2025i26-1407
 
 # file system
 	alias lsa='ls -a'
@@ -46,6 +46,7 @@ echo 2025i22-1159
 	alias kan='sudo ~/apps/kanata --cfg /media/nff/RED/Work/git/dotfiles/kanata/kanata00.kbd'
 	alias ka='/media/nff/RED/s/c/kalk/kalk'
 	alias kri='~/apps/krita-5.2.11-x86_64.AppImage'
+	alias mass='/media/nff/RED/s/c/mass/mass'
 	alias alk='/media/nff/RED/s/c/alk/alk /media/nff/HOTdata/LOGS/alc.MASS'
 	alias sz='/media/nff/RED/s/c/alk/alk /media/nff/HOTdata/LOGS/alc.MASS -sz 240'
 	alias kg='/media/nff/RED/s/c/alk/alk /media/nff/HOTdata/LOGS/alc.MASS -kg 720'
