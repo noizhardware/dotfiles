@@ -1,7 +1,7 @@
 # usage: put `source /media/nff/RED/Work/git/dotfiles/linuxMint/alias01.sh` in `~/.bashrc` (and `~/.profile`) ; use `cd $HOME to go there`
 echo the Ghostless Shell
 echo $BASH_SOURCE
-echo 2025i26-1407
+echo 2025i28-1235
 
 # file system
 	alias lsa='ls -a'
@@ -26,6 +26,7 @@ echo 2025i26-1407
 	alias temp='sensors'
 	alias pin='ping example.com'
 	alias speed='speedtest-cli | grep -e Download -e Upload -e ms'
+	alias usbs='/media/nff/RED/Work/git/dotfiles/linuxMint/usbserial.sh'
 ## POWER
 	alias off='poweroff'
 	alias sus='systemctl suspend'
@@ -50,6 +51,8 @@ echo 2025i26-1407
 	alias alk='/media/nff/RED/s/c/alk/alk /media/nff/HOTdata/LOGS/alc.MASS'
 	alias sz='/media/nff/RED/s/c/alk/alk /media/nff/HOTdata/LOGS/alc.MASS -sz 240'
 	alias kg='/media/nff/RED/s/c/alk/alk /media/nff/HOTdata/LOGS/alc.MASS -kg 720'
+	alias bonzo='/media/nff/HOTdata/shaderz/Bonzomatic/bonzomatic /media/nff/HOTdata/shaderz/Bonzomatic/config.json'
+	alias bf='(cd /opt/betaflight/betaflight-configurator && exec sudo ./betaflight-configurator)'
 # PATHs quick CD
 	alias src='cd /media/nff/RED/s/c/'
 	alias log='cd /media/nff/HOTdata/LOGS'
