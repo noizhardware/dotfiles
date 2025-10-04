@@ -1,7 +1,7 @@
 ;; https://github.com/jtroo/kanata/blob/main/docs/config.adoc
 ;; key names https://github.com/jtroo/kanata/blob/main/parser/src/keys/mod.rs
 ;; created 2025a18-1534
-;; current 2025e02-1530
+;; current 2025j04-1445
 
 ;; load with;
 ;; 	(include R:\Work\git\dotfiles\kanata\kanata00.kbd)
@@ -172,7 +172,9 @@
 	r (macro C-r) ;; reload
 
 
-	k (macro lmeta $menu-time n i g h t $menu-time ent $menu-time tab $menu-time tab $menu-time spc $menu-time A-f4) ;; night light
+	;;k (macro lmeta $menu-time n i g h t $menu-time ent $menu-time tab $menu-time tab $menu-time spc $menu-time A-f4) ;; night light
+	k (macro C-A-t $menu-time l i c ent $menu-time q q ent)
+	j (macro C-A-t $menu-time l i w ent $menu-time q q ent)
 
 	;; navigate windows
 		esc (macro A-F4) ;; close window

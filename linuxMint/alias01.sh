@@ -1,7 +1,7 @@
 # usage: put `source /media/nff/RED/Work/git/dotfiles/linuxMint/alias01.sh` in `~/.bashrc` (and `~/.profile`) ; use `cd $HOME to go there`
 echo the Ghostless Shell
 echo $BASH_SOURCE
-echo 2025i28-1235
+echo 2025j04-1213
 
 # file system
 	alias lsa='ls -a'
@@ -25,7 +25,8 @@ echo 2025i28-1235
 	alias sys='inxi -Fxxxrzc0 --usb ; mokutil --sb-state ' # show all system info
 	alias temp='sensors'
 	alias pin='ping example.com'
-	alias speed='speedtest-cli | grep -e Download -e Upload -e ms'
+	#alias speed='speedtest-cli | grep -e Download -e Upload -e ms'
+	alias speed='curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python3'
 	alias usbs='/media/nff/RED/Work/git/dotfiles/linuxMint/usbserial.sh'
 ## POWER
 	alias off='poweroff'
@@ -67,6 +68,7 @@ echo 2025i28-1235
 # opening folders in file manager window
 	alias dld='xdg-open ~/Downloads'
 	alias uu='xdg-open /media/nff/RED/uu'
+	alias dat='xdg-open /media/nff/RED/Work/electronics/datasheet/_components'
 
 # opening files
 	alias oge='xdg-open /media/nff/HOTdata/LOGS/GELD.ods'
