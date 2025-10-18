@@ -1,7 +1,7 @@
 # usage: put `source /media/nff/RED/Work/git/dotfiles/linuxMint/alias01.sh` in `~/.bashrc` (and `~/.profile`) ; use `cd $HOME to go there`
 echo the Ghostless Shell
 echo $BASH_SOURCE
-echo 2025j04-1213
+echo 2025j18-1938
 
 # file system
 	alias lsa='ls -a'
@@ -79,5 +79,7 @@ echo 2025j04-1213
 	alias opri='xdg-open /media/nff/RED/Work/minijack/mmix/prices.ods'
 	alias omod='xdg-open /media/nff/RED/Work/minijack/mmix/BOMs/_module_addup_02.ods'
 	alias wlo='xdg-open /media/nff/RED/MUCKE/focus/whitenoiseLow.mp3'
+	alias wno='xdg-open /media/nff/RED/MUCKE/focus/whitenoise.mp3'
+	alias wha='xdg-open /media/nff/RED/MUCKE/focus/whitenoiseHarsh.mp3'
 	alias obom='xdg-open /media/nff/HOTdata/EAGLE/BRD/JLCPCB/example-assembly/example-BOM.csv'
 	alias oass='xdg-open /media/nff/HOTdata/EAGLE/BRD/JLCPCB/example-assembly/example-assembly.csv'

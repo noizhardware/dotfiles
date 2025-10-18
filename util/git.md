@@ -93,6 +93,13 @@ This is a safe and easy way to rollback to a previous state. No history is destr
 ~~~~
 but I never tested it
 
+
+## revert single file to a specific commit
+with `git log` you will see each commit have their SHA-1 checksum
+use the checksum to revert a file;
+git restore --source b6a70245290dc470e0e6a1fd3d30e98a34cad731 geld.ods
+
+
 ## Remote
 	push a local repo to a remote server
 	`git remote add origin https://github.com/w3schools-test/hello-world.git`
