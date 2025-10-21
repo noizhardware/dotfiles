@@ -188,8 +188,9 @@
 	, VolumeDown
 	. VolumeUp
 	n @newfile
-	pgup (macro M-x $power-menu-time u $power-menu-time s) ;; sleep
-	pgdn (macro M-x $power-menu-time u $power-menu-time h) ;; hybernate
+	;;pgup (macro M-x $power-menu-time u $power-menu-time s) ;; sleep
+	;;pgdn (macro M-x $power-menu-time u $power-menu-time h) ;; hibernate
+	pgdn (macro C-A-t $menu-time h i b ent) ;; hibernate
 )
 
 (deflayermap (tabnums)
