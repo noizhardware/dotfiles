@@ -1,7 +1,7 @@
 # usage: put `source /media/nff/RED/Work/git/dotfiles/linuxMint/alias01.sh` in `~/.bashrc` (and `~/.profile`) ; use `cd $HOME to go there`
 echo the Ghostless Shell
 echo $BASH_SOURCE
-echo 2025j18-1938
+echo 2025j21-1955
 
 # file system
 	alias lsa='ls -a'
@@ -28,6 +28,7 @@ echo 2025j18-1938
 	#alias speed='speedtest-cli | grep -e Download -e Upload -e ms'
 	alias speed='curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python3'
 	alias usbs='/media/nff/RED/Work/git/dotfiles/linuxMint/usbserial.sh'
+
 ## POWER
 	alias off='poweroff'
 	alias sus='systemctl suspend'
@@ -43,7 +44,6 @@ echo 2025j18-1938
 		# sudo apt install lm-sensors
 
 
-
 # PROGRAMS quick launch
 	alias kan='sudo ~/apps/kanata --cfg /media/nff/RED/Work/git/dotfiles/kanata/kanata00.kbd'
 	alias ka='/media/nff/RED/s/c/kalk/kalk'
@@ -54,11 +54,14 @@ echo 2025j18-1938
 	alias kg='/media/nff/RED/s/c/alk/alk /media/nff/HOTdata/LOGS/alc.MASS -kg 720'
 	alias bonzo='/media/nff/HOTdata/shaderz/Bonzomatic/bonzomatic /media/nff/HOTdata/shaderz/Bonzomatic/config.json'
 	alias bf='(cd /opt/betaflight/betaflight-configurator && exec sudo ./betaflight-configurator)'
+
+
 # PATHs quick CD
 	alias src='cd /media/nff/RED/s/c/'
 	alias log='cd /media/nff/HOTdata/LOGS'
 	alias dot='cd /media/nff/RED/Work/git/dotfiles'
 	alias root='cd /'
+
 
 # night light
 	alias lic='gsettings set org.cinnamon.settings-daemon.plugins.color night-light-enabled false'
@@ -68,7 +71,9 @@ echo 2025j18-1938
 # opening folders in file manager window
 	alias dld='xdg-open ~/Downloads'
 	alias uu='xdg-open /media/nff/RED/uu'
+	alias muk='xdg-open /media/nff/RED/MUCKE'
 	alias dat='xdg-open /media/nff/RED/Work/electronics/datasheet/_components'
+
 
 # opening files
 	alias oge='xdg-open /media/nff/HOTdata/LOGS/GELD.ods'
