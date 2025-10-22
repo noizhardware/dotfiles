@@ -1,7 +1,7 @@
 ;; https://github.com/jtroo/kanata/blob/main/docs/config.adoc
 ;; key names https://github.com/jtroo/kanata/blob/main/parser/src/keys/mod.rs
 ;; created 2025a18-1534
-;; current 2025j04-1445
+;; current 2025j22-1026
 
 ;; load with;
 ;; 	(include R:\Work\git\dotfiles\kanata\kanata00.kbd)
@@ -301,6 +301,7 @@
 	tab (macro mlft mlft) ;; double click
 	q mmtp ;; MClick tap
 	w (tap-hold 1 200 lctl lctl) ;; hold Ctrl ; for EAGLE panning
+	e (macro C-r 100 C-f) ;; ratsnest&route for EAGLE
 )
 
 (deflayermap (browser)

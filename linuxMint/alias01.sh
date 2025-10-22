@@ -60,6 +60,7 @@ echo 2025j21-1955
 	alias src='cd /media/nff/RED/s/c/'
 	alias log='cd /media/nff/HOTdata/LOGS'
 	alias dot='cd /media/nff/RED/Work/git/dotfiles'
+	alias site='cd /media/nff/RED/Work/git/noizhardware.github.io'
 	alias root='cd /'
 
 
@@ -73,6 +74,7 @@ echo 2025j21-1955
 	alias uu='xdg-open /media/nff/RED/uu'
 	alias muk='xdg-open /media/nff/RED/MUCKE'
 	alias dat='xdg-open /media/nff/RED/Work/electronics/datasheet/_components'
+	alias apn='xdg-open /media/nff/RED/Work/git/electronics-app-notes'
 
 
 # opening files
