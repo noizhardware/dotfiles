@@ -1,7 +1,7 @@
 # usage: put `source /media/nff/RED/Work/git/dotfiles/linuxMint/alias01.sh` in `~/.bashrc` (and `~/.profile`) ; use `cd $HOME to go there`
 echo the Ghostless Shell
 echo $BASH_SOURCE
-echo 2025j21-1955
+echo 2025j25-1323
 
 # file system
 	alias lsa='ls -a'
@@ -22,6 +22,7 @@ echo 2025j21-1955
 
 #SYSTEM
 	alias version='lsb_release -a'
+	alias term='echo $TERM'
 	alias sys='inxi -Fxxxrzc0 --usb ; mokutil --sb-state ' # show all system info
 	alias temp='sensors'
 	alias pin='ping example.com'
@@ -54,6 +55,8 @@ echo 2025j21-1955
 	alias kg='/media/nff/RED/s/c/alk/alk /media/nff/HOTdata/LOGS/alc.MASS -kg 720'
 	alias bonzo='/media/nff/HOTdata/shaderz/Bonzomatic/bonzomatic /media/nff/HOTdata/shaderz/Bonzomatic/config.json'
 	alias bf='(cd /opt/betaflight/betaflight-configurator && exec sudo ./betaflight-configurator)'
+	alias eth='python3 /media/nff/RED/s/py/eth/eth.py'
+	alias zk='/media/nff/RED/s/c/zk0/zk0 /media/nff/RED/s/c/zk0/test'
 
 
 # PATHs quick CD
@@ -81,6 +84,7 @@ echo 2025j21-1955
 	alias oge='xdg-open /media/nff/HOTdata/LOGS/GELD.ods'
 	alias oin='xdg-open /media/nff/RED/!documents/contabilita/acc_2025/incoming.ods'
 	alias oacc='xdg-open /media/nff/RED/!documents/contabilita/acc_2025/income2025.ods'
+	alias ofor='xdg-open /media/nff/RED/!documents/contabilita/forfettaria2025.ods'
 	alias ost='xdg-open /media/nff/RED/Work/minijack/mmix/BOMs/_stock.ods'
 	alias oml='xdg-open /media/nff/RED/Work/minijack/mailinglist.ods'
 	alias opri='xdg-open /media/nff/RED/Work/minijack/mmix/prices.ods'
