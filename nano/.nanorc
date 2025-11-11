@@ -1,0 +1,34 @@
+## 2025j30-1609
+## use `alias nano="cp /media/nff/RED/Work/git/dotfiles/nano/.nanorc $HOME/.nanorc;nano"`
+## use `showkey -a` in terminal, and press a key combo to see how it's represented
+
+unbind ^X all
+
+bind ^Q exit all
+bind ^C copy main
+bind ^V paste all
+bind ^X cut main
+bind ^S savefile main
+bind M-s writeout main ## save As
+bind ^F whereis all
+bind ^H replace main
+bind ^Z undo main
+bind ^Y redo main
+
+include /media/nff/RED/Work/git/dotfiles/nano/md.nanorc
+
+set tabsize 4
+#set guidestripe 80
+
+
+## ciaoo
+## ciaoo
+## ciaoo
+##bind ^x cut main
+##bind ^v uncut main
+##bind ^z undo main
+##bind ^y redo main
+##bind ^f whereis main
+##bind F3 findnext main
+##bind ^h replace main
+##set linenumbers

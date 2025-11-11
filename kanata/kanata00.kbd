@@ -1,7 +1,7 @@
 ;; https://github.com/jtroo/kanata/blob/main/docs/config.adoc
 ;; key names https://github.com/jtroo/kanata/blob/main/parser/src/keys/mod.rs
 ;; created 2025a18-1534
-;; current 2025j22-1026
+;; current 2025k11-1551
 
 ;; load with;
 ;; 	(include R:\Work\git\dotfiles\kanata\kanata00.kbd)
@@ -70,6 +70,7 @@
 		d (multi f24 (tap-hold $tap-time $hold-time d (macro M-d))) ;; hold d >> Win+D (desktop)
 		w (multi f24 (tap-hold $tap-time $hold-time w (macro C-w))) ;; hold w >> Ctrl+W (close tab)
 		;;lalt (multi f24 (tap-hold $tap-time $hold-time (layer-switch $flayer) lalt)) ;; hold lalt=lalt / tap=Flayer
+		k (multi f24 (tap-hold $tap-time $hold-time k (macro C-A-t $menu-time k a ent))) ;; hold k >> open kalk in terminal
 
 	;;; TAP-DANCE
 		;;s (tap-dance $tap-tapdance (s (macro C-s)))
@@ -99,7 +100,11 @@
 	(x d c) (macro C-x) $chord-time first-release (blank)
 	(c f v) (macro C-c) $chord-time first-release (blank)
 	(v g b) (macro C-v) $chord-time first-release (blank)
-	(z s x) (macro C-p 50 z k Digit0 / t e s t / t e m p l a t e . m d 50 ent) $chord-time first-release (blank)
+
+
+	;;(z s x) (macro C-p 50 z k Digit0 / z e t / t e m p l a t e . m d 50 ent) $chord-time first-release (blank)
+	(z s x) (macro C-A-t 500 z k k ent n a n o spc f l e e t i n g . t x t 50 ent) $chord-time first-release (blank)
+	(lshift a z) (macro C-s 50 C-q 50 q q ent) $chord-time first-release (blank)
 	
 	;; maus
 	(esc 1) mlft $chord-time first-release (blank)
@@ -116,6 +121,8 @@
 	;;(q CapsLock) ent $chord-time first-release (blank)
 	(bspc `) (macro A-F4) $chord-time first-release (blank)
 	(3 4 5) (macro A-F4) $chord-time first-release (blank)
+	(ArrowDown ArrowRight) (macro C-A-ArrowRight) $chord-time first-release (blank) ;; change workspace right
+	(ArrowLeft ArrowDown) (macro C-A-ArrowLeft) $chord-time first-release (blank) ;; change workspace left
 	
 	;; special chars
 	(a q) (unicode à) $chord-time first-release (blank)
