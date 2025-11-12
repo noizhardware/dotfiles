@@ -1,7 +1,7 @@
 # usage: put `source /media/nff/RED/Work/git/dotfiles/linuxMint/alias01.sh` in `~/.bashrc` (and `~/.profile`) ; use `cd $HOME to go there`
 echo the Ghostless Shell
 echo $BASH_SOURCE
-echo 2025k05-2210
+echo 2025k12-2128
 
 ## file system
 	alias lsa='ls -a'
@@ -65,10 +65,13 @@ echo 2025k05-2210
 	alias bonzo='/media/nff/HOTdata/shaderz/Bonzomatic/bonzomatic /media/nff/HOTdata/shaderz/Bonzomatic/config.json'
 	alias bf='(cd /opt/betaflight/betaflight-configurator && exec sudo ./betaflight-configurator)'
 	alias eth='python3 /media/nff/RED/s/py/eth/eth.py'
+
+## ZK0
 	alias zk='/media/nff/RED/s/c/zk0/zk0 /media/nff/HOTdata/LOGS/zet'
 		alias zkk='cd /media/nff/HOTdata/LOGS/zet'
 		# alias tt='nano template.md'
 		alias fle='nano /media/nff/HOTdata/LOGS/zet/fleeting.txt'
+		alias nn='/media/nff/HOTdata/LOGS/zet/new.sh'
 
 ## PATHs quick CD
 	alias src='cd /media/nff/RED/s/c/'
