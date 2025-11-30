@@ -1,0 +1,49 @@
+/* https://facelessuser.github.io/MarkdownPreview/usage/ */
+{
+	/*"github_mode": "gfm",*/
+
+	"js": [
+        // "R:/htmlExports/css/enableCheckboxes.js"
+        "/media/nff/RED/htmlExports/css/enableCheckboxes.js"
+
+    ],
+
+	/*
+		Sets the default css file to embed in the HTML:
+		default - Use the builtin CSS or github CSS, depending on parser config (markdown.css or github.css)
+		other - Set an absolute path or url to any css file
+	*/
+	/*"css": "default",*/
+    // "css": "R:/htmlExports/css/ghexport.css",
+	"css": "/media/nff/RED/htmlExports/css/ghexport.css",
+	/*
+		Allow CSS overrides
+		true - a .css file with the same name as the markdown file, in the same folder, will override the default css
+		false - Matching files ignored
+	*/
+	"allow_css_overrides": true,
+
+	    /*
+        Enables a post process to inject header ids to ensure hrefs to headers work
+    */
+    "github_inject_header_ids": false,
+
+        /*
+        Sets HTML output to a simple form:
+            - No head
+            - No body tags
+            - ids, classes, and style are stripped out
+            - Just bare minimum HTML tags and attributes
+            - extension modifications included
+    */
+    "html_simple": false,
+
+    /* questo serviva per togliere i blob sui capitoli, ma toglieva anche le checkboxes clickabili */
+    /*"markdown_extensions": [
+        {
+            "markdown.extensions.toc": {
+                "permalink": false
+            }
+        }
+    ]*/
+}

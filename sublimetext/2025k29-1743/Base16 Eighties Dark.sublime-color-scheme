@@ -1,0 +1,82 @@
+// Documentation at https://www.sublimetext.com/docs/color_schemes.html
+{
+	"variables":
+	{
+		"safetyOrange" : "#ff7900",
+		"yelloh" : "#f8c97b",
+		"purpel" : "#c79bcc",
+	},
+	"globals":
+	{
+		// matching brackets
+		"brackets_foreground": "var(safetyOrange)",
+		"brackets_options": "var(safetyOrange)",
+        "bracket_contents_foreground": "var(safetyOrange)"
+	},
+	"rules":
+	[
+		{
+			"name" : "Lists",
+			"scope" : "markup.list",
+			"foreground" : "#eeefff",
+			"caret" : "#ff7900",
+		},
+		{
+			"name" : "Link Url",
+			"scope" : "meta.link",
+			"foreground" : "var(safetyOrange)",
+		},
+		{
+			"name" : "Invalid",
+			"scope" : "invalid.illegal",
+			"background" : "white",
+			"foreground" : "red",
+		},
+		/*{
+			"name" : "Wikilink",
+			"scope" : "markdown.extensions.wikilinks",
+			"foreground" : "safetyOrange",
+		},*/
+		{
+			"name" : "Wikilink",
+			"scope" : "wikilink, punctuation.definition.wikilink",
+			"foreground" : "var(safetyOrange)",
+		},
+		/*{
+			"name": "Markdown: Link Description",
+			"scope": "(meta.image.inline.description.markdown, meta.image.reference.description.markdown, meta.link.inline.description.markdown, meta.link.reference.description.markdown, meta.link.reference.literal.description.markdown, meta.link.reference.wiki.description.markdown) - comment - constant - entity - punctuation - string - markup.strikethrough",
+			"foreground": "var(safetyOrange)",
+		},*/
+		{
+			"name": "Headings",
+			"scope": "markup.heading punctuation.definition.heading, entity.name.section",
+			"foreground": "#7596b7"
+		},
+		{
+			"name": "List Punctuation",
+			"scope": "markup.list.numbered.bullet, markup.list.numbered.bullet, punctuation.definition.list_item",
+			"foreground": "white"
+		},
+		{
+			"name": "Bold",
+			"scope": "markup.bold, punctuation.definition.bold",
+			"foreground": "var(yelloh)"
+		},
+		{
+			"name": "Italic",
+			"scope": "markup.italic, punctuation.definition.italic",
+			"foreground": "var(purpel)"
+		},
+		{
+			"name": "Link Text",
+			"scope": "meta.image, meta.link, punctuation.definition.meta.image, punctuation.definition.meta.link",
+			"foreground": "var(safetyOrange)"
+		},
+		{
+			"name": "Link Url",
+			"scope": "markup.underline.link",
+			"foreground": "var(safetyOrange)"
+		},
+
+	]
+}

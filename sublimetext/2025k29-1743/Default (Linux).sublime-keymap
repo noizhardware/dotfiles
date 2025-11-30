@@ -1,0 +1,20 @@
+[
+	{ "keys": ["alt+w"], "command": "prompt_select_workspace" },
+	
+	{ "keys": ["ctrl+alt+up"], "command": "select_lines", "args": {"forward": false} },
+	{ "keys": ["ctrl+alt+down"], "command": "select_lines", "args": {"forward": true} },
+
+	// imported from win
+		{ "keys": ["ctrl+shift+m"], "command": "markdown_preview", "args": {"target": "browser", "parser":"markdown"} },
+		// { "keys": ["alt+enter"], "command": "open_url_under_cursor" },
+		{"keys": ["shift+enter"], "command": "toggle_markdown_checkbox"},
+		{"keys": ["shift+backspace"], "command": "tilde_markdown_checkbox"},
+		{"keys": ["alt+q"], "command": "delete_and_archive_to_file"},
+		// {"keys": ["alt+a"], "command": "delete_and_archive_to_file_no_date"},
+		{"keys": ["ctrl+alt+d"], "command": "today_flow"},
+		{"keys": ["alt+\\"], "command": "toggle_raw_line_edit"},
+		{"keys": ["alt+d"], "command": "toggle_tab_scrolling"},
+
+		{"keys": ["ctrl+enter"], "command": "jump_to_md_link"},
+		{"keys": ["alt+enter"], "command": "open_url_under_cursor"},
+]

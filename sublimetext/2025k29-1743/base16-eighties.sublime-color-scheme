@@ -1,0 +1,19 @@
+// Documentation at https://www.sublimetext.com/docs/color_schemes.html
+// created	2024j31-1021
+// last		2024j31-1021
+{
+	"variables":
+	{
+	},
+	"globals":
+	{
+	},
+	"rules":
+	[
+		{
+            "name": "Lists",
+            "scope": "markup.list",
+            "foreground": "#f2f2f2"
+        },
+	]
+}

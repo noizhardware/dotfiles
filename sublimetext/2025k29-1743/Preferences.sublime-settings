@@ -1,0 +1,29 @@
+// Settings in here override those in "Default/Preferences.sublime-settings",
+// and are overridden in turn by syntax-specific settings.
+{
+	"variables":
+	{
+		"safetyOrange" : "#ff7900",
+	},
+	"word_wrap": "true",
+	"theme": "Adaptive.sublime-theme",
+	"color_scheme": "Packages/User/base16-eightiesBAO.tmTheme",
+	"font_size": 13,
+	"ignored_packages":
+	[
+		"Vintage",
+	],
+	"index_files": false,
+	
+	// "caret_style": "smooth",
+	"caret_style": "smooth", // "smooth", "phase", "blink" and "solid"
+	"caret_blink_interval": 0.85, // 0 = use default OS settings
+	
+	"always_show_minimap_viewport": true,
+
+	"highlight_modified_tabs": true,
+	"accent_tint_modifier": "var(safetyOrange)",
+	"show_tab_close_buttons": false,
+	"hide_new_tab_button": true,
+	"enable_tab_scrolling": true,
+}

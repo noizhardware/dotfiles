@@ -1,7 +1,7 @@
 ;; https://github.com/jtroo/kanata/blob/main/docs/config.adoc
 ;; key names https://github.com/jtroo/kanata/blob/main/parser/src/keys/mod.rs
 ;; created 2025a18-1534
-;; current 2025k11-1551
+;; current 2025k28-2004
 
 ;; load with;
 ;; 	(include R:\Work\git\dotfiles\kanata\kanata00.kbd)
@@ -12,6 +12,10 @@
 	process-unmapped-keys yes ;; so I don't need to fill (defsrc)
 	concurrent-tap-hold yes ;; for chords
 	;;danger-enable-cmd yes
+
+	;; linux only
+	;;linux-unicode-u-code v
+	linux-unicode-termination space
 )
 
 (defvar
@@ -70,7 +74,7 @@
 		d (multi f24 (tap-hold $tap-time $hold-time d (macro M-d))) ;; hold d >> Win+D (desktop)
 		w (multi f24 (tap-hold $tap-time $hold-time w (macro C-w))) ;; hold w >> Ctrl+W (close tab)
 		;;lalt (multi f24 (tap-hold $tap-time $hold-time (layer-switch $flayer) lalt)) ;; hold lalt=lalt / tap=Flayer
-		k (multi f24 (tap-hold $tap-time $hold-time k (macro C-A-t $menu-time k a ent))) ;; hold k >> open kalk in terminal
+		k (multi f24 (tap-hold $tap-time $hold-time k (macro C-A-t $menu-time k a l ent))) ;; hold k >> open kalk in terminal
 
 	;;; TAP-DANCE
 		;;s (tap-dance $tap-tapdance (s (macro C-s)))
@@ -102,9 +106,11 @@
 	(v g b) (macro C-v) $chord-time first-release (blank)
 
 
-	;;(z s x) (macro C-p 50 z k Digit0 / z e t / t e m p l a t e . m d 50 ent) $chord-time first-release (blank)
-	(z s x) (macro C-A-t 500 z k k ent n a n o spc f l e e t i n g . t x t 50 ent) $chord-time first-release (blank)
-	(lshift a z) (macro C-s 50 C-q 50 q q ent) $chord-time first-release (blank)
+	;; zk0
+		;;(z s x) (macro C-p 50 z k Digit0 / z e t / t e m p l a t e . m d 50 ent) $chord-time first-release (blank)
+		;; (z s x) (macro C-A-t 500 z k k ent n a n o spc f l e e t i n g . t x t 50 ent) $chord-time first-release (blank)
+		(z s x) (macro C-A-t 500 f l e ent) $chord-time first-release (blank)
+		(lshift a z) (macro C-s 50 C-q 50 q q ent) $chord-time first-release (blank)
 	
 	;; maus
 	(esc 1) mlft $chord-time first-release (blank)
@@ -126,8 +132,8 @@
 	
 	;; special chars
 	(a q) (unicode à) $chord-time first-release (blank)
-	(e 3) (unicode è) $chord-time first-release (blank)
-	(e 2) (unicode é) $chord-time first-release (blank)
+	(e 2) (unicode è) $chord-time first-release (blank)
+	(e 3) (unicode é) $chord-time first-release (blank)
 	(i 9) (unicode ì) $chord-time first-release (blank)
 	(o 0) (unicode ò) $chord-time first-release (blank)
 	(u 8) (unicode ù) $chord-time first-release (blank)
@@ -284,8 +290,10 @@
 (deflayermap (chars)
 	grv XX ;; no-op
 	a (unicode à)
-	w (unicode è)
-	e (unicode é)
+	3 (unicode é)
+	;;w (macro C-S-u 50 e 8 spc)
+	;;e (macro C-S-u 50 e 9 spc)
+	e (unicode è)
 	r (unicode €)
 	u (unicode ù)
 	i (unicode ì)

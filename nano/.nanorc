@@ -1,4 +1,4 @@
-## 2025j30-1609
+## 2025k21-1217
 ## use `alias nano="cp /media/nff/RED/Work/git/dotfiles/nano/.nanorc $HOME/.nanorc;nano"`
 ## use `showkey -a` in terminal, and press a key combo to see how it's represented
 
@@ -19,6 +19,7 @@ include /media/nff/RED/Work/git/dotfiles/nano/md.nanorc
 
 set tabsize 4
 #set guidestripe 80
+set softwrap
 
 
 ## ciaoo

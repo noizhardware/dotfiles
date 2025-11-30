@@ -1,17 +1,17 @@
 # usage: put `source /media/nff/RED/Work/git/dotfiles/linuxMint/alias01.sh` in `~/.bashrc` (and `~/.profile`) ; use `cd $HOME to go there`
 echo the Ghostless Shell
 echo $BASH_SOURCE
-echo 2025k12-2128
+echo 2025k30-2047
 
 ## file system
 	alias lsa='ls -a'
 	alias lsd='ls -d */'
 	#alias disk='df -h | grep Size && df -h | grep sda1'
-	alias disk='df -h'
+	alias dsk='df -h'
 	alias siz='du -sbh *'
-	alias sizd='du -sh' # size Directory
-	alias here='pwd'
-	killdir(){
+	alias sid='du -sh' # size Directory
+	alias hre='pwd'
+	kdr(){ # killdir
 		rm -r "$1"
 	}
 
@@ -31,12 +31,17 @@ echo 2025k12-2128
 	alias term='echo $TERM'
 	alias sys='inxi -Fxxxrzc0 --usb ; mokutil --sb-state ' # show all system info
 	alias temp='sensors'
+	# alias temp='xsensors'
 		# sudo apt install lm-sensors
 	alias pin='ping example.com'
 	#alias speed='speedtest-cli | grep -e Download -e Upload -e ms'
 	#alias speed='curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python3'
 	alias speed='python3 /media/nff/RED/Work/git/dotfiles/py/speedtest.py'
 	alias usbs='/media/nff/RED/Work/git/dotfiles/linuxMint/usbserial.sh'
+	#alias read='xrandr --output HDMI-0 --gamma 1:1:1 --brightness 0.27 --set CTM '1431655765,0,1431655765,0,1431655765,0,1431655765,0,1431655765,0,1431655765,0,1431655765,0,1431655765,0,1431655765,0'' # reading light brightness
+	# alias read='xrandr --output HDMI-0 --brightness 0.27' # reading light brightness
+	alias rea='nvidia-settings -a '[DPY:HDMI-0]/DigitalVibrance=-1024' && xrandr --output HDMI-0 --brightness 0.32'
+	alias ren='nvidia-settings -a '[DPY:HDMI-0]/DigitalVibrance=0' && xrandr --output HDMI-0 --brightness 1 ; lic ; lic ; sleep .5 ; liw ; liw'
 
 ## POWER
 	alias off='poweroff'
@@ -46,7 +51,7 @@ echo 2025k12-2128
 	alias rst='systemctl reboot'
 
 ## META
-	alias refresh='source ~/.bashrc'
+	alias rld='source ~/.bashrc'
 	alias hh='cat /media/nff/RED/Work/git/dotfiles/linuxMint/alias01.sh'
 	alias eda='nano /media/nff/RED/Work/git/dotfiles/linuxMint/alias01.sh'
 	alias qq='exit'
@@ -56,7 +61,7 @@ echo 2025k12-2128
 ## PROGRAMS quick launch
 	alias nano="cp /media/nff/RED/Work/git/dotfiles/nano/.nanorc $HOME/.nanorc;nano"
 	alias kan='sudo ~/apps/kanata --cfg /media/nff/RED/Work/git/dotfiles/kanata/kanata00.kbd'
-	alias ka='/media/nff/RED/s/c/kalk/kalk'
+	alias kal='/media/nff/RED/s/c/kalk/kalk'
 	alias kri='~/apps/krita-5.2.11-x86_64.AppImage'
 	alias mass='/media/nff/RED/s/c/mass/mass'
 	alias alk='/media/nff/RED/s/c/alk/alk /media/nff/HOTdata/LOGS/alc.MASS'
@@ -65,6 +70,8 @@ echo 2025k12-2128
 	alias bonzo='/media/nff/HOTdata/shaderz/Bonzomatic/bonzomatic /media/nff/HOTdata/shaderz/Bonzomatic/config.json'
 	alias bf='(cd /opt/betaflight/betaflight-configurator && exec sudo ./betaflight-configurator)'
 	alias eth='python3 /media/nff/RED/s/py/eth/eth.py'
+	alias plan='/media/nff/RED/s/bash/plan.sh'
+	alias wea='curl wttr.in/bedogno'
 
 ## ZK0
 	alias zk='/media/nff/RED/s/c/zk0/zk0 /media/nff/HOTdata/LOGS/zet'
@@ -99,7 +106,7 @@ echo 2025k12-2128
 	alias oge='xdg-open /media/nff/HOTdata/LOGS/GELD.ods'
 	alias oin='xdg-open /media/nff/RED/!documents/contabilita/acc_2025/incoming.ods'
 	alias oacc='xdg-open /media/nff/RED/!documents/contabilita/acc_2025/income2025.ods'
-	alias ofor='xdg-open /media/nff/RED/!documents/contabilita/forfettaria2025.ods'
+	alias ofor='xdg-open /media/nff/RED/!documents/contabilita/forfettaria2026.ods'
 	alias ost='xdg-open /media/nff/RED/Work/minijack/mmix/BOMs/_stock.ods'
 	alias oml='xdg-open /media/nff/RED/Work/minijack/mailinglist.ods'
 	alias opri='xdg-open /media/nff/RED/Work/minijack/mmix/prices.ods'

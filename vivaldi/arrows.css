@@ -1,0 +1,60 @@
+/* ===== Make Back / Forward active icons color #f26722 ===== */
+
+/* 1) Inline SVG icons and their child shapes (common case) */
+.button-toolbar.back:not(.disabled) svg,
+.button-toolbar.forward:not(.disabled) svg,
+.toolbar-button.back:not(.disabled) svg,
+.toolbar-button.forward:not(.disabled) svg {
+  fill: #f26722 !important;
+  color: #f26722 !important;      /* some icons inherit from color */
+}
+
+/* SVG children: path, rect, circle, g, etc. */
+.button-toolbar.back:not(.disabled) svg * ,
+.button-toolbar.forward:not(.disabled) svg * ,
+.toolbar-button.back:not(.disabled) svg * ,
+.toolbar-button.forward:not(.disabled) svg * {
+  fill: #f26722 !important;
+  stroke: #f26722 !important;     /* for stroked icons */
+  color: #f26722 !important;
+}
+
+/* 2) Icons drawn via mask / -webkit-mask or as SVG used as background-image */
+.button-toolbar.back:not(.disabled),
+.button-toolbar.forward:not(.disabled),
+.toolbar-button.back:not(.disabled),
+.toolbar-button.forward:not(.disabled) {
+  /* If the icon is a mask, set background-color so mask shows this color */
+  background-color: #f26722 !important;
+  -webkit-mask-size: contain !important;
+  -webkit-mask-repeat: no-repeat !important;
+  -webkit-mask-position: center !important;
+}
+
+/* 3) If Vivaldi uses an <i> or .icon element with background-image */
+.button-toolbar.back:not(.disabled) .icon,
+.button-toolbar.forward:not(.disabled) .icon,
+.toolbar-button.back:not(.disabled) .icon,
+.toolbar-button.forward:not(.disabled) .icon {
+  background-color: #f26722 !important;
+  /* Try forcing background-image removal so the color shows (if safe) */
+  background-image: none !important;
+}
+
+/* 4) Fallback: tint the whole button's contents (works if icon is a raster but not ideal) */
+.button-toolbar.back:not(.disabled),
+.button-toolbar.forward:not(.disabled),
+.toolbar-button.back:not(.disabled),
+.toolbar-button.forward:not(.disabled) {
+  filter: none !important; /* clear other filters */
+}
+
+/* Optional: hover/active states (match the color) */
+.button-toolbar.back:not(.disabled):hover svg,
+.button-toolbar.forward:not(.disabled):hover svg,
+.toolbar-button.back:not(.disabled):hover svg,
+.toolbar-button.forward:not(.disabled):hover svg {
+  fill: #f26722 !important;
+  stroke: #f26722 !important;
+  color: #f26722 !important;
+}

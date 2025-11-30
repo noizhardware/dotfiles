@@ -1,0 +1,161 @@
+%YAML 1.2
+---
+name: J
+file_extensions: [ijs, ijt, j]
+scope: source.j
+
+variables:
+  validname: '[A-Za-z][A-Za-z_0-9]*'
+  closeexpdef: '^\s*\)\s*$'
+  noinflect: '(?![.:])'
+
+contexts:
+  main:
+    - include: comments
+    - include: strings
+    - include: expdef
+    - include: noundef
+    - include: notes
+    - include: note
+    - include: numbers
+    - include: nouns
+    - include: verbs
+    - include: adverbs
+    - include: conjunctions
+    - include: globals
+    - include: locals
+    - include: trailingws
+
+  # multi-line explicit verb/adverb/conjunction definition
+  expdef:
+    - match: '\b([1-4]|13|adverb|conjunction|verb|monad|dyad)\s+(:\s*0|define)\b'
+      scope: punctuation.definition.explicit.block.begin.j
+      push:
+        - meta_content_scope: definition.explicit.block.j
+        - include: comments
+        - include: strings
+        - include: numbers
+        - include: nouns
+        - include: verbs
+        - include: adverbs
+        - include: conjunctions
+        - include: globals
+        - include: locals
+        - include: controls
+        - include: expargs
+        - include: trailingws
+        - match: '{{closeexpdef}}'
+          scope: punctuation.definition.explicit.block.end.j
+          pop: true
+
+  comments:
+    - match: '\bNB\..*$'
+      scope: comment.line.j
+
+  strings:
+    - match: "'"
+      captures:
+        0: punctuation.definition.string.begin.j
+      push:
+        - meta_scope: string.quoted.j
+        - match: "(')|(\n)"
+          captures:
+            1: punctuation.definition.string.end.j
+            2: invalid.illegal.unclosed-string.j
+          pop: true
+
+  trailingws:
+    - match: '(\s)+\n'
+      scope: invalid.deprecated.trailing-whitespace
+
+  numbers:
+    - match: '\b[_0-9][_0-9\.a-zA-Z]*\b{{noinflect}}'
+      scope: constant.numeric.j
+
+  nouns:
+    - match: '\b(_\.|a\.|a:){{noinflect}}'
+      scope: keyword.other.noun.j
+
+  verbs:
+      # numbers with inflection and double inflections
+    - match: '((_?[1-9]:)|(\b0:)|({::)){{noinflect}}'
+      scope: keyword.operator.verb.j
+      # letters with inflection
+    - match: '\b((p\.\.)|([AcCeEiIjLopr]\.)|([ipqsux]:)){{noinflect}}'
+      scope: keyword.operator.verb.j
+      # symbols with . inflection
+    - match: '([<>+*\-%$|,#{}^~"?]\.){{noinflect}}'
+      scope: keyword.operator.verb.j
+      # symbols with : inflection
+    - match: '([<>+*\-%$|,#{};~"_/\\\[]:){{noinflect}}'
+      scope: keyword.operator.verb.j
+      # symbols with no inflection
+    - match: '([<>+*\-%$|,#{!;^=?\[\]]){{noinflect}}'
+      scope: keyword.operator.verb.j
+
+  adverbs:
+      # letters with inflection
+    - match: '\b(([bfMt]\.)|(t:)){{noinflect}}'
+      scope: keyword.operator.adverb.j
+      # symbols with and without . inflection
+    - match: '(([/\\]\.)|([~/\\}])){{noinflect}}'
+      scope: keyword.operator.adverb.j
+
+  conjunctions:
+      # letters with inflection
+    - match: '\b(([dDHT]\.)|([DLS]:)){{noinflect}}'
+      scope: keyword.operator.conjunction.j
+      # symbols with double inflection, . or : inflection or no inflection
+    - match: '((&\.:)|([&@!;]\.)|([&@!`^]:)|([&@`"])){{noinflect}}'
+      scope: keyword.operator.conjunction.j
+      # . or : with or without inflection (need leading whitespace)
+    - match: '\s(([.:][.:])|([.:])){{noinflect}}'
+      scope: keyword.operator.conjunction.j
+
+  controls:
+    - match: '\b(if|do|else|elseif|end|for|select|case|fcase)\.{{noinflect}}'
+      scope: keyword.control.j
+    - match: '\b(assert|break|continue|return|while|whilst)\.{{noinflect}}'
+      scope: keyword.control.j
+    - match: '\b(throw|try|catch|catchd|catcht)\.{{noinflect}}'
+      scope: keyword.control.j
+    - match: '\b(for_{{validname}}|goto_{{validname}}|label_{{validname}})\.{{noinflect}}'
+      scope: keyword.control.j
+
+  globals:
+    - match: '=:'
+      scope: copula.global.j
+
+  locals:
+    - match: '=\.'
+      scope: copula.local.j
+
+  # argument identifiers within explicit definition blocks
+  expargs:
+    - match: '\b[nmuvxy](?![\w.:])'
+      scope: variable.parameter.j
+
+  # multi-line noun definition
+  noundef:
+    - match: '\b(0|noun)\s+(:\s*0|define)\b'
+      scope: punctuation.definition.string.block.begin.j
+      push:
+        - meta_content_scope: string.noun.j
+        - match: '{{closeexpdef}}'
+          scope: punctuation.definition.string.block.end.j
+          pop: true
+
+  # multi-line note
+  notes:
+    - match: ^\s*\bNote\b(?!\s*\=[:.])\s*[\'\d].*$
+      scope: punctuation.definition.comment.block.begin.j
+      push:
+        - meta_scope: comment.block.j
+        - match: '{{closeexpdef}}'
+          scope: punctuation.definition.comment.block.end.j
+          pop: true
+
+  # single-line note
+  note:
+    - match: \bNote\b(?!\s*\=[:.])\s*[\'\d].*$
+      scope: comment.line.j
