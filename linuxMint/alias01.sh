@@ -1,7 +1,7 @@
 # usage: put `source /media/nff/RED/Work/git/dotfiles/linuxMint/alias01.sh` in `~/.bashrc` (and `~/.profile`) ; use `cd $HOME to go there`
 echo the Ghostless Shell
 echo $BASH_SOURCE
-echo 2025k30-2047
+echo 2025w03-2329
 
 ## file system
 	alias lsa='ls -a'
@@ -14,6 +14,7 @@ echo 2025k30-2047
 	kdr(){ # killdir
 		rm -r "$1"
 	}
+	alias rmd=kdr
 
 ## PATH
 	export PATH="$PATH:/home/nff"
@@ -72,6 +73,10 @@ echo 2025k30-2047
 	alias eth='python3 /media/nff/RED/s/py/eth/eth.py'
 	alias plan='/media/nff/RED/s/bash/plan.sh'
 	alias wea='curl wttr.in/bedogno'
+	yt3(){ #youtube to mp3
+		# num=${1:-5} #uses the first argument, with a default value of 5 if it isn't provided
+		python3 /home/nff/Downloads/yt-dlp.py "$1" -t mp3
+	}
 
 ## ZK0
 	alias zk='/media/nff/RED/s/c/zk0/zk0 /media/nff/HOTdata/LOGS/zet'
