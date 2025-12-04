@@ -1,7 +1,7 @@
 # usage: put `source /media/nff/RED/Work/git/dotfiles/linuxMint/alias01.sh` in `~/.bashrc` (and `~/.profile`) ; use `cd $HOME to go there`
 echo the Ghostless Shell
 echo $BASH_SOURCE
-echo 2025w03-2329
+echo 2025w04-2237
 
 ## file system
 	alias lsa='ls -a'
@@ -77,6 +77,9 @@ echo 2025w03-2329
 		# num=${1:-5} #uses the first argument, with a default value of 5 if it isn't provided
 		python3 /home/nff/Downloads/yt-dlp.py "$1" -t mp3
 	}
+	# alias tor='/home/nff/Downloads/tor-browser/Browser/start-tor-browser'
+	# alias tor='(/home/nff/Downloads/tor-browser/Browser/start-tor-browser &) && exit'
+	alias tor='(/home/nff/Downloads/tor-browser/Browser/start-tor-browser &)'
 
 ## ZK0
 	alias zk='/media/nff/RED/s/c/zk0/zk0 /media/nff/HOTdata/LOGS/zet'
