@@ -1,3 +1,5 @@
+1005ha bios battery 2025w09-1751
+
 ## specs
 - Asus Eee PC x101ch
 - 1GB ram

@@ -28,7 +28,7 @@ class JumpToMdLinkCommand(sublime_plugin.TextCommand):
                 self.handle_link(inner)
                 return
 
-        sublime.status_message("No [[link]] under cursor.")
+        sublime.status_message("No [[wikiLink]] under cursor.")
 
     def handle_link(self, inner):
         window = self.view.window()
@@ -51,7 +51,7 @@ class JumpToMdLinkCommand(sublime_plugin.TextCommand):
 
         # CASE B: single-word filename [[file]]
         if " " in inner:
-            sublime.status_message("Not a single-word [[link]].")
+            sublime.status_message("Not a single-word [[wikiLink]].")
             return
 
         filename = inner + ".md"
