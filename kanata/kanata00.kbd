@@ -1,7 +1,7 @@
 ;; https://github.com/jtroo/kanata/blob/main/docs/config.adoc
 ;; key names https://github.com/jtroo/kanata/blob/main/parser/src/keys/mod.rs
 ;; created 2025a18-1534
-;; current 2025k28-2004
+;; current 2026a16-2132
 
 ;; load with;
 ;; 	(include R:\Work\git\dotfiles\kanata\kanata00.kbd)
@@ -66,7 +66,8 @@
 		;;z (multi f24 (tap-hold $tap-time $hold-time z (macro C-S-z))) ;; hold z >> Ctrl+Shift+Z (screenshot)
 		z (multi f24 (tap-hold $tap-time $hold-time z (macro S-PrintScreen))) ;; hold z >> Shift+Printscreen (screenshot LinuxMint)
 		t (multi f24 (tap-hold $tap-time $hold-time t (macro C-A-t))) ;; hold t >> Ctrl+Alt+T (terminal LinuxMint)
-		b (multi f24 (tap-hold $tap-time $hold-time b (macro C-S-a 500 ArrowDown 40 spc))) ;; hold b >> Ctrl+Shift+A (fullscreen screenshot) + autosave
+		;;b (multi f24 (tap-hold $tap-time $hold-time b (macro C-S-a 500 ArrowDown 40 spc))) ;; hold b >> Ctrl+Shift+A (fullscreen screenshot) + autosave
+		b (multi f24 (tap-hold $tap-time $hold-time b (macro C-S-a 700 ent))) ;; hold b >> Ctrl+Shift+A (fullscreen screenshot) + autosave
 		x (multi f24 (tap-hold $tap-time $hold-time x (macro C-x))) ;; hold x >> Ctrl+X (cut)
 		c (multi f24 (tap-hold $tap-time $hold-time c (macro C-c))) ;; hold c >> Ctrl+C (copy)
 		v (multi f24 (tap-hold $tap-time $hold-time v (macro C-v))) ;; hold v >> Ctrl+V (paste)
