@@ -1,4 +1,5 @@
-1005ha bios battery 2025w09-1751
+- change 1005ha bios battery 2025w09-1751
+- keyboard tasto `G`
 
 ## specs
 - Asus Eee PC x101ch
