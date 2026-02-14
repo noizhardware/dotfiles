@@ -1,7 +1,7 @@
 ;; https://github.com/jtroo/kanata/blob/main/docs/config.adoc
 ;; key names https://github.com/jtroo/kanata/blob/main/parser/src/keys/mod.rs
 ;; created 2025a18-1534
-;; current 2026a16-2132
+;; current 2026b14-1141
 
 ;; load with;
 ;; 	(include R:\Work\git\dotfiles\kanata\kanata00.kbd)
@@ -320,12 +320,29 @@
 	e (macro C-r 100 C-f) ;; ratsnest&route for EAGLE
 )
 
+(deffakekeys
+  ctrldown lctl
+  ctrlup   lctl
+)
+
+(defalias
+  ctrlclick (multi
+    (on-press-fakekey ctrldown press)
+    mlft
+    (on-release-fakekey ctrldown release)
+  )
+)
+
 (deflayermap (browser)
 	2 XX ;; no-op
 	esc C-w ;; close tab
 	1 C-pgup ;; tab left
 	3 C-pgdn ;; tab right
-	4 (macro C-(mltp)) ;; Ctrl + LClick
+	4 @ctrlclick
+	;;4 (multi lctl mlft) ;; Ctrl + LClick
+	;;4 (macro C-S-mlft) ;; Ctrl + LClick
+	;;4 (macro lctl 100 mlft 100) ;; Ctrl + LClick
+	;;4 (macro C-(mltp)) ;; Ctrl + LClick
 	;;4 (tap-hold 1 200 (macro lctl mlft) (macro lctl mlft)) 
 	;;4 C-mlft ;; Ctrl + LClick HOLD
 	tab A-left ;; back

@@ -1,6 +1,23 @@
 - change 1005ha bios battery 2025w09-1751
 - keyboard tasto `G`
 
+### boot to terminal only
+sudo nano /etc/default/grub
+change line
+GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"
+into
+GRUB_CMDLINE_LINUX_DEFAULT="text"
+then
+sudo update-grub
+sudo systemctl set-default multi-user.target
+reboot
+
+to start the GUI(untested)
+`sudo systemctl start lightdm`
+questo invece funzia, ma apre un desktop diverso forse...
+`startx`
+
+
 ## specs
 - Asus Eee PC x101ch
 - 1GB ram
