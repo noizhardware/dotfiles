@@ -1,7 +1,7 @@
 ;; https://github.com/jtroo/kanata/blob/main/docs/config.adoc
 ;; key names https://github.com/jtroo/kanata/blob/main/parser/src/keys/mod.rs
 ;; created 2025a18-1534
-;; current 2026b18-1400
+;; current 2026b18-1802
 
 ;; load with;
 ;; 	(include R:\Work\git\dotfiles\kanata\kanata00.kbd)
@@ -70,7 +70,8 @@
 		b (multi f24 (tap-hold $tap-time $hold-time b (macro C-S-a 700 ent))) ;; hold b >> Ctrl+Shift+A (fullscreen screenshot) + autosave
 		x (multi f24 (tap-hold $tap-time $hold-time x (macro C-x))) ;; hold x >> Ctrl+X (cut)
 		c (multi f24 (tap-hold $tap-time $hold-time c (macro C-c))) ;; hold c >> Ctrl+C (copy)
-		v (multi f24 (tap-hold $tap-time $hold-time v (macro C-S-v))) ;; hold v >> Ctrl+V (paste)
+		v (multi f24 (tap-hold $tap-time $hold-time v (macro C-v))) ;; hold v >> Ctrl+V (paste)
+		f (multi f24 (tap-hold $tap-time $hold-time f (macro C-S-v))) ;; hold f >> Ctrl+Shift+V (paste in terminal)
 		p (multi f24 (tap-hold $tap-time $hold-time p (macro C-p))) ;; hold p >> Ctrl+P (SublimeSearch)
 		d (multi f24 (tap-hold $tap-time $hold-time d (macro M-d))) ;; hold d >> Win+D (desktop)
 		w (multi f24 (tap-hold $tap-time $hold-time w (macro C-w))) ;; hold w >> Ctrl+W (close tab)
@@ -86,7 +87,7 @@
 		;; a (multi f24 (tap-hold $tap-time $hold-time a lsft))
 		;; s (multi f24 (tap-hold $tap-time $hold-time s lmet))
 		;;d (multi f24 (tap-hold $tap-time $hold-time d lalt))
-		f (multi f24 (tap-hold $tap-time $hold-time f lctl))
+		;;f (multi f24 (tap-hold $tap-time $hold-time f lctl))
 		j (multi f24 (tap-hold $tap-time $hold-time j rctl))
 		;;k (multi f24 (tap-hold $tap-time $hold-time k ralt))
 		;; l (multi f24 (tap-hold $tap-time $hold-time l rmet))
