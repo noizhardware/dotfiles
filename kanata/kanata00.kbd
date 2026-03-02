@@ -342,12 +342,12 @@
 	1 C-pgup ;; tab left
 	3 C-pgdn ;; tab right
 	4 @ctrlclick
-	;;4 (multi lctl mlft) ;; Ctrl + LClick
-	;;4 (macro C-S-mlft) ;; Ctrl + LClick
-	;;4 (macro lctl 100 mlft 100) ;; Ctrl + LClick
-	;;4 (macro C-(mltp)) ;; Ctrl + LClick
-	;;4 (tap-hold 1 200 (macro lctl mlft) (macro lctl mlft)) 
-	;;4 C-mlft ;; Ctrl + LClick HOLD
+		;;4 (multi lctl mlft) ;; Ctrl + LClick
+		;;4 (macro C-S-mlft) ;; Ctrl + LClick
+		;;4 (macro lctl 100 mlft 100) ;; Ctrl + LClick
+		;;4 (macro C-(mltp)) ;; Ctrl + LClick
+		;;4 (tap-hold 1 200 (macro lctl mlft) (macro lctl mlft)) 
+		;;4 C-mlft ;; Ctrl + LClick HOLD
 	tab A-left ;; back
 	w A-right ;; fwd
 	r C-r ;; reload page
