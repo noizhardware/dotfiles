@@ -195,6 +195,11 @@ done.
 
 THEN you need to: `git remote set-url origin git@github.com:noizhardware/repoName.git`
 
+## create new repo 2026c26-1000
+`sudo apt install gh`
+`gh repo create projectname --public   # or --private / --internal`
+sticazzi FAIL
+
 ## push all
 ~~~~
 git add --all
