@@ -138,7 +138,7 @@ linux (/home/nff/.ssh/id_rsa.pub)
 - do the "push all":
 ~~~~
 git add -A
-git commit -m "comment"
+git commit -m "init"
 git push origin master
 ~~~~
 if the repository didn't previously exist, you'll be prompted with a link to create the repository on git.sr.ht — click that link and fill out the form on that page. You'll be redirected to your repository on git.sr.ht: you're done!
