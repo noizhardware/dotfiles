@@ -188,6 +188,9 @@ export LS_COLORS
 	alias wlo='xdg-open /media/nff/RED/MUCKE/focus/whitenoiseLow.mp3'
 	alias wno='xdg-open /media/nff/RED/MUCKE/focus/whitenoise.mp3'
 	alias wha='xdg-open /media/nff/RED/MUCKE/focus/whitenoiseHarsh.mp3'
+		alias wn0=`wlo`
+		alias wn1=`wno`
+		alias wn2=`wha`
 	alias ave='xdg-open /media/nff/RED/MUCKE/ost/Ave\ Maria\ -\ Hitman_\ Blood\ Money\ \ mp3.mp3'
 	alias des='xdg-open /media/nff/RED/MUCKE/Red\ Hot\ Chili\ Peppers-Discography/2006\ -\ Stadium\ Arcadium\ -\ Mars/01\ -\ Desecration\ Smile.mp3'
 	alias obom='xdg-open /media/nff/HOTdata/EAGLE/BRD/JLCPCB/example-assembly/example-BOM.csv'
