@@ -12,7 +12,13 @@
 - compile a sketch; `arduino-cli compile --fqbn arduino:avr:micro /media/nff/RED/s/avr/nyx_wryte/nyx_wryte.ino --verbose`
 - upload a sketch; `arduino-cli upload -p /dev/ttyACM0 --fqbn arduino:avr:micro /media/nff/RED/s/avr/nyx_wryte/nyx_wryte.ino --verbose`
 
-2026b26-1051 I need a console client, to read serial data from the ardu on linux
+- 2026b26-1051 I need a console client, to read serial data from the ardu on linux
+	- use [[/media/nff/RED/s/c/serialConsole/serialConsole.c]] 2026e24-1315
+
+sometimes avrdude shows warning; `avrdude: jtagmkII_initialize(): Cannot locate "flash" and "boot" memories in description`
+can be safely ignored, if the compile was successful
+I can add the `-v` flag, so I can clearly see upload succesful like;
+`avrdude: xxx bytes of flash written / avrdude done.  Thank you.`
 
 
 ---
