@@ -8,7 +8,12 @@ LS_COLORS='rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:c
 export LS_COLORS
 
 ## management
-	alias syncall="log && gpus && dof && gpus"
+syncall(){
+log || echo "log failed"
+gpus || echo "gpus failed"
+dof || echo "dof failed"
+gpus || echo "gpus failed"
+}
 
 
 ## file system
