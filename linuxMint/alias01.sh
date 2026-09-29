@@ -19,7 +19,7 @@ export LS_COLORS
 	#alias disk='df -h | grep Size && df -h | grep sda1'
 	alias dsk='df -h'
 	alias siz='du -sbh *'
-	alias sib='du -sbh *' # in raw bytes
+	alias sib='du -sb *' # in raw bytes
 	alias sid='du -sh' # size Directory
 	alias hre='pwd'
 	kdr(){ # killdir
