@@ -1,7 +1,14 @@
 pw-cli list-objects | grep node.name
 ffmpeg -f pulse -i <node.name>.monitor output.mp3
 ffmpeg -f pulse -i <node.name>.monitor -t 00:05:00 output.mp3
+ffmpeg -f pulse -i Vivaldi.monitor -t 00:00:10 /home/nff/Downloads/recording.wav
+ffmpeg -f pulse -i Vivaldi.monitor -t 00:00:10 /home/nff/Downloads/recording.mp3
+	hh:mm:ss
 press `q` to stop/finalize recording
+
+
+
+
 https://mynoise.net/NoiseMachines/babbleNoiseGenerator.php
 
 set sample rate with `-ar` option, must come before the input (-i) so it applies to the PulseAudio capture, not just the output:
